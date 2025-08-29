@@ -1,0 +1,42 @@
+
+%=================%
+%   PAGE LAYOUT   %
+%=================%
+
+\settypeblocksize{*}{1.2\lxvchars}{*} % lxvchars è una dimensione raccomandata che dipende dal font, utile per la leggibilità.
+\setlrmargins{*}{*}{1}                % setta i margini in modo che siano 1:1 adeguandosi al typeblock.
+\setulmarginsandblock{1.5in}{*}{1.4}  % setta i margini superiore e inferiore {superiore}{inferiore}{rapporto}.
+\checkandfixthelayout                 % does the magic.
+
+
+
+%=========================%
+%   HEADER & PAGESTYLES   %
+%=========================%
+
+\setlength{\headwidth}{\textwidth}
+
+\makepagestyle{thesis}                                                  % definisce il nome dello stile.
+\makerunningwidth{thesis}{\headwidth}                                   % definisce la lunghezza dell'header.
+\makeheadrule{thesis}{\headwidth}{\normalrulethickness}                 % mette la riga nell'header.
+\makeheadposition{thesis}{flushright}{flushleft}{flushright}{flushleft} % definisce la posizione dell'header.
+\makepsmarks{thesis}{%                                                  % da qui in poi non lo so
+    \nouppercaseheads
+    \createmark{chapter}{both}{shownumber}{\chaptername\ }{.\ } 
+    \createmark{section}{right}{shownumber}{}{.\ }              
+    \createplainmark{toc}{both}{\contentsname}                  
+    \createplainmark{lof}{both}{\listfigurename}                
+    \createplainmark{lot}{both}{\listtablename}
+    \createplainmark{bib}{both}{\bibname}
+    \createplainmark{index}{both}{\indexname}
+    \createplainmark{glossary}{both}{\glossaryname}    
+}
+
+%% se oneside:
+    \makeoddhead{thesis}{\bfseries\leftmark}{}{\bfseries\thepage}
+%% se twoside:
+    % \makeevenhead{thesis}{\bfseries\thepage}{}{\bfseries\leftmark}
+    % \makeoddhead{thesis}{\bfseries\rightmark}{}{\bfseries}
+
+\chapterstyle{hangnum}
+\aliaspagestyle{chapter}{empty} % toglie il numero di pagina nelle pagine con il nome del capitolo.
