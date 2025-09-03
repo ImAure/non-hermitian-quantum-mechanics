@@ -1,0 +1,75 @@
+NON-HERMITIAN QUANTUM MECHANICS
+
+==> Introduction
+    ->> Brief history?
+    ->> Hermitian operators as observable quantities
+    ->> Non-Hermitian Hamiltonians with real eigenvalues
+    ->> The case of PT-Symmetric Hamiltonians
+
+==> Hermiticity in "classical" QM
+    ->> Postulates of QM 
+    ->> Hermitian operators and their Properties
+        --> reality of eigenvalues, orthonormality of eigenspaces, unitarity of time evolution
+    ->> Examples?
+
+==> P and T Operators
+    ->> Definition of P and T
+    ->> Main properties of P and T
+        --> Action on Lorentz' group(?), Px, Pp, Tx, Tp ...
+        --> Other properties: P^2 = T^2 = 1...
+        --> Reality of eigenvalues
+    ->> PT operator
+        --> PT symmetry
+
+==> PT-Symmetric Hamiltonians
+    ->> PT-Symmetric Hamiltonians and inner product/completenes
+    ->> The C operator and CPT inner product
+    ->> Unitarity of PT Symmetric QM
+
+==> Examples and applications
+    ->> PT Harmonic oscillator (... + x^2(ix)^e)
+    ->> More examples? Matrix Hamiltonian 
+
+==> Conclusions?
+    ->> Hermiticity is sufficient but not necessity
+
+
+10 minutes including questions (8 mins max)
+limit on pages?
+
+
+
+
+
+
+
+
+
+------------------------------------------
+
+
+
+
+==> Hermitian Operators in QM 
+    ->> Postulates of "classical" QM
+        --> Hermitian operators as observable quantities
+        --> Process of measuerement
+        --> Expectation values
+    ->> Properties of Hermitian Operators
+        --> Reality of eigenvalues
+        --> Orthonormality of eigenspaces
+        --> Unitarity and conservation of probability
+
+==> P and T Operators
+    ->> Definition of P and T
+        --> Action of P and T on the Lorentz Group
+        --> Non linearity of the T operator
+    ->> PT Symmetry
+        --> Properties 
+        --> Example: H = p^2 + x^2 + iax
+        --> Eigenstates of PT operator
+
+==> PT Symmetrical Theories
+    ->> Sextic hamiltonian?
+    ->> Upside-down potentials?
+

@@ -1,0 +1,22 @@
+\chapter{Hermitian Operators in Quantum Mechanics}\label{ch:hermiticity}
+    \section{Postulates of Hermitian Quantum Mechanics}
+        Hermitian operators play a fundamental role in Quantum Mechanics since its postulates strictly bind the physical observables to them. Let's go over these postulates succintly \cite{Shankar2012-kg}:
+        \begin{enumerate}[label=\Roman*.]
+            \item The state of the particle is represented by a vector $\ket{\psi\pqty{t}}$ in a Hilbert space.
+            \item The classical independent variables $x$ and $p$ are represented by Hermitian operators $\hx$ and $\hp$ with the following matrix elements in the eigenbasis $\ket{x}$ of $\hx$:
+            \begin{align*}
+                \mel*{x}{\hx}{x'} &= x\delta\pqty*{x-x'} \mycomma \\
+                \mel*{x}{\hp}{x'} &= -i\hbar\pdv{x}\delta\pqty*{x-x'} \myperiod
+            \end{align*}
+            The operators corresponding to dependent variables $\omega\pqty{x,p}$ are given by the same fuction of the operators $\hat{\Omega}\pqty*{\hx,\hp}$.
+            \item If the particle is in the state $\ket{\psi}$, measurement of the observable $\hat{\Omega}$ will yield one of the eigenvalues $\omega_n$ of $\hat{\Omega}$ with probability $\abs{\braket{\omega_n}{\psi}}^2$. The state of the system will change from $\ket{\psi}$ to $\ket{\omega_n}$ as a result of the measurement.
+            \item The state vector $\ket{\psi\pqty{t}}$ evolves according to Schr\"odinger's wave equation
+            \begin{equation}
+                i\hbar\pdv{t}\!\ket{\psi\pqty{t}} = \hH\!\ket{\psi\pqty{t}}
+                \mycomma
+                \label{eq:schrodinger}
+            \end{equation}
+            where $\hH = \hH\pqty*{\hx,\hp}$ is the quantum Hamiltonian operator of the system.
+        \end{enumerate}
+    \section{Hermitian operators and their properties}
+    \section{Examples of Hermitian operators}

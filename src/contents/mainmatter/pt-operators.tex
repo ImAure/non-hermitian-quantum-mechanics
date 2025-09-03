@@ -1,0 +1,71 @@
+\chapter{Parity Inversion and Time Reversal Operators}\label{ch:pt-operators}
+    \section{Spacetime transformations}
+        The \emph{Parity Inversion} and \emph{Time Reversal} operators are best understood by looking into the context of special relativity.
+
+        The Lorentz group is the group of all $4\times4$ real matrices that transform a $4$-vector $\tensor{x}{^\mu} = \pqty{ct,x,y,z} = \pqty{ct,\vb{r}}$ into another $4$-vector $\tensor{{x'}}{^\mu}$ while preserving the scalar $4$-interval\footnote{The signature $\pqty{+,-,-,-}$ is implied.}
+        \begin{equation}
+            \label{eq:4-interval}
+            \Delta s^2 = \tensor{x}{_\mu} \tensor{x}{^\mu} = c^2t^2 - x^2 - y^2 - z^2
+            \myperiod
+        \end{equation}
+        By this definition, it is clear that transformations that change the sign of one or more of the components are allowed. As a consequence, the most general Lorentz group, which is often referred to as $O\pqty{1,3}$, is not connected.
+
+        We shall hereby limit our focus to four of the self-connected components of this group only. In order to describe them, we shall introduce the following symmetry transformations. Let \mcP\ be the map 
+        \begin{equation}
+            \label{eq:lorentz-P}
+            \func{\mcP}{\pqty{ct,\vb{r}}}{\pqty{ct,-\vb{r}}}
+        \end{equation}
+        and, similarly, let \mcT\ be the map
+        \begin{equation}
+            \label{eq:lorentz-T}
+            \func{\mcT}{\pqty{ct,\vb{r}}}{\pqty{-ct,\vb{r}}}
+            \mycomma
+        \end{equation}
+        let \PT\ be the composition of \mcP\ and \mcT.
+        The \mcP\ and \mcT\ operators are usually named \emph{parity inversion} and \emph{time reversal}, and they can be simply represented by the two diagonal matrices
+        \begin{equation*}
+            \mcP = \pmqty{\dmat{1,-1,-1,-1}}
+            \qand
+            \mcT = \pmqty{\dmat{-1,1,1,1}}
+            \mycomma
+        \end{equation*}
+        It is also evident that $\mcP^2 = \mcT^2 = \idM$ and $\PT = \mcT\mcP = -\idM$.
+        
+        We can now determine the four components of the subgroup \cite{bender2024}:
+        \begin{enumerate}[label = \mybullet]
+            \item The \emph{proper orthochronous Lorentz group}, also known as the identity component since it is the connected subgroup of $O\pqty{1,3}$ containing the identity transformation. This group of transformations does not flip the sign of neither the time coordinate nor the one of the spacial coordinates.
+            \item The three distinct products of the proper orthochronous Lorentz group with \mcP, \mcT\ and \PT\ respectively, containing the transformations whose effect involves either flipping the sign of the time coordinate, the sign of the spacial coordinates or both simultaneously.
+        \end{enumerate}
+        None of the last three sets of transformations constitute a subgroup of themselves: the only actual subgroup is the identity component as it is the only one containing the identity transformation.
+        
+        It can be shown \cite{bender2024} that the number of disconnected components in the Lorentz group can be brought down to two if we extend the group to the complex numbers. When we allow the coefficients to be complex, the ``\mcP\ component'' and the ``\mcT\ component'' of the group become connected and the same can be said of the proper orthochronous subgroup and the ``\PT\ component''. This suggests that the \PT\ symmetry could play a more fundamental role as symmetry of nature compared to \mcP\ or \mcT\ alone.
+    
+    \section{Definition and properties of \hP\ and \hT}
+        Moving on from the preliminary definition of the classical \mcP, \mcT\ and \PT\ operators in the context of Lorentz trasformation, let's now introduce their quantum analogous along with some of their properties.
+
+        In the context of non-relativistic Quantum Mechanics we expect the quantum operators to behave in a way similar to their classical counterparts, as the correspondence principle underlines. Specifically, we would like the parity inversion operator to map $\hx$ to $-\hx$ and $\hp$ to $-\hp$, while the time reversal operator should leave $\hx$ untouched and map $\hp$ to its opposite, $-\hp$. The reasoning behind this request is quite intuitive: flipping the spacial coordinates will just flip both the position and the direction of motion of a particle; flipping the time coordinate will not affect the position of the particle but it will appear as though it is moving backwards.
+
+        In order to satisfy these requirements, the quantum \hP\ and \hT\ operators are defined by their action on \hx\ and \hp\ as follows:
+        \begin{align}
+            \label{eq:quantum-P}
+            &\hP\hx\hP^{-1} = -\hx
+            \mycomma
+            &\hP\hp\hP^{-1} = -\hp
+            \mycomma
+            \\
+            \label{eq:quantum-T}
+            &\hT\hx\hT^{-1} = \hx
+            \mycomma
+            &\hT\hp\hT^{-1} = -\hp
+            \myperiod
+        \end{align}
+        Since parity inversion and time reversal are independent actions, we define
+        \begin{equation}
+            \label{eq:PT-commutator}
+            \comm*{\hP}{\hT} = 0
+            \myperiod
+        \end{equation}
+
+
+
+    \section{\PT\ Symmetry}

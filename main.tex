@@ -6,10 +6,16 @@
     \pagestyle{thesis}
 
     \frontmatter
-
+        \tableofcontents
+        %\input{src/contetns/frontbackmatter/preface}
     \mainmatter
-
+        \input{src/contents/mainmatter/introduction}
+        \input{src/contents/mainmatter/hermiticity}
+        \input{src/contents/mainmatter/pt-operators}
+        \input{src/contents/mainmatter/pt-symmetric-hamiltonians}
+        \input{src/contents/mainmatter/examples}
+        \input{src/contents/mainmatter/conclusions}
     \backmatter
         \printbibliography
-
+        \input{src/contents/frontbackmatter/acknowledgements}
 \end{document}
