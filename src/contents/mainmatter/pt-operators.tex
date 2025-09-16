@@ -2,7 +2,7 @@
     \section{Spacetime transformations}
         The \emph{Parity Inversion} and \emph{Time Reversal} operators are best understood by looking into the context of special relativity.
 
-        The Lorentz group is the group of all $4\times4$ real matrices that transform a $4$-vector $\tensor{x}{^\mu} = \pqty{ct,x,y,z} = \pqty{ct,\vb{r}}$ into another $4$-vector $\tensor{{x'}}{^\mu}$ while preserving the scalar $4$-interval\footnote{The signature $\pqty{+,-,-,-}$ is implied.}
+        The Lorentz group is the group of all $4\times4$ real matrices that transform a $4$-vector $\tensor{x}{^\mu} = \pqty{ct,x,y,z} = \pqty{ct,\vb{r}}$ into another $4$-vector $\tensor{{x'}}{^\mu}$ while preserving the scalar $4$-interval\footnote{The signature $\pqty{+,-,-,-}$ for the Minkowski spacetime is implied.}
         \begin{equation}
             \label{eq:4-interval}
             \Delta s^2 = \tensor{x}{_\mu} \tensor{x}{^\mu} = c^2t^2 - x^2 - y^2 - z^2
@@ -38,12 +38,12 @@
         \end{enumerate}
         None of the last three sets of transformations constitute a subgroup of themselves: the only actual subgroup is the identity component as it is the only one containing the identity transformation.
         
-        It can be shown \cite{bender2024} that the number of disconnected components in the Lorentz group can be brought down to two if we extend the group to the complex numbers. When we allow the coefficients to be complex, the ``\mcP\ component'' and the ``\mcT\ component'' of the group become connected and the same can be said of the proper orthochronous subgroup and the ``\PT\ component''. This suggests that the \PT\ symmetry could play a more fundamental role as symmetry of nature compared to \mcP\ or \mcT\ alone.
+        It can be shown \cite{bender2024} that the number of disconnected components in the Lorentz group can be brought down to two if we extend the group to the complex numbers. When we allow the coefficients to be complex, the ``\mcP\ component'' and the ``\mcT\ component'' of the group become connected and the same can be said of the proper orthochronous subgroup and the ``\PT\ component''. This suggests that the \PT\ symmetry could play a more fundamental role as a symmetry of nature compared to \mcP\ or \mcT\ separately.
     
     \section{Definition and properties of \hP\ and \hT}
         Moving on from the preliminary definition of the classical \mcP, \mcT\ and \PT\ operators in the context of Lorentz trasformation, let's now introduce their quantum analogous along with some of their properties.
 
-        In the context of non-relativistic Quantum Mechanics we expect the quantum operators to behave in a way similar to their classical counterparts, as the correspondence principle underlines. Specifically, we would like the parity inversion operator to map $\hx$ to $-\hx$ and $\hp$ to $-\hp$, while the time reversal operator should leave $\hx$ untouched and map $\hp$ to its opposite, $-\hp$. The reasoning behind this request is quite intuitive: flipping the spacial coordinates will just flip both the position and the direction of motion of a particle; flipping the time coordinate will not affect the position of the particle but it will appear as though it is moving backwards.
+        In the context of non-relativistic Quantum Mechanics we expect the quantum operators to behave in a way similar to their classical counterparts, as the correspondence principle underlines. Specifically, if we limit our attention to the one dimensional case for the sake of simplicity, we would like the parity inversion operator to map $\hx$ to $-\hx$ and $\hp$ to $-\hp$, while the time reversal operator should leave $\hx$ unaltered and map $\hp$ to its opposite, $-\hp$. The reasoning behind this request is quite intuitive: flipping the spacial coordinates will just flip both the position and the direction of motion of a particle; flipping the time coordinate will not affect the position of the particle but it will appear as though it is moving backwards.
 
         In order to satisfy these requirements, the quantum \hP\ and \hT\ operators are defined by their action on \hx\ and \hp\ as follows:
         \begin{align}
@@ -59,13 +59,85 @@
             &\hT\hp\hT^{-1} = -\hp
             \myperiod
         \end{align}
-        Since parity inversion and time reversal are independent actions, we define
+        Since the inversion of parity and the reversal of time are independent actions, the assumption\footnote{The convention $\comm*{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}$ is implied.}
         \begin{equation}
             \label{eq:PT-commutator}
-            \comm*{\hP}{\hT} = 0
+            \comm*{\hP}{\hT} = 0 
+        \end{equation}
+        is legit.
+
+        Having defined the operators, let's now go over the property of linearity. Since we are trying to uncover some kind of symmetry, we expect that the laws of Physics should be unchanged down to the fundamental level. Hence, the equality $\comm*{\hx}{\hp} = i \hbar$ should hold even after transforming the operators through the action of \hP\ or \hT. By using the earlier definitions, it is easy to show that this is indeed true:
+        \begin{equation*}
+            i \hbar = \comm*{\hx}{\hp} = \comm*{-\hx}{-\hp} = \comm*{\hP \hx \hP^{-1}}{\hP \hp \hP^{-1}} = \hP \comm*{\hx}{\hp} \hP^{-1} = \hP i \hbar \hP^{-1}
+        \end{equation*}
+        which implies that
+        \begin{equation}
+            \label{eq:PiP}
+            \hP i \hP^{-1} = i
+            \myperiod
+        \end{equation}
+        On a similar fashion
+        \begin{equation*}
+            i \hbar = \comm*{\hx}{\hp} = \comm*{\hT \hx \hT^{-1}}{-\hT \hp \hT^{-1}} = \hT \comm*{\hx}{-\hp} \hT^{-1} = \hT \pqty{-i \hbar} \hT^{-1}
+            \mycomma
+        \end{equation*}
+        however, since the commutator must be preserved, we find that
+        \begin{equation}
+            \label{eq:TiT}
+            \hT i \hT^{-1} = -i
+            \mycomma
+        \end{equation}
+        which means that the \hT\ operator \emph{is not linear}. We can then say for any $z \in \bbC$ 
+        \begin{alignat}{3}
+            \label{eq:P-linear}
+            \hP z \hP^{-1} &= z        
+            &\quad\iff\quad 
+            \hP z &= z \hP
+            \mycomma
+            \\
+            \label{eq:T-antilinear}
+            \hT z \hT^{-1} &= z^{\dag} 
+            &\quad\iff\quad 
+            \hT z &= z^{\dag} \hT
+            \mycomma
+        \end{alignat}
+        where $z^\dag$ is the hermitian conjugate\footnote{Being a number, the hermitian conjugate $z^\dag$ and the complex conjugate $z^*$ are in fact the same thing.} of $z$. In this context, \hT\ is said to be \emph{antilinear}.
+
+        We can also prove that \hP\ is both Hermitian and Unitary. Starting from $\hvr\ket{x} = x\ket{x}$ and by looking at \eqref{eq:lorentz-P}, it is easy to convince ourselves that applying the Parity Inversion operator on $\ket{x}$ will yield $\ket{-x}$. We have
+        \begin{equation*}
+            \mel{\phi}{\hP}{\psi}
+            = \int_{\bbR}\bra{\phi}\hP\ket{x}\bra{x}\ket{\psi}\dd{x}
+            = \int_{\bbR}\phi^*\pqty{-x}\psi\pqty{x}\dd{x}
+            \myperiod
+        \end{equation*}
+        Since we are integrating over all of $\bbR$ we are allowed to rename the variable of integration from $x$ to $-x$, and by considering the hermitian conjugate of $\hP\ket{x} = \ket{-x}$, $\bra{x}\hP^\dag = \bra{-x}$, we get
+        \begin{equation*}
+            \int_{\bbR}\phi^*\pqty{x}\psi\pqty{-x}\dd{x}
+            = \int_{\bbR}\bra{\phi}\ket{x}\bra{x}\hP^\dag\ket{\psi}\dd{x}
+            = \mel{\phi}{\hP^\dag}{\psi}
+            \mycomma
+        \end{equation*}
+        from which we see that $\hP^\dag = \hP$. Following that $\hP^2 = \hat{\idM}$ we get the Unitarity. To sum up,
+        \begin{equation}
+            \label{eq:P-properties}
+            \hP = \hP^\dag = \hP^{-1}
+            \qand
+            \hP^2 = \hat{\idM}
             \myperiod
         \end{equation}
 
+        Being linear, Hermitian and Unitary, due to the Spectral Theorem we can say the \hP\ operator possesses real unimodular eigenvalues. If we agree on naming $\ket{\pm}$ the eigenstate of \hP\ with eigenvalue $\pm 1$, we can then write
+        \begin{equation}
+            \hP\ket{\pm} = \pm\ket{\pm}\myperiod
+        \end{equation}
+        
+        Going back to \hT, having already shown that it is antilinear, we are not allowed to talk about Hermiticity nor Unitarity. We can however show that \hT\ preserves the modulus of scalar products and, consequently, the norm.
 
-
+        By the definition we have $\mel{x}{\hT}{\psi} = \psi^*\pqty{x}$. If we calculate the inner product between two transformed states $\hT\ket{\phi}$ and $\hT\ket{\psi}$, we find
+        \begin{equation*}
+            \bra{\phi}\hT^\dag\hT\ket{\psi} = \int_\bbR \phi\pqty{x}\psi^*\pqty{x}\dd{x} = \bra{\psi}\ket{\phi} = \bra{\phi}\ket{\psi}^*\mycomma
+        \end{equation*}
+        which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\hT^\dag\hT\ket{\psi}$ must have the same modulus.
     \section{\PT\ Symmetry}
+        It is now time to introduce the composite operator \hPT\ which will be of major interest throughout the rest of this work.
+    \section{Summary of \hP, \hT\ and \hPT's properties}
