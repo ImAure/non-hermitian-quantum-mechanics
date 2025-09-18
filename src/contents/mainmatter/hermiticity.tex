@@ -18,5 +18,43 @@
             \end{equation}
             where $\hH = \hH\pqty*{\hx,\hp}$ is the quantum Hamiltonian operator of the system.
         \end{enumerate}
+
+        The Schr\"odinger's wave equation dewscribes the evolution in time of the phyisical state in the Hilbert space and it is of little use in its most formal expression. One of the most popular ways of making the problem more accustomed to our purposes is achieved through the introduction of the eigenstates of the position operator \hx, and its vector analogous $\hvr = \pqty{\hx,\hy,\hz}$ which allows us to transpose the problem in the language of functions. We shall name $\ket{x}$ the eigenstate of \hx\ with eigevalue $x$, in symbols
+        \begin{equation}
+            \label{eq:x-eigenvalues}
+            \hx\ket{x} = x\ket{x}
+            \mycomma
+        \end{equation}
+        and, with similar considerations, its vector form
+        \begin{equation}
+            \label{eq:r-eigenvalues}
+            \hvr\ket{\vb{r}} = \vb{r}\ket{\vb{r}}
+            \myperiod
+        \end{equation}
+
+        For a quantum physical state $\ket{\psi}$ to be in the eigenstate $\ket{\vb{r}}$, it means that it is infinitely localized in the region of space centered in $\vb{r}$. If we were to introduce a function, or rather a \emph{wavefunction}, which helps us in mathematically defining the spacial distribution of a particle in space, we should rightfully expect it to be shaped like a Dirac's Delta. We can in fact define the wavefunction for any physical state $\ket{\psi}$: we know from the postulates of Quanum Mechanics that the quantity $\abs{\braket{\vb{r}}{\psi}}^2$ is the proability---or rather the \emph{probability density}, since $\vb{r}$ varies continuously---of a position measurement yielding the eigenvalue $\vb{r}$. We hence define the wavefunction as
+        \begin{equation}
+            \label{eq:vavefunction}
+            \psi\pqty{\vb{r}} = \braket{\vb{r}}{\psi}
+            \mycomma
+        \end{equation}
+        which is a complex valued function whose modulus squared is notoriusly a density of probability. For the wavefunction to be well defined, we need the total probability to be unity, namely 
+        \begin{equation}
+            \int\nolimits_{\bbR^3}\psi\pqty{r}\dd[3]{\vb{r}} = 1
+            \mycomma
+        \end{equation}
+        and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. By the properties of 
+
+        
+        
+        Having defined the wavefunction, it is trivial to see that for any eigenstate of $\ket{\vb{r}_0}$ \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r_0}} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
+
+        One of the problems of main interest in Quantum Mechanics is the one of finding the eigenvalues of the Hamiltonian operator \hH\ by solving 
+        \begin{equation}
+            \hH\ket{\phi_n} = E_n\ket{\phi_n}
+            \mycomma
+        \end{equation}
+        the \emph{time independent Schr\"odinger Equation}.
+        This is especially useful under the condition that the Hamiltonian be time independent, allowing us to search find 
     \section{Hermitian operators and their properties}
     \section{Examples of Hermitian operators}
