@@ -1,6 +1,6 @@
 \chapter{Hermitian Operators in Quantum Mechanics}\label{ch:hermiticity}
     \section{Postulates of Hermitian Quantum Mechanics}
-        Hermitian operators play a fundamental role in Quantum Mechanics since its postulates strictly bind the physical observables to them. Let's go over these postulates \cite{Shankar2012-kg} and their implications \cite{Shankar2012-kg,Sakurai2020-pu} succintly:
+        Hermitian operators play a fundamental role in Quantum Mechanics since its postulates directly bind them to physical observables. Let's go over these postulates \cite{Shankar2012-kg} and their implications \cite{Shankar2012-kg,Sakurai2020-pu} succinctly:
         \begin{enumerate}[label=\Roman*.] 
             \item The state of the particle is represented by a vector $\ket{\psi\pqty{t}}$ in a Hilbert space.
             \item The classical independent variables $x$ and $p$ are represented by Hermitian operators $\hx$ and $\hp$ with the following matrix elements in the eigenbasis $\ket{x}$ of $\hx$:
@@ -8,7 +8,7 @@
                 \mel*{x}{\hx}{x'} &= x\delta\pqty*{x-x'} \mycomma \\
                 \mel*{x}{\hp}{x'} &= -i\hbar\pdv{x}\delta\pqty*{x-x'} \myperiod
             \end{align*}
-            The operators corresponding to dependent variables $\omega\pqty{x,p}$ are given by the same fuction of the operators $\togglehat{\Omega}\pqty*{\hx,\hp}$.
+            The operators corresponding to dependent variables $\omega\pqty{x,p}$ are given by the same function of the operators $\togglehat{\Omega}\pqty*{\hx,\hp}$.
             \item If the particle is in the state $\ket{\psi}$, measurement of the observable $\togglehat{\Omega}$ will yield one of the eigenvalues $\omega_n$ of $\togglehat{\Omega}$ with probability $\abs{\braket{\omega_n}{\psi}}^2$. The state of the system will change from $\ket{\psi}$ to $\ket{\omega_n}$ as a result of the measurement.
             \item The state vector $\ket{\psi\pqty{t}}$ evolves according to Schr\"odinger's wave equation
             \begin{equation}
@@ -19,7 +19,7 @@
             where $\hH = \hH\pqty*{\hx,\hp}$ is the quantum Hamiltonian operator of the system.
         \end{enumerate}
 
-        The Schr\"odinger's wave equation dewscribes the evolution in time of the phyisical state in the Hilbert space and it is of little use in its most formal expression. One of the most popular ways of making the problem more accustomed to our purposes is achieved through the introduction of the eigenstates of the position operator \hx, and its vector analogous $\hvr = \pqty{\hx,\hy,\hz}$ which allows us to transpose the problem in the language of functions. We shall name $\ket{x}$ the eigenstate of \hx\ with eigevalue $x$, in symbols
+        The Schr\"odinger's wave equation describes the evolution in time of the physical state in the Hilbert space and it is of little use in its most formal expression. A common way to make the problem easier to tackle is to introduce the eigenstates of the position operator \hx, and its vector analogous $\hvr = \pqty{\hx,\hy,\hz}$ which allows us to transpose the problem in the language of functions. We shall name $\ket{x}$ the eigenstate of \hx\ with eigenvalue $x$, in symbols
         \begin{equation}
             \label{eq:x-eigenvalues}
             \hx\ket{x} = x\ket{x}
@@ -33,7 +33,7 @@
         \end{equation}
 
         \subsection{Introduction to wavefunctions}
-            For a quantum physical state $\ket{\psi}$ to be in the eigenstate $\ket{\vb{r}}$, it means that it is infinitely localized in the region of space centered in $\vb{r}$. If we were to introduce a function, or rather a \emph{wavefunction}, which helps us in mathematically defining the spacial distribution of a particle in space, we should rightfully expect it to be shaped like a Dirac's Delta. We can in fact define the wavefunction for any physical state $\ket{\psi}$: we know from the postulates of Quanum Mechanics that the quantity $\abs{\braket{\vb{r}}{\psi}}^2$ is the proability---or rather the \emph{probability density}, since $\vb{r}$ varies continuously---of a position measurement yielding the eigenvalue $\vb{r}$. We hence define the wavefunction as
+            If a state $\ket{\psi}$ coincides with an eigenstate $\ket{\vb{r}}$, it means that the particle is infinitely localized at $\vb{r}$. If we were to introduce a function, or rather a \emph{wavefunction}, which helps us in mathematically defining the spacial distribution of a particle in space, we should rightfully expect it to be shaped like a Dirac's Delta. We can in fact define the wavefunction for any physical state $\ket{\psi}$: we know from the postulates of Quantum Mechanics that the quantity $\abs{\braket{\vb{r}}{\psi}}^2$ is the proability---or rather the \emph{probability density}, since $\vb{r}$ varies continuously---of a position measurement yielding the eigenvalue $\vb{r}$. We hence define the wavefunction as
             \begin{equation}
                 \label{eq:vavefunction}
                 \psi\pqty{\vb{r}} = \braket{\vb{r}}{\psi}
@@ -46,15 +46,15 @@
                 \mycomma
             \end{equation}
             and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. % By the properties of 
-            Having defined the wavefunction, it is trivial to see that for any eigenstate $\ket{\vb{r}_0}$ of \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r_0}} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
+            Having defined the wavefunction, it is easy to see that for any eigenstate $\ket{\vb{r}_0}$ of \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r}_0} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
 
-            The language of wavefunctions is not essential to the development of a Quantum Mechanical theory, as the theory could be entirely developed by the usage of operatorial formalism in the Heisenberg picture. It is however quite useful since it allows us to translate the problems from the abstract Hilbert space to the more concrete $L^2$ space of modulus squared Lebesgue-integrable functions. In this space, the scalar product between physical states can be expressed in terms of the integral
+            The wavefunction formalism is not strictly necessary, since a quantum mechanical theory could be entirely developed by the usage of operatorial formalism in the Heisenberg picture. It is however quite useful since it allows us to translate the problems from the abstract Hilbert space to the more concrete $L^2$ space of modulus squared Lebesgue-integrable functions. In this space, the scalar product between physical states can be expressed in terms of the integral
             \begin{equation}
                 \label{eq:integral-inner-product}
                 \braket{g}{f} = \int\nolimits_{\bbR^3}g^*\pqty{\vb{r}} f\pqty{\vb{r}} \dd[3]{\vb{r}}
                 \myperiod
             \end{equation}
-            This way it is clear that the condition \eqref{eq:normalization} is nothing more than asking that the inner product \eqref{eq:integral-inner-product} induced norm of a physical state be unity.
+            This way, it is clear that condition \eqref{eq:normalization} is just the requirement that the norm of a physical state induced by inner product \eqref{eq:integral-inner-product} be unity.
 
             Looking at the definition \eqref{eq:vavefunction}, we can interpret the wavefunction as the \emph{continuously varying Fourier coefficients} that allow us to express the state as an infinite linear combination of the basis states $\qty{\ket{\vb{r}}}$ of the Hilbert space, under the assumption that $\qty{\ket{\vb{r}}}$ is a complete set. This translates to
             \begin{equation*}
@@ -69,7 +69,7 @@
             which, in turn, can be seen as
             \begin{equation}
                 \label{eq:integral-identity}
-                \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \togglehat{\idM}
+                \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \hidM
                 \myperiod
             \end{equation}
             This expression of the Identity operator is a tool that can help us later.
@@ -82,23 +82,172 @@
                 \mycomma
             \end{equation}
             the \emph{time independent Schr\"odinger Equation}.
-            This is especially useful under the condition that the Hamiltonian be time independent, allowing us to search for factored solutions in space and time. When the Hamiltonian is time indipendent, it is easy to verify that states of the form
+            This is especially useful under the condition that the Hamiltonian be time independent, allowing us to search for factored solutions in space and time. When the Hamiltonian is time independent, it is easy to verify that states of the form
             \begin{equation*}
                 \ket{\psi\pqty{t}} = \myexp{-i\frac{E_n}{\hbar}t}\ket{\phi_n}
             \end{equation*}
             are solutions to the complete wave equation \eqref{eq:schrodinger}. Solutions of \eqref{eq:schrodinger-time-independent} are called \emph{stationary states} because the expectation value of any observable over a stationary state is conserved. This is easy to see with a few passages, as the quantity
             \begin{equation*}
-                \ev*{\togglehat{A}}
-                = \ev{\togglehat{A}}{\psi\pqty{t}}
-                = \ev{\myexp{i\frac{E_n}{\hbar}t}\togglehat{A}\myexp{-i\frac{E_n}{\hbar}t}}{\phi_n}
-                = \ev{\togglehat{A}}{\phi_n}
+                \ev*{\hA}
+                = \ev{\hA}{\psi\pqty{t}}
+                = \ev{\myexp{i\frac{E_n}{\hbar}t}\hA\myexp{-i\frac{E_n}{\hbar}t}}{\phi_n}
+                = \ev{\hA}{\phi_n}
             \end{equation*}
             does not depend on time.
 
-    \section{Hermitian operators and their properties}
-        The reason behind the choice of Hermitian operators as observables lies in the importat properties they have, the most immediate one being the reality of their eigenvalues, since applying an operator to a physical states yields one of its eigenvalues as a measurement of the corresponding physical quantity and we expect all measurements in physics to be real numbers.
+            Many problems can often be reduced to finding the eigenvalues and eigenfunctions of the Hamiltonian operator. This approach allows us to determine the possible energy levels of the system and the corresponding stationary states. In practice, the time independent Schr\"odinger equation is often solved in the position representation, where the eigenvalue problem becomes a differential equation for the wavefunction:
+            \begin{equation}
+                \label{eq:schrodinger-position}
+                \bqty{-\frac{\hbar^2}{2m}\laplacian + V\pqty{\vb{r}}}\psi_n(\vb{r}) = E_n\psi_n(\vb{r})
+                \myperiod
+            \end{equation}
+            Here, $\psi_n\pqty{\vb{r}}$ are the eigenfunctions associated with the energy eigenvalues $E_n$. The set of all such eigenfunctions forms a complete basis for the Hilbert space, allowing any physical state to be expressed as a linear combination of stationary states. This framework is fundamental for analyzing quantum systems, especially when dealing with bound states and quantized energy spectra, and for it to be applicable in the study of a real physical system it is essential that the energy eigenvalues $E_n$ be real. This is the reason why we are interested in looking into the conditions that allow an operator to have real eigenvalues, the most common being Hermiticity.
+
+    \section{Hermitian operators and their properties}\label{s:hermitian-operators}
+        Hermitian operators are chosen as observables because of their crucial properties, the most immediate one being the reality of their eigenvalues: since applying an operator to a physical states yields one of its eigenvalues as a measurement of the corresponding physical quantity and we expect all measurements in physics to be real numbers, we cannot give up on real eigenvalues. Another important property of Hermitian operators, which we shall cover further on, is their connection with unitary transformations. In Quantum Mechanics, Hermitian operators can induce unitary transformations, mirroring the role of conserved dynamical variables in Classical Mechanics as generators of infinitesimal Symmetry transformations.
         
-        Studying the properties in a finite-dimensional vector space is easier, however in Quantum Mechanics we mostly have to deal with infinite-dimensional Hilbert spaces, which leads to different behaviours of the operators in some edge cases where the dimensionality of the vector space cannot be ignored. Let's now go over some of the most important and useful properties of Hermitian operators and their spectra \cite{Bernardini1993-iy} starting with the finite dimensional case. We shall then see how these properties generalize to infinite-dimensional Hilbert spaces.
-        
-        
-    \section{Examples of Hermitian operators}
+        Studying the properties of operators in a finite-dimensional vector space is an easier task, however in Quantum Mechanics we mostly have to deal with infinite-dimensional Hilbert spaces, which leads to different behaviours of the operators in some edge cases where the dimensionality of the vector space cannot be ignored. Let's now go over some of the most important and useful properties of Hermitian operators and their spectra \cite{Bernardini1993-iy} starting with the finite dimensional case. We shall then see how these properties generalize to infinite-dimensional Hilbert spaces.
+
+        \subsection{Hermitian operators in finite dimensional spaces}
+            In a $n$-dimensional Hilber space, the eigenvalue problem is stated in the usual way
+            \begin{equation*}
+                \hA\ket{\psi} = \lambda\ket{\psi}
+                \myperiod
+            \end{equation*}
+            The operator \hA\ is Hermitian if it equals its own adjoint, that is
+            \begin{equation*}
+                \hA = \hA^\dagger
+                \myperiod
+            \end{equation*}
+            This definition is equivalent to the condition
+            \begin{equation*}
+                \mel{\phi}{\hA}{\psi} = \mel{\psi}{\hA}{\phi}^*
+                \mycomma
+            \end{equation*}
+            which must hold for any pair of states $\ket{\phi}$ and $\ket{\psi}$ in the Hilbert space. We can derive some important properties of Hermitian operators, which are all grouped under the name of the \emph{Spectral Theorem for Hermitian Operators} \cite{Bernardini1993-iy}:
+            \begin{enumerate}[label = \textit{\roman{enumi}}.]
+                \item An Hermitian operator \hA\ over an $n$-dimensional Hilbert space possesses $n$, not necessarily distinct, real eigenvalues $\lambda_1,\ldots,\lambda_n$. Eigenvectors associated to distinct eigenvalues are orthogonal.
+                \item The operator \hA\ possesses $n$ orthonormal eigenvectors $\ket{\phi_i}$.
+                \item The operator \hA\ can be expressed via its \emph{spectral decomposition}
+                    \begin{equation}
+                        \label{eq:spectral-decomposition}
+                        \hA = \sum\nolimits_i \dyad{\phi_i}{\phi_i}\lambda_i
+                        \mycomma
+                    \end{equation}
+                    where $\dyad{\phi_i}{\phi_i}$ is the \emph{orthogonal projection} operator, which decomposes the Hilbert space into the direct sum of $n$ mutually orthogonal eigenspaces. It naturally follows that
+                    \begin{equation}
+                        \label{eq:completeness-of-identity}
+                        \sum\nolimits_i \dyad{\phi_i}{\phi_i} = \hidM
+                        \myperiod
+                    \end{equation}
+                    \label{p:decomposition}
+                \item In the orthonormal basis $\qty{\ket{\phi_i}}$, the matrix elements of \hA\ are
+                    \begin{equation*}
+                        \mel{\phi_i}{\hA}{\phi_j} = \pmqty{\dmat{\lambda_1,\ddots,\lambda_n}}
+                        \myperiod
+                    \end{equation*}
+                    The diagonal representation of \hA\ can be achieved by a similarity tranfsormation described by the unitary operator \hU.
+                \item If $m \leq n$ eigenvalues are degenerate, the matrix elements of \hA\ restricted to the $m$-dimensional eigenspace of the eigenvectors associated to the degenerate eigenvalues can be further diagonalized and the eigenspace can be further decomposed in a way similar to property \ref{p:decomposition}
+                \item Any polynomial of the operator \hA\ can be expressed through its spectral decomposition
+                    \begin{equation}
+                        \label{eq:polynomial-of-operator}
+                        p\pqty*{\hA} = \sum\nolimits_i \dyad{\phi_i}{\phi_i} p\pqty{\lambda_i}
+                        \myperiod
+                    \end{equation}
+            \end{enumerate}
+            The last property can be generalized to the expression of a generic function $f\pqty*{\hA}$ by invoking the Taylor expansion of $f$, given that we define some sort of convergence criterion for operator series first, which is not of particular interest for this work. Assuming that the series converges and through the help of the spectral decomposition \eqref{eq:spectral-decomposition} of \hA, it can be shown that
+            \begin{equation}
+                \label{eq:function-of-operator}
+                f\pqty*{\hA} = \sum\nolimits_n c_n \hA^n = \sum\nolimits_n \dyad{\phi_n}{\phi_n} f\pqty{\lambda_n}
+            \end{equation}
+            for some complex coefficients $c_n$.
+        \subsection{Hermitian operators and Symmetry transformations}\label{ss:unitary-transformations}
+            It can be trivially proved \cite{Bernardini1993-iy}, through the use of \eqref{eq:function-of-operator}, that the complex exponential of an Hermitian operator is a unitary operator:
+            \begin{equation*}
+                \hU = \myexp{i\hA}
+                \myperiod
+            \end{equation*}
+            We can however find a more interesting connection of this property with Symmetry transformations in Classical Mechanics. Let $\hA = -\epsilon\hG$ and let's consider the Taylor expansion of \hU
+            \begin{equation*}
+                \hU = \hidM - i\epsilon\hG + o\pqty{\epsilon}
+            \end{equation*}
+            The requirement that \hU\ be unitary is satisfied even if we truncate the expansion at the first order, given that \hG\ is Hermitian and $\epsilon \to 0$:
+            \begin{equation*}
+                \hU\hU^\dag = \pqty{\hidM - i\epsilon\hG}\pqty{\hidM + i\epsilon\hG^\dag} + o\pqty{\epsilon} = \hidM + i\epsilon\pqty{\hG^\dag - \hG} + o\pqty{\epsilon}
+                \mycomma
+            \end{equation*}
+            which is exactly equal to \hidM\ if $\hG^\dag = \hG$.
+
+            The expectation value of another observable \hB\ will, in general, change when the transformation defined by \hU\ is applied:
+            \begin{align*}
+                \expval*{\hB'} &= \mel{\psi}{\hU\hB\hU^\dag}{\psi} \\
+                &= \mel{\psi}{\pqty{\hidM - i\epsilon\hG} \hB \pqty{\hidM + i\epsilon\hG^\dag}}{\psi} + o\pqty{\epsilon} \\
+                &= \expval*{\hB} + i\epsilon\expval*{\comm*{\hB}{\hG}} + o\pqty{\epsilon}
+                \mycomma
+            \end{align*}
+            which becomes
+            \begin{equation}
+                \label{eq:infinitesimal-transformation-QM}
+                \expval*{\hB'} = \expval*{\hB} + i\epsilon\expval*{\comm*{\hB}{\hG}}
+            \end{equation}
+            if we again let $\epsilon \to 0$. We can then deduce that any observable that commutes with \hB\ can be seen as the generator of a unitary transformation that leaves $\expval*{\hB}$ unchanged. Moreover, for any couple of operators \hA\ and \hB\ such that $\comm*{\hA}{\hB} = 0$, we can say that each of them is the generator of a tranformation that leaves the expectation value of the other unchanged. The relationship \eqref{eq:infinitesimal-transformation-QM} is strikingly similar to the classical relation\footnote{The convention $\acomm{f}{g} = \pdv{f}{x}\pdv{g}{p} - \pdv{f}{p}\pdv{g}{x}$ is implied.} \cite{Goldstein2005-ep}
+            \begin{equation}
+                \label{eq:infinitesimal-transformation-classical}
+                \var{A} = A' - A = \varepsilon\acomm{A}{g}
+                \mycomma
+            \end{equation}
+            which relates the transformation of a dynamical variable $A\pqty{x,p}$ with the Poisson bracket of $A$ with the generating function of the transformation, $g$. From Classical Mechanics \cite{Goldstein2005-ep} we know that the Hamiltonian is the generator of translations in time. If we let $\epsilon = \dd{t}$, relation \eqref{eq:infinitesimal-transformation-classical} then becomes
+            \begin{equation*}
+                \dot{A} = \acomm*{A}{\mcH}
+                \mycomma
+            \end{equation*}
+            which in turn reduces to Hamilton's equations when $A = x, p$.
+
+            By the correspondence principle we can then say that if an observable \hA\ commutes with the Hamiltonian \hH :
+            \begin{enumerate}[label = \mybullet]
+                \item \hA\ is conserved through time, since \hH\ is the generator of a unitary transformation, namely time translation, that leaves \hA\ unchanged;
+                \item \hH\ is conserved through the transformation generated by \hA, meaning that the physical system, its properties and the equations of motion will remain the same under such transformation.
+            \end{enumerate}
+            It is now clear how essential the requisite that any observable quantity be described by an Hermitian operator. In Quantum Mechanics this allows us to connect conserved quantities to Symmetry transformations which, being unitary, preserve the inner product and consequently conserve the probabilities of all measurement outcomes.
+
+        \subsection{Extension to infinite dimensional Hilbert spaces}
+            The properties of Hermitian operators in infinite-dimensional Hilbert spaces are not as straightforward as in the finite-dimensional case. Some properties, such as the reality of eigenvalues and the orthogonality of eigenvectors associated with distinct eigenvalues, still hold. However, other properties may not generalize directly or as easily \cite{Bernardini1993-iy}.
+
+            Since we cannot represent operators with matrices in infinite dimensions, the eigenvalue problems cannot be translated into finding the roots of a polynomial like we would usually do. We should rather define the \emph{resolvent operator} $\hRl = \hA - \lambda\hidM$ and ask ourselves whether \hRl\ \emph{cannot} be inverted in
+            \begin{equation}
+                \label{eq:eigenvalue-problem-infinite}
+                \hRl \ket{\psi} = \vb{0}
+                \mycomma
+            \end{equation}
+            for some $\ket{\psi} \neq \vb{0}$. When $\hRl^{-1}$ does not exist it means that the eigenvalue problem is satisfied for that specific value of $\lambda$. The inability to express the operator as a matrix also means that it cannot be diagonalized in the traditional sense. We shall nonetheless refer to operators as \emph{diagonal} when we consider a complete set of their eigenvectors as a basis for the Hilbert space.
+
+            An important distinction that arises in infinite dimensions is between \emph{bounded} and \emph{unbounded} operators. An operator $\hA$ is bounded if there exists a constant $C > 0$ such that for any $\ket{\psi}$
+            \begin{equation*}  
+                \norm*{\hA \ket{\psi}} \leq C \norm*{\ket{\psi}}
+                \myperiod
+            \end{equation*}
+            Bounded operators are continuous and defined on the whole Hilbert space, and their spectral properties are considerably easier to handle. In particular, any bounded self-adjoint operator has a well-defined spectral resolution. Unfortunately, many operators of physical interest, even the most basic ones like \hx\ and \hp\ are unbounded, and therefore require a more delicate functional-analytic treatment, starting from the specification of a dense domain.
+
+            The requirement that an operator be Hermitian does not actually guarantee the widest set of properties. The requirement that best extends the properties of a finite-dimensional Hermitian operators is actually \emph{self-adjointness}. We say that an operator \hA\ is \emph{self-adjoint} if it satisfies $\mel{\phi}{\hA}{\psi} = \mel{\psi}{\hA}{\phi}^*$ for all $\ket{\phi}$ and $\ket{\psi}$ in its domain and the domain of its Hermitian conjugate $\hA^\dag$ is the same of \hA. For many applications, it is enough to ask that the domain of $\hA^\dag$ is \emph{dense} in the domain of \hA.
+
+            The central result that generalizes diagonalization to infinite dimensions is still called \emph{Spectral Theorem} and it states that, given a bounded self-adjoint operator \hA\ on a Hilbert space \cite{Bernardini1993-iy}:
+            \begin{enumerate}[label = \textit{\roman{enumi}}]
+                \item The spectrum of \hA, $\sigma\pqty*{\hA}$ is a bounded subset of \bbR.
+                \item Eigenstates associated with distinct eigenvalues are orthogonal.
+                \item The operator \hA\ can be expressed in its spectral decomposition through an integral over its spectrum
+                    \begin{equation}
+                        \label{eq:spectral-decomposition-infinite}
+                        \hA = \int\nolimits_{\sigma\pqty{\hA}} \lambda \dd{E_\lambda}
+                        \mycomma
+                    \end{equation}
+                    where
+                    \begin{equation*}
+                        \dd{E_\lambda} = \sum\nolimits_i \dyad{\phi_i}{\phi_i}\delta\pqty{\lambda - \lambda_i}\dd{\lambda}
+                        \myperiod
+                    \end{equation*}
+                \item The projection operator $\dyad{\phi_i}{\phi_i}$ decomposes the Hilbert space into the direct sum of orthogonal eigenspaces.
+                \item In case of degeneracy, the eigenspace associated with the degenerate eigenvalue can be further decomposed in a similar way.
+                \item The integral \eqref{eq:spectral-decomposition-infinite} reduces to an infinite series similar to \eqref{eq:spectral-decomposition} in the case that the spectrum of the operator is discrete.
+            \end{enumerate}
+
+            Under the conditions of boundedness and self-adjointness, the spectral decomposition of an operator can be used to define functions of the operator. In such cases it is possible to define unitary transformations that behave in a way similar to what we stated in \Sref{ss:unitary-transformations}.
