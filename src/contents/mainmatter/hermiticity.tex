@@ -1,7 +1,7 @@
 \chapter{Hermitian Operators in Quantum Mechanics}\label{ch:hermiticity}
     \section{Postulates of Hermitian Quantum Mechanics}
-        Hermitian operators play a fundamental role in Quantum Mechanics since its postulates strictly bind the physical observables to them. Let's go over these postulates succintly \cite{Shankar2012-kg}:
-        \begin{enumerate}[label=\Roman*.]
+        Hermitian operators play a fundamental role in Quantum Mechanics since its postulates strictly bind the physical observables to them. Let's go over these postulates \cite{Shankar2012-kg} and their implications \cite{Shankar2012-kg,Sakurai2020-pu} succintly:
+        \begin{enumerate}[label=\Roman*.] 
             \item The state of the particle is represented by a vector $\ket{\psi\pqty{t}}$ in a Hilbert space.
             \item The classical independent variables $x$ and $p$ are represented by Hermitian operators $\hx$ and $\hp$ with the following matrix elements in the eigenbasis $\ket{x}$ of $\hx$:
             \begin{align*}
@@ -32,29 +32,73 @@
             \myperiod
         \end{equation}
 
-        For a quantum physical state $\ket{\psi}$ to be in the eigenstate $\ket{\vb{r}}$, it means that it is infinitely localized in the region of space centered in $\vb{r}$. If we were to introduce a function, or rather a \emph{wavefunction}, which helps us in mathematically defining the spacial distribution of a particle in space, we should rightfully expect it to be shaped like a Dirac's Delta. We can in fact define the wavefunction for any physical state $\ket{\psi}$: we know from the postulates of Quanum Mechanics that the quantity $\abs{\braket{\vb{r}}{\psi}}^2$ is the proability---or rather the \emph{probability density}, since $\vb{r}$ varies continuously---of a position measurement yielding the eigenvalue $\vb{r}$. We hence define the wavefunction as
-        \begin{equation}
-            \label{eq:vavefunction}
-            \psi\pqty{\vb{r}} = \braket{\vb{r}}{\psi}
-            \mycomma
-        \end{equation}
-        which is a complex valued function whose modulus squared is notoriusly a density of probability. For the wavefunction to be well defined, we need the total probability to be unity, namely 
-        \begin{equation}
-            \int\nolimits_{\bbR^3}\psi\pqty{r}\dd[3]{\vb{r}} = 1
-            \mycomma
-        \end{equation}
-        and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. By the properties of 
+        \subsection{Introduction to wavefunctions}
+            For a quantum physical state $\ket{\psi}$ to be in the eigenstate $\ket{\vb{r}}$, it means that it is infinitely localized in the region of space centered in $\vb{r}$. If we were to introduce a function, or rather a \emph{wavefunction}, which helps us in mathematically defining the spacial distribution of a particle in space, we should rightfully expect it to be shaped like a Dirac's Delta. We can in fact define the wavefunction for any physical state $\ket{\psi}$: we know from the postulates of Quanum Mechanics that the quantity $\abs{\braket{\vb{r}}{\psi}}^2$ is the proability---or rather the \emph{probability density}, since $\vb{r}$ varies continuously---of a position measurement yielding the eigenvalue $\vb{r}$. We hence define the wavefunction as
+            \begin{equation}
+                \label{eq:vavefunction}
+                \psi\pqty{\vb{r}} = \braket{\vb{r}}{\psi}
+                \mycomma
+            \end{equation}
+            which is a complex valued function whose modulus squared is notoriously a density of probability. For the wavefunction to be well defined, we need the total probability to be unity, namely 
+            \begin{equation}
+                \label{eq:normalization}
+                \int\nolimits_{\bbR^3}\abs{\psi\pqty{\vb{r}}}^2 \dd[3]{\vb{r}} = 1
+                \mycomma
+            \end{equation}
+            and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. % By the properties of 
+            Having defined the wavefunction, it is trivial to see that for any eigenstate $\ket{\vb{r}_0}$ of \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r_0}} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
 
-        
-        
-        Having defined the wavefunction, it is trivial to see that for any eigenstate of $\ket{\vb{r}_0}$ \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r_0}} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
+            The language of wavefunctions is not essential to the development of a Quantum Mechanical theory, as the theory could be entirely developed by the usage of operatorial formalism in the Heisenberg picture. It is however quite useful since it allows us to translate the problems from the abstract Hilbert space to the more concrete $L^2$ space of modulus squared Lebesgue-integrable functions. In this space, the scalar product between physical states can be expressed in terms of the integral
+            \begin{equation}
+                \label{eq:integral-inner-product}
+                \braket{g}{f} = \int\nolimits_{\bbR^3}g^*\pqty{\vb{r}} f\pqty{\vb{r}} \dd[3]{\vb{r}}
+                \myperiod
+            \end{equation}
+            This way it is clear that the condition \eqref{eq:normalization} is nothing more than asking that the inner product \eqref{eq:integral-inner-product} induced norm of a physical state be unity.
 
-        One of the problems of main interest in Quantum Mechanics is the one of finding the eigenvalues of the Hamiltonian operator \hH\ by solving 
-        \begin{equation}
-            \hH\ket{\phi_n} = E_n\ket{\phi_n}
-            \mycomma
-        \end{equation}
-        the \emph{time independent Schr\"odinger Equation}.
-        This is especially useful under the condition that the Hamiltonian be time independent, allowing us to search find 
+            Looking at the definition \eqref{eq:vavefunction}, we can interpret the wavefunction as the \emph{continuously varying Fourier coefficients} that allow us to express the state as an infinite linear combination of the basis states $\qty{\ket{\vb{r}}}$ of the Hilbert space, under the assumption that $\qty{\ket{\vb{r}}}$ is a complete set. This translates to
+            \begin{equation*}
+                \ket{\psi} = \int\nolimits_{\bbR^3} \psi\pqty{\vb{r}} \ket{\vb{r}} \dd[3]{\vb{r}}
+                \mycomma
+            \end{equation*}
+            which can be easily manipulated into
+            \begin{equation*}
+                \ket{\psi} = \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} \ket{\psi}
+                \mycomma
+            \end{equation*}
+            which, in turn, can be seen as
+            \begin{equation}
+                \label{eq:integral-identity}
+                \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \hat{\idM}
+                \myperiod
+            \end{equation}
+            This expression of the Identity operator is a tool that can help us later.
+        
+        \subsection{The time independent Schr\"odinger Equation}
+            One of the problems of main interest in Quantum Mechanics is the one of finding the eigenvalues of the Hamiltonian operator \hH\ by solving 
+            \begin{equation}
+                \label{eq:schrodinger-time-independent}
+                \hH\ket{\phi_n} = E_n\ket{\phi_n}
+                \mycomma
+            \end{equation}
+            the \emph{time independent Schr\"odinger Equation}.
+            This is especially useful under the condition that the Hamiltonian be time independent, allowing us to search for factored solutions in space and time. When the Hamiltonian is time indipendent, it is easy to verify that states of the form
+            \begin{equation*}
+                \ket{\psi\pqty{t}} = \myexp{-i\frac{E_n}{\hbar}t}\ket{\phi_n}
+            \end{equation*}
+            are solutions to the complete wave equation \eqref{eq:schrodinger}. Solutions of \eqref{eq:schrodinger-time-independent} are called \emph{stationary states} because the expectation value of any observable over a stationary state is conserved. This is easy to see with a few passages, as the quantity
+            \begin{equation*}
+                \ev*{\hat{A}}
+                = \ev{\hat{A}}{\psi\pqty{t}}
+                = \ev{\myexp{i\frac{E_n}{\hbar}t}\hat{A}\myexp{-i\frac{E_n}{\hbar}t}}{\phi_n}
+                = \ev{\hat{A}}{\phi_n}
+            \end{equation*}
+            does not depend on time.
+
     \section{Hermitian operators and their properties}
+        The reason behind the choice of Hermitian operators as observables lies in the importat properties they have, the most immediate one being the reality of their eigenvalues, since applying an operator to a physical states yields one of its eigenvalues as a measurement of the corresponding physical quantity and we expect all measurements in physics to be real numbers.
+        
+        Studying the properties in a finite-dimensional vector space is easier, however in Quantum Mechanics we mostly have to deal with infinite-dimensional Hilbert spaces, which leads to different behaviours of the operators in some edge cases where the dimensionality of the vector space cannot be ignored. Let's now go over some of the most important and useful properties of Hermitian operators and their spectra \cite{Bernardini1993-iy} starting with the finite dimensional case. We shall then see how these properties generalize to infinite-dimensional Hilbert spaces.
+        
+        
     \section{Examples of Hermitian operators}
