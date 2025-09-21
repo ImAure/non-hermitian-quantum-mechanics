@@ -12,7 +12,7 @@
         \end{equation}
         By this definition, it is clear that transformations that change the sign of one or more of the components are allowed. As a consequence, the most general Lorentz group, which is often referred to as $O\pqty{1,3}$, is not connected.
 
-        We shall hereby limit our focus to four of the self-connected components of this group only. In order to describe them, we shall introduce the following symmetry transformations. Let \mcP\ be the map 
+        We will only focus on four of the connected components of this group. In order to describe them, we shall introduce the following symmetry transformations. Let \mcP\ be the map 
         \begin{equation}
             \label{eq:lorentz-P}
             \func{\mcP}{\pqty{ct,\vb{r}}}{\pqty{ct,-\vb{r}}}
@@ -35,19 +35,19 @@
         
         We can now determine the four components of the subgroup \cite{bender2024}:
         \begin{enumerate}[label = \mybullet]
-            \item The \emph{proper orthochronous Lorentz group}, also known as the identity component since it is the connected subgroup of $O\pqty{1,3}$ containing the identity transformation. This group of transformations does not flip the sign of neither the time coordinate nor the one of the spacial coordinates.
-            \item The three distinct products of the proper orthochronous Lorentz group with \mcP, \mcT\ and \PT\ respectively, containing the transformations whose effect involves either flipping the sign of the time coordinate, the sign of the spacial coordinates or both simultaneously.
+            \item The \emph{proper orthochronous Lorentz group}, also known as the identity component since it is the connected subgroup of $O\pqty{1,3}$ containing the identity transformation. This group of transformations does not flip the sign of neither the time coordinate nor the one of the spatial coordinates.
+            \item The three distinct products of the proper orthochronous Lorentz group with \mcP, \mcT\ and \PT\ respectively, containing the transformations whose effect involves either flipping the sign of the time coordinate, the sign of the spatial coordinates or both simultaneously.
         \end{enumerate}
         None of the last three sets of transformations constitute a subgroup of themselves: the only actual subgroup is the identity component as it is the only one containing the identity transformation.
         
         It can be shown \cite{bender2024} that the number of disconnected components in the Lorentz group can be brought down to two if we extend the group to the complex numbers. When we allow the coefficients to be complex, the ``\mcP\ component'' and the ``\mcT\ component'' of the group become connected and the same can be said of the proper orthochronous subgroup and the ``\PT\ component''. This suggests that the \PT\ symmetry could play a more fundamental role as a symmetry of nature compared to \mcP\ or \mcT\ separately.
     
     \section{Definition and properties of \hP\ and \hT}\label{s:def-of-P-and-T}
-        Moving on from the preliminary definition of the classical \mcP, \mcT\ and \PT\ operators in the context of Lorentz trasformation, let's now introduce their quantum analogous along with some of their properties.
+        Moving on from the preliminary definition of the classical \mcP, \mcT\ and \PT\ operators in the context of Lorentz transformation, let's now introduce their quantum analogous along with some of their properties.
 
-        In the context of non-relativistic Quantum Mechanics we expect the quantum operators to behave in a way similar to their classical counterparts, as the correspondence principle underlines. Specifically, if we limit our attention to the one dimensional case for the sake of simplicity, we would like the parity inversion operator to map $\hx$ to $-\hx$ and $\hp$ to $-\hp$, while the time reversal operator should leave $\hx$ unaltered and map $\hp$ to its opposite, $-\hp$. The reasoning behind this request is quite intuitive: flipping the spacial coordinates will just flip both the position and the direction of motion of a particle; flipping the time coordinate will not affect the position of the particle but it will appear as though it is moving backwards.
+        In the context of non-relativistic Quantum Mechanics we expect the quantum operators to behave in a way similar to their classical counterparts, as the correspondence principle underlines. Specifically, if we limit our attention to the one dimensional case for the sake of simplicity, we would like the parity inversion operator to map $\hx$ to $-\hx$ and $\hp$ to $-\hp$, while the time reversal operator should leave $\hx$ unaltered and map $\hp$ to its opposite, $-\hp$. The reasoning behind this request is quite intuitive: flipping the spatial coordinates will just flip both the position and the direction of motion of a particle; flipping the time coordinate will not affect the position of the particle but it will appear as though it is moving backwards.
 
-        In order to satisfy these requirements, the quantum \hP\ and \hT\ operators are defined by their action on \hx\ and \hp\ as follows:
+        In order to satisfy these requirements, the quantum \hP\ and \hT\ operators are conventionally defined by their action on \hx\ and \hp\ as follows:
         \begin{align}
             \label{eq:quantum-P}
             &\hP\hx\hP^{-1} = -\hx
@@ -68,7 +68,7 @@
         \end{equation}
         is legit.
 
-        Having defined the operators, let's now go over the property of linearity. Since we are trying to uncover some kind of symmetry, we expect that the laws of Physics should be unchanged down to the fundamental level. Hence, the equality $\comm*{\hx}{\hp} = i \hbar$ should hold even after transforming the operators through the action of \hP\ or \hT. By using the earlier definitions, it is easy to show that this is indeed true:
+        Having defined the operators, let's now go over the property of linearity. Since we are trying to uncover some kind of symmetry, we expect that the laws of Physics should be unchanged down to the fundamental level. Hence, the canonical commutation relation $\comm*{\hx}{\hp} = i \hbar$ should hold even after transforming the operators through the action of \hP\ or \hT. By using the earlier definitions, it is easy to show that this is indeed true if some assumptions on \hT are made:
         \begin{equation*}
             i \hbar = \comm*{\hx}{\hp} = \comm*{-\hx}{-\hp} = \comm*{\hP \hx \hP^{-1}}{\hP \hp \hP^{-1}} = \hP \comm*{\hx}{\hp} \hP^{-1} = \hP i \hbar \hP^{-1}
         \end{equation*}
@@ -142,7 +142,7 @@
             = \pm\ket{\pm}\myperiod
         \end{equation}
         
-        Going back to \hT, having already shown that it is antilinear, we are not really allowed to talk about Hermiticity nor unitarity. We can however show that \hT\ preserves the modulus of scalar products and, consequently, the norm,which is an essential property to have in order to preserve probability. By the definition of \hT\ we have $\mel{x}{\hT}{\psi} = \psi^*\pqty{x}$. If we evaluate the inner product between two transformed states $\hT\ket{\phi}$ and $\hT\ket{\psi}$, we find
+        Going back to \hT, having already shown that it is antilinear, we are not really allowed to talk about Hermiticity nor unitarity. We can however show that \hT\ preserves the modulus of scalar products and, consequently, the norm, which is an essential property to have in order to preserve probability. By the definition of \hT\ we have $\mel{x}{\hT}{\psi} = \psi^*\pqty{x}$. If we evaluate the inner product between two transformed states $\hT\ket{\phi}$ and $\hT\ket{\psi}$, we find
         \begin{equation*}
             \bra{\phi}\hT^\dag\hT\ket{\psi}
             = \int\nolimits_\bbR \phi\pqty{x}\psi^*\pqty{x}\dd{x}
@@ -150,14 +150,15 @@
             = \bra{\phi}\ket{\psi}^*
             \mycomma
         \end{equation*}
-        which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\hT^\dag\hT\ket{\psi}$ must have the same modulus. An operator that conserves the modulus of the inner product, but not necessarily the inner product itself, is said to be \emph{antiunitary}. An antiunitary operator can be expressed as the product of an unitary linear part $\hU$ and antilinear part $\hK$ which solely deals with the complex conjugation \cite{Sakurai2020-pu}, hence
+        which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\hT^\dag\hT\ket{\psi}$ must have the same modulus. An operator that conserves the modulus of the inner product, but not necessarily the inner product itself, is said to be \emph{antiunitary}. Antiunitarity for \hT\ is often required in its very definition, however, we proved this property by making sure that the canonical commutation relations are conserved under \mcT\ transformations.
+        
+        We would like to understand how the eigenvalue problems translates to antiunitary operators. An antiunitary operator can be expressed \cite{Sakurai2020-pu} as the product of an unitary linear part $\hU$ and antilinear part $\hK$ which solely deals with the complex conjugation, hence
         \begin{equation}
             \label{eq:antiunitary-operator}
             \hT = \hU\hK
             \myperiod
         \end{equation}
-        
-        The properties of an antiunitary operator may vary depending on the system in consideration. In particular, let's show that $\hT^2$ is not necessarily the identity operator: unlike the classical case where $\mcT^2 = \idM$, we can have $\hT^2 = \pm\togglehat{\idM}$. In the case of a physical state with spin $s = 1/2$, we may express the unitary part $\hU$ as
+        The properties of an antiunitary operator may vary depending on the system in consideration. In particular, let's show that $\hT^2$ is not necessarily the identity operator, unlike the classical case where $\mcT^2 = \idM$. In the case of a physical state with spin $s = 1/2$, we may express the unitary part $\hU$ as
         \begin{equation*}
             \hU = \myexp{-i \frac{\hSy}{\hbar} \pi}
             \mycomma
@@ -180,7 +181,7 @@
             = \myexp{-i \togglehat{\sigma}_y \pi}
             \mycomma
         \end{equation*}
-        showing that the double application of \hT\ corresponds to a rotation of an angle $\pi$ about the $y$ axis, hence the eigenstates of \hSz, which we hereby name $\ket{\pm}$, not to be confused with the eginestates of \hP, will be flipped:
+        showing that the double application of \hT\ corresponds to a rotation of an angle $\pi$ about the $y$ axis, hence the eigenstates of \hSz, which we hereby name $\ket{\pm}$, not to be confused with the eigenstates of \hP, will be flipped:
         \begin{equation*}
             \hT^2 \ket{\pm} = \mp \ket{\pm}
             \quad\implies\quad
@@ -236,7 +237,7 @@
             &= \hp
             \myperiod
         \end{align}
-        Following from the fact that $\hP^2 = \hT^2 = \togglehat{\idM}$, we also get that $\hPT^2 = \togglehat{\idM}$. However, \hPT\ is antilinear just like \hT\ and therefore cannot be neither Hermitian nor unitary.
+        Following from the fact that $\hP^2 = \hT^2 = \togglehat{\idM}$, we also get that $\hPT^2 = \togglehat{\idM}$. However, \hPT\ is antilinear just like \hT\ and therefore cannot be neither Hermitian nor unitary; it is however antiunitary.
 
         We can extend the definition of \PT\ tranformation to any operator $\togglehat{A}$ that can be expressed as a function of \hx\ and \hp, namely
         \begin{equation}
@@ -281,7 +282,7 @@
         \end{equation*}
         showing that $e^{i\theta / 2}\ket{\psi}$ indeed is an eigenstate for \hPT\ with eigenvalue $1$.
 
-        We are now ready to introduce the concept \PT\ Symmetry. Let's consider a linear operator $\togglehat{A}$ such that $\comm*{\hPT, H} = 0$, meaning that the operator itself is \PT-Symmetric. It may be tempting to assume that, since $\togglehat{A}$ and \hPT\ commute, a set of simultaneus eigenstates for both operators exists. However this is only true for \emph{linear} operators that commute, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaenous eigenstates exists. It can be shown that, when such a set can be found, the eigenvalues of $\togglehat{A}$ are real \cite{bender2024}. We start from the eigenvalue problem for $\togglehat{A}$,
+        We are now ready to introduce the concept \PT\ Symmetry. Let's consider a linear operator $\togglehat{A}$ such that $\comm*{\hPT, H} = 0$, meaning that the operator itself is \PT-Symmetric. It may be tempting to assume that, since $\togglehat{A}$ and \hPT\ commute, a set of simultaneous eigenstates for both operators exists. However this is only true for \emph{linear} operators that commute, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaneous eigenstates exists. It can be shown that, when such a set can be found, the eigenvalues of $\togglehat{A}$ are real \cite{bender2024}. We start from the eigenvalue problem for $\togglehat{A}$,
         \begin{equation}
             \label{eq:eigenvalue-problem-A}
             \togglehat{A} \ket{\psi} = \lambda \ket{\psi}
@@ -298,4 +299,4 @@
         \end{equation*}
         By looking at \eqref{eq:eigenvalue-problem-A} we deduce that $\lambda = \lambda^* \in \bbR$.
 
-        When the \PT-Symmetric operator in question is the Hamiltonian \hH and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT-Symmetric} and that \emph{\PT Symmetry is not broken}. This is an intersting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.
+        When the \PT-Symmetric operator in question is the Hamiltonian \hH\ and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT-Symmetric} and that \emph{\PT Symmetry is not broken}. This is an interesting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.

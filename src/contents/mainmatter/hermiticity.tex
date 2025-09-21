@@ -8,8 +8,8 @@
                 \mel*{x}{\hx}{x'} &= x\delta\pqty*{x-x'} \mycomma \\
                 \mel*{x}{\hp}{x'} &= -i\hbar\pdv{x}\delta\pqty*{x-x'} \myperiod
             \end{align*}
-            The operators corresponding to dependent variables $\omega\pqty{x,p}$ are given by the same fuction of the operators $\hat{\Omega}\pqty*{\hx,\hp}$.
-            \item If the particle is in the state $\ket{\psi}$, measurement of the observable $\hat{\Omega}$ will yield one of the eigenvalues $\omega_n$ of $\hat{\Omega}$ with probability $\abs{\braket{\omega_n}{\psi}}^2$. The state of the system will change from $\ket{\psi}$ to $\ket{\omega_n}$ as a result of the measurement.
+            The operators corresponding to dependent variables $\omega\pqty{x,p}$ are given by the same fuction of the operators $\togglehat{\Omega}\pqty*{\hx,\hp}$.
+            \item If the particle is in the state $\ket{\psi}$, measurement of the observable $\togglehat{\Omega}$ will yield one of the eigenvalues $\omega_n$ of $\togglehat{\Omega}$ with probability $\abs{\braket{\omega_n}{\psi}}^2$. The state of the system will change from $\ket{\psi}$ to $\ket{\omega_n}$ as a result of the measurement.
             \item The state vector $\ket{\psi\pqty{t}}$ evolves according to Schr\"odinger's wave equation
             \begin{equation}
                 i\hbar\pdv{t}\!\ket{\psi\pqty{t}} = \hH\!\ket{\psi\pqty{t}}
@@ -69,7 +69,7 @@
             which, in turn, can be seen as
             \begin{equation}
                 \label{eq:integral-identity}
-                \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \hat{\idM}
+                \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \togglehat{\idM}
                 \myperiod
             \end{equation}
             This expression of the Identity operator is a tool that can help us later.
@@ -88,10 +88,10 @@
             \end{equation*}
             are solutions to the complete wave equation \eqref{eq:schrodinger}. Solutions of \eqref{eq:schrodinger-time-independent} are called \emph{stationary states} because the expectation value of any observable over a stationary state is conserved. This is easy to see with a few passages, as the quantity
             \begin{equation*}
-                \ev*{\hat{A}}
-                = \ev{\hat{A}}{\psi\pqty{t}}
-                = \ev{\myexp{i\frac{E_n}{\hbar}t}\hat{A}\myexp{-i\frac{E_n}{\hbar}t}}{\phi_n}
-                = \ev{\hat{A}}{\phi_n}
+                \ev*{\togglehat{A}}
+                = \ev{\togglehat{A}}{\psi\pqty{t}}
+                = \ev{\myexp{i\frac{E_n}{\hbar}t}\togglehat{A}\myexp{-i\frac{E_n}{\hbar}t}}{\phi_n}
+                = \ev{\togglehat{A}}{\phi_n}
             \end{equation*}
             does not depend on time.
 
