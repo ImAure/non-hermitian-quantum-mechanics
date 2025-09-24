@@ -1,5 +1,96 @@
 \chapter{\PT-Symmetric Hamiltonians}\label{ch:pt-symmetric-hamiltonians}
     \section{\PT-Symmetric Hamiltonians}
-    \section{The problem of completeness}
+        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-Symmetric if $\comm*{\hPT}{\hA} = 0$, which, in the case of the Hamiltonian \hH\ reads
+        \begin{equation}
+            \label{eq:PT-H-commutator}
+            \comm*{\hPT}{\hH} = 0
+            \myperiod
+        \end{equation}
+        The requirement of \PT-Symmetry is weaker than the one of Hermiticity as, from \PT-Symmetry alone, we can say little on the properties of the Hamiltonian's spectrum. As we found in \Sref{s:pt-symmetry}, the eigenvalues of a \PT-Symmetric Hamiltonian are real under the condition that \PT-Symmetry is not broken, meaning that the eneregy eigenvalues are real when the associated eigenstates are also simultaneous eigenstates for \hPT, which is not granted by \eqref{eq:PT-H-commutator} alone since \hPT\ is not a linear operator.
+
+        Usually, when working with real quantum mechanical systems, the associated Hamiltonian is rarely Hermitian \cite{bender2024}. This is due to the fact that physical systems experience either loss to or gain from the environment---if not both at the same time. \PT-Symmetry on its end manages to describe systems that are coupled to the environment in such a way that gain and loss balance each other.
+
+        Giving up on Hermiticity, however, comes at a price. As we will see in the next section, \PT-Symmetric Hamiltonians do not generally possess a complete set of eigenstates and the time evolution they generate is not unitary in the usual sense, meaning that probability may not be conserved when using the standard inner product
+        \begin{equation}
+            \label{eq:standard-inner-product}
+            \braket{\phi}{\psi} = \int\nolimits_{\bbR^3} \phi^*\pqty{\vb{r}} \psi\pqty{\vb{r}} \dd[3]{\vb{r}}
+            \myperiod
+        \end{equation}
+        This means that, while \PT-Symmetric Hamiltonians can have real eigenvalues, they cannot be used to build a physical theory of Quantum Mechanics unless we modify some of its foundations.
+
+    \section{The problem of completeness, unitarity and orthogonality}
+        When workgin with \PT-Symmetric Hamiltonians, three problems arise:
+        \begin{enumerate}[label = \mybullet]
+            \item When \PT-Symmetry is broken, it is not always possible to find a complete set of eigenstates of the Hamiltonian for the Hilbert space.
+            \item When \PT-Symmetry is broken, the energy spectrum becomes complex and the time evolution operator, which is built on the Hamiltonian as 
+            \begin{equation}
+                \label{eq:time-evolution}
+                \hU\pqty{t} = \myexp{-i\frac{\hH}{\hbar}t}
+                \mycomma
+            \end{equation}
+            will not preserve probability due to the introduction of exponentials of real numbers as coefficients.
+            \item Even when \PT-Symmetry is unbroken and a complete set for the Hilbert space can be found, the set is not guaranteed to be orthogonal.
+        \end{enumerate}
+        To demonstrate what was just stated, let's look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's, by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. The Hamiltonian implicitly has the dimensions of energy.}
+        \begin{equation}
+            \label{eq:ex:reduced-2x2-hamiltonian}
+            \hH = \pmqty{\dmat[1]{i\gamma, -i\gamma}}
+            \mycomma
+        \end{equation}
+        with $\gamma\in\bbR$ and the following definitions for \hP\ and \hT :
+        \begin{equation}
+            \label{eq:ex:reduced-2x2-P-T}
+            \hP = \hat{\sigma}_x = \pmqty{\admat[0]{1,1}}
+            \mycomma\qquad
+            \hT = \hK
+            \mycomma
+        \end{equation}
+        where \hK\ is complex conjugation. It is straightforward to see that $\hH^\dag \neq \hH$ and $\comm*{\hPT}{\hH} = 0$ for any value of $\gamma$ by using properties \eqref{eq:PT-commutator} and \eqref{eq:P-properties} and then evaluating $\hP\pqty*{\hK\hH\hK^{-1}}\hP = \hP\hH^*\hP$.
+        
+        The eigenvalues of \hH, obtained by solving $\det\pqty*{\hH - \lambda\hidM} = 0$, are
+        \begin{equation*}
+            \lambda_\pm = \pm\sqrt{1-\gamma^2}
+        \end{equation*}
+        which are real when $\abs{\gamma} < 1$, zero when $\abs{\gamma} = 1$ and complex when $\abs{\gamma} > 1$.
+        
+        Let's look at $\gamma = 1$ first. In this case, the Hamiltonian is still \PT-Symmetric and the eigenvalues are real and degenerate, however it is not possible to find two linearly independent eigenvectors for \hH. The only independent eigenvector is
+        \begin{equation*}
+            \ket{\phi_0} = \frac{1}{\sqrt{2}}\pmqty{1 \\ -i}
+            \mycomma
+        \end{equation*}
+        which does not make for a complete set for $\bbC^2$.
+
+        Let's now look at how breaking the \PT-Symmetry causes the loss of unitarity by looking at the case where $\gamma > 1$. We can express the eigenvalues as the two purely imaginary quantities
+        \begin{equation*}
+            \lambda_\pm = \pm i \sqrt{\gamma^2 - 1}
+        \end{equation*}
+        with eigenvectors
+        \begin{equation*}
+            \ket{\phi_\pm} = \pmqty{1 \\ -i\gamma \pm \lambda_\pm}
+            \mycomma
+        \end{equation*}
+        which are not simultaneously eigenvectors for \hPT, since
+        \begin{equation*}
+            \hPT\ket{\phi_\pm} = \pqty{i\gamma + \lambda_\mp}\ket{\phi_\mp}
+            \myperiod
+        \end{equation*}
+        We should note that the application of \hPT\ to either of the eigenvectors gives us a vector proportional to the other eigenvector. The time evolution operator is the function \eqref{eq:time-evolution} of \hH\ which, when applied to the eigenstates of \hH, will yield the same function of the corresponding eigenvalues:
+        \begin{equation*}
+            \hU\pqty{t}\ket{\phi_\pm} = \myexp{-i\frac{\hH}{\hbar}t}\ket{\phi_\pm} = \myexp{\mp\frac{\sqrt{\gamma^2-1}}{\hbar}t}\ket{\phi_\pm}
+        \end{equation*}
+        where the exponential actually diverges for $\ket{\phi_+}$ and goes to zero for $\ket{\phi_-}$. While we get two independent eigenvectors of \hH, consituting a complete set for $\bbC^2$, the time evolution operator that we built from the Hamiltonian does not preserve the norm and is not a unitary transformation.
+
+        We can end this section by noting that when $\abs{\gamma} < 1$ and \PT-Symmetry is unbroken, the two eigenvectors we can find are not orthogonal according to the standard inner product. By letting $\alpha = \sqrt{1 - \gamma^2}$ we have 
+        \begin{equation*}
+            \ket{\phi_\pm} = \pmqty{1 \\ -i\gamma + \lambda_\pm} = \pmqty{1 \\ -i\gamma \pm \alpha}
+            \myperiod
+        \end{equation*}
+        the inner product between the two eigenvectors is
+        \begin{equation*}
+            \bra{\phi_-}\ket{\phi_+} = \pmqty{1 & i\gamma - \alpha}\pmqty{1 \\ -i\gamma + \alpha} = 2 \gamma^2
+            \mycomma
+        \end{equation*}
+        which is only zero when $\gamma = 0$.
+
     \section{Construction of the \hC\ operator and \CPT\ inner product}
     \section{Unitarity of \PT-Symmetric Quantum Mechanics}
