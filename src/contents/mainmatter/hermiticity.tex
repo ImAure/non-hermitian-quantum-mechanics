@@ -120,10 +120,12 @@
                 \myperiod
             \end{equation*}
             This definition is equivalent to the condition
-            \begin{equation*}
-                \mel{\phi}{\hA}{\psi} = \mel{\psi}{\hA}{\phi}^*
+            \begin{equation}
+                \label{eq:hermiticity-inner-product}
+                \mel{\phi}{\hA}{\psi}
+                = \mel{\phi}{\hA^\dag}{\psi}
                 \mycomma
-            \end{equation*}
+            \end{equation}
             which must hold for any pair of states $\ket{\phi}$ and $\ket{\psi}$ in the Hilbert space. We can derive some important properties of Hermitian operators, which are all grouped under the name of the \emph{Spectral Theorem for Hermitian Operators} \cite{Bernardini1993-iy}:
             \begin{enumerate}[label = \textit{\roman{enumi}}.]
                 \item An Hermitian operator \hA\ over an $n$-dimensional Hilbert space possesses $n$, not necessarily distinct, real eigenvalues $\lambda_1,\ldots,\lambda_n$. Eigenvectors associated to distinct eigenvalues are orthogonal.
@@ -221,9 +223,9 @@
             \end{equation}
             for some $\ket{\psi} \neq \vb{0}$. When $\hRl^{-1}$ does not exist it means that the eigenvalue problem is satisfied for that specific value of $\lambda$. The inability to express the operator as a matrix also means that it cannot be diagonalized in the traditional sense. We shall nonetheless refer to operators as \emph{diagonal} when we consider a complete set of their eigenvectors as a basis for the Hilbert space.
 
-            An important distinction that arises in infinite dimensions is between \emph{bounded} and \emph{unbounded} operators. An operator $\hA$ is bounded if there exists a constant $C > 0$ such that for any $\ket{\psi}$
+            An important distinction that arises in infinite dimensions is between \emph{bounded} and \emph{unbounded} operators. An operator $\hA$ is bounded if there exists a constant $L \geq 0$ such that for any $\ket{\psi}$
             \begin{equation*}  
-                \norm*{\hA \ket{\psi}} \leq C \norm*{\ket{\psi}}
+                \norm*{\hA \ket{\psi}} \leq L \norm*{\ket{\psi}}
                 \myperiod
             \end{equation*}
             Bounded operators are continuous and defined on the whole Hilbert space, and their spectral properties are considerably easier to handle. In particular, any bounded self-adjoint operator has a well-defined spectral resolution. Unfortunately, many operators of physical interest, even the most basic ones like \hx\ and \hp\ are unbounded, and therefore require a more delicate functional-analytic treatment, starting from the specification of a dense domain.
@@ -233,7 +235,7 @@
             The central result that generalizes diagonalization to infinite dimensions is still called \emph{Spectral Theorem} and it states that, given a bounded self-adjoint operator \hA\ on a Hilbert space \cite{Bernardini1993-iy}:
             \begin{enumerate}[label = \textit{\roman{enumi}}]
                 \item The spectrum of \hA, $\sigma\pqty*{\hA}$ is a bounded subset of \bbR.
-                \item Eigenstates associated with distinct eigenvalues are orthogonal.
+                \item Eigenstates associated with distinct eigenvalues are orthogonal. \label{p:orthogonality}
                 \item The operator \hA\ can be expressed in its spectral decomposition through an integral over its spectrum
                     \begin{equation}
                         \label{eq:spectral-decomposition-infinite}
