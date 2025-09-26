@@ -1,3 +1,131 @@
 \chapter{Examples and Applications}\label{ch:examples}
+    Now that we covered the key aspects and foundations of a \PT-Symmetric quantum mechanical theory, let's look at some exaples of application to better understand how the tools we introduced operate in practical scenarios.
+    
+    In this chapter we will explore further the $2\times2$ matrix Hamiltonian presented in \Sref{s:problem} and look at a more concrete system obtained from the deformation of the Hamiltonian of the Quantum Harmonic Oscillator.
     \section{A finite dimensional Hamiltonian}
-    \section{Perturbation of the Harmonic Oscillator}
+        Let's briefely review the $2\times2$ Hamiltonian we looked at in the previous chapter, delving into the details of the construction of \hC. The \PT-Symmetric Hamiltonian is
+        \begin{equation}
+            \hH = E_0 \pmqty{\dmat[1]{i\gamma, -i\gamma}}
+        \end{equation}
+        with both $E_0,\gamma \in \bbR$. \PT\ Symmetry is unbroken when $\abs{\gamma} < 1$. The eigenvalues and the normalized eigenvectors with respect to \PT\ inner product are
+        \begin{equation*}
+            \lambda_\pm = \pm \alpha E_0
+            \mycomma
+            \qquad
+            \ket{\phi_\pm} = \frac{1}{\sqrt{2\alpha}} \pmqty{1 \\ \pm\alpha - i \gamma}
+        \end{equation*}
+        such that
+        \begin{equation*}
+            \hH\ket{\phi_\pm} = \alpha \pm E_0 \ket{\phi_\pm}
+            \qand
+            \braket{\phi_\pm}{\phi_\pm}_{\PT} = \pm 1
+            \myperiod
+        \end{equation*}
+        We construct the \hC\ operator starting from \eqref{eq:C-position} which in this case becomes
+        \begin{equation}
+            \hC = \dyad{\phi_+}{\phi_+} + \dyad{\phi_-}{\phi_-} = \frac{1}{2\alpha}\pmqty{\dmat[2]{2i\gamma, -2i\gamma}} = \frac{1}{\alpha E_0}\hH
+            \mycomma
+        \end{equation}
+        reminding that $\bra{\phi_\pm}$ is the \PT-conjugate of $\ket{\phi_\pm}$. Properties \eqref{eq:C-H-commutator}, \eqref{eq:C-PT-commutator} and \eqref{eq:C-eigenvalues} are trivially verified.
+
+        Let's now determine the \CPT\ inner product, which is given by \eqref{eq:CPT-inner-product} by making use of \eqref{eq:CPT-conjugation}. The \CPT\ conjugate of $\ket{\phi_\pm}$ is
+        \begin{align*}
+            \bra{\phi_\pm}
+            &= \bqty{\ket{\phi_\pm}}^\myconj \\
+            &= \bqty*{\hCPT\ket{\phi_\pm}}^\intercal \\
+            &= \frac{1}{\alpha E_0}\bqty*{\hH\hPT\ket{\phi_\pm}}^\intercal \\
+            &= \frac{1}{\alpha E_0}\bqty*{\pm E_0 \alpha \ket{\phi_\pm}}^\intercal \\
+            &= \pm\frac{1}{\sqrt{2\alpha}}\pmqty{\pm\alpha + i\gamma & 1}
+            \myperiod
+        \end{align*}
+        As expected, we have
+        \begin{equation}
+            \braket{\phi_\pm}{\phi_\pm}_{\CPT} =  \pm\frac{1}{2\alpha}\pmqty{\pm\alpha + i\gamma & 1}\pmqty{1 \\ \pm\alpha - i \gamma} = 1
+            \mycomma
+        \end{equation}
+        and
+        \begin{equation}
+            \braket{\phi_-}{\phi_+}_{\CPT} = -\frac{1}{2\alpha}\pmqty{-\alpha + i\gamma & 1}\pmqty{1 \\ \alpha - i \gamma} = 0
+            \myperiod
+        \end{equation}
+        The set $\qty{\ket{\phi_\pm}}$ is therefore complete and orthonormal and, along with the \CPT\ inner product, gives $\bbC^2$ the structure of an Hilbert space.
+
+        We may now express the general physical state $\ket{\psi}$ as 
+        \begin{equation*}
+            \ket{\psi} = c_{-}\ket{\phi_{-}} + c_{+}\ket{\phi_+}
+        \end{equation*}
+        for some $c_\pm\in\bbC$. The time evolved state is therefore
+        \begin{align*}
+            \ket{\psi\pqty{t}} 
+            &= \myexp{-i\frac{\hH}{\hbar}t}\bqty*{c_{-}\ket{\phi_{-}} + c_{+}\ket{\phi_{+}}}\\
+            &= c_{-}\myexp{i\omega t} \ket{\phi_{-}} + c_{+}\myexp{-i \omega t} \ket{\phi_{+}}
+            \mycomma
+        \end{align*}
+        with $\omega = E_0 \alpha / \hbar$. It is possible to verify that this state is indeed a solution of the time dependent Schr\"odinger's equation \eqref{eq:schrodinger}.
+
+        Finally, let's evaluate the similarity transformation that yields the Hermitian isospectral Hamiltonian \hF. We recall from \eqref{eq:C-exponential} that
+        \begin{equation*}
+            \myexp{\hQ} = \hC\hP
+            \myperiod
+        \end{equation*}
+        Let $\hM = \hC\hP$ and $\hS = \myexp{-\hQ/2}$ so that
+        \begin{equation}
+            \label{eq:S-M-function}
+            \hS = \frac{1}{\sqrt{\hM}}
+            \myperiod
+        \end{equation}
+        \hM\ is easy to calculate from the definition of \hC\ and \hP; after we calculate \hM\ we may diagonalize it, evaluate function \eqref{eq:S-M-function} and then do the inverse transformation to find the correct expression for \hS. The operator \hM\ takes the matrix form
+        \begin{equation*}
+            \hM = \frac{1}{\alpha}\pmqty{\admat[1]{i\gamma, -i\gamma}}
+            \mycomma
+        \end{equation*}
+        its eigenvalues and normalized eigenvectors are
+        \begin{equation*}
+            \mu_{\pm} = \frac{1}{\alpha}\pqty{1 \mp \gamma}
+            \mycomma
+            \qquad
+            \ket{\mu_\pm} = \frac{1}{\sqrt{2}}\pmqty{1 \\ \pm i}
+            \myperiod
+        \end{equation*}
+        If we let
+        \begin{equation*}
+            \hU = \frac{1}{\sqrt{2}}\pmqty{1 & -i \\ 1 & i}
+            \mycomma
+        \end{equation*}
+        we can find the diagonal expression of \hM\ via the similarity transformation
+        \begin{equation}
+            \hM_d = \hU \hM \hU^\dag
+            \mycomma
+        \end{equation}
+        which equals
+        \begin{equation*}
+            \hM_d = \pmqty{\dmat{\mu_{+}, \mu_{-}}}
+            \myperiod
+        \end{equation*}
+        To evaluate \hS, we find its diagonal form by applying \eqref{eq:S-M-function} to the diagonal $\hM_d$ matrix, which yields
+        \begin{equation*}
+            \hS_d = \pmqty{\dmat{1/\sqrt{\mu_{+}}, 1/\sqrt{\mu_{-}}}}
+            \mycomma
+        \end{equation*}
+        and then do the inverse transformation $\hS = \hU^\dag \hS_d \hU$ to get
+        \begin{align*}
+            \hS &= \frac{1}{2}\pmqty{1 & 1 \\ i & -i}  \pmqty{\dmat[0]{1/\sqrt{\mu_{+}}, 1/\sqrt{\mu_{-}}}} \pmqty{1 & -i \\ 1 & i} \\
+            &= \frac{1}{2\sqrt{\mu_{+}\mu_{-}}} \pmqty{\admat[\sqrt{\mu_{+}} + \sqrt{\mu_{-}}]{i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}} , -i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}}}}
+            \myperiod
+        \end{align*}
+        Via an analogous process we find the inverse
+        \begin{align*}
+            \hS^{-1} = \frac{1}{2} \pmqty{\admat[\sqrt{\mu_{+}} + \sqrt{\mu_{-}}]{-i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}} , i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}}}}
+            \myperiod
+        \end{align*}
+        Now we can evaluate the transformation \eqref{eq:F-Q-similarity} and after some careful matrix multiplication we find 
+        \begin{equation*}
+            \hF = \hS \hH \hS^{-1}
+            = \alpha E_0 \pmqty{\admat{1,1}}
+            = \alpha E_0 \togglehat{\sigma}_x
+            \mycomma
+        \end{equation*}
+        which is indeed Hermitian.
+        
+        
+        \section{Deformation of the Harmonic Oscillator}

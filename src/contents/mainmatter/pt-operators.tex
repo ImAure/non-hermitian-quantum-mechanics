@@ -152,7 +152,7 @@
                 = \bra{\phi}\ket{\psi}^*
                 \mycomma
             \end{equation*}
-            which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\hT^\dag\hT\ket{\psi}$ must have the same modulus. An operator that conserves the modulus of the inner product, but not necessarily the inner product itself, is said to be \emph{antiunitary}. Antiunitarity for \hT\ is often required in its very definition, however, we proved this property by making sure that the canonical commutation relations are conserved under \mcT\ transformations.
+            which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\hT^\dag\hT\ket{\psi}$ must have the same modulus. An operator that conserves the modulus of the inner product, but not the inner product itself, is said to be \emph{antiunitary}. Antiunitarity for \hT\ is often required in its very definition, however, we proved this property by making sure that the canonical commutation relations are conserved under \mcT\ transformations.
             
             We would like to understand how the eigenvalue problems translates to antiunitary operators. An antiunitary operator can be expressed \cite{Sakurai2020-pu} as the product of an unitary linear part $\hU$ and antilinear part $\hK$ which solely deals with the complex conjugation, hence
             \begin{equation}
@@ -165,7 +165,7 @@
                 \hU = \myexp{-i \frac{\hSy}{\hbar} \pi}
                 \mycomma
             \end{equation*}
-            where the choice of fase $\pi$ is made in order to invert the direction of spin \hvS, as we would expect from the Time Reversal transformation, not differently from how it transforms \hvp. In this case
+            where the choice of phase $\pi$ is made in order to invert the direction of spin \hvS, as we would expect from the Time Reversal transformation, not differently from how it transforms \hvp. In this case
             \begin{equation*}
                 \hT^2 = \myexp{-i \frac{\hSy}{\hbar} \pi} \hK \myexp{-i \frac{\hSy}{\hbar} \pi} \hK
             \end{equation*}
@@ -284,13 +284,13 @@
         \end{equation*}
         showing that $e^{i\theta / 2}\ket{\psi}$ indeed is an eigenstate for \hPT\ with eigenvalue $1$.
 
-        We are now ready to introduce the concept \PT\ Symmetry. Let's consider a linear operator \hA\ such that $\comm*{\hPT}{\hA} = 0$, meaning that the operator itself is \PT-Symmetric. It may be tempting to assume that, since \hA\ and \hPT\ commute, a set of simultaneous eigenstates for both operators exists. However this is only true for \emph{linear} operators that commute, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaneous eigenstates exists. It can be shown that, when such a set can be found, the eigenvalues of \hA\ are real \cite{bender2024}. We start from the eigenvalue problem for \hA,
+        We are now ready to introduce the concept of \PT\ Symmetry. Let's consider a linear operator \hA\ such that $\comm*{\hPT}{\hA} = 0$, meaning that the operator itself is \PT-Symmetric. It may be tempting to assume that, since \hA\ and \hPT\ commute, a set of simultaneous eigenstates for both operators exists. However this is only true for \emph{linear} operators with a null commutator, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaneous eigenstates exists. It can be shown that, when such a set can be found, the eigenvalues of \hA\ are real \cite{bender2024}. We start from the eigenvalue problem for \hA,
         \begin{equation}
             \label{eq:eigenvalue-problem-A}
             \hA \ket{\psi} = \lambda \ket{\psi}
             \mycomma
         \end{equation}
-        by assuming that $\ket{\psi}$ is an eigenstate with eigenvalue $1$ for \hPT\ as well. If we multiply the eigenvalue problem \eqref{eq:eigenvalue-problem-A} on the left by \hPT, we obtain
+        by assuming that $\ket{\psi}$ is an eigenstate with eigenvalue $1$ for \hPT\ as well. If we multiply equation \eqref{eq:eigenvalue-problem-A} on the left by \hPT, we obtain
         \begin{equation*}
             \hPT \hA \ket{\psi} = \hPT \lambda \ket{\psi}
             \quad\iff\quad
@@ -299,6 +299,6 @@
             \hA \ket{\psi} = \lambda^* \ket{\psi}
             \myperiod
         \end{equation*}
-        By looking at \eqref{eq:eigenvalue-problem-A} we deduce that $\lambda = \lambda^* \in \bbR$.
+        By looking at \eqref{eq:eigenvalue-problem-A} we deduce that $\lambda^* = \lambda \in \bbR$.
 
-        When the \PT-Symmetric operator in question is the Hamiltonian \hH\ and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT-Symmetric} and that \emph{\PT\ Symmetry is not broken}. This is an interesting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.
+        When the \PT-Symmetric operator in question is the Hamiltonian \hH\ and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT-Symmetric} and that \emph{\PT\ Symmetry is unbroken}. This is an interesting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.
