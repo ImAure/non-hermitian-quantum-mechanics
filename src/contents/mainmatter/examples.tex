@@ -7,7 +7,12 @@
         \begin{equation}
             \hH = E_0 \pmqty{\dmat[1]{i\gamma, -i\gamma}}
         \end{equation}
-        with both $E_0,\gamma \in \bbR$. \PT\ Symmetry is unbroken when $\abs{\gamma} < 1$. The eigenvalues and the normalized eigenvectors with respect to \PT\ inner product are
+        with both $E_0,\gamma \in \bbR$. The \hP\ and \hT\ operators are defined as in \eqref{eq:ex:reduced-2x2-P-T},
+        \begin{equation*}
+            \hP = \togglehat{\sigma}_x \mycomma \qquad \hT = \hK
+            \mycomma
+        \end{equation*}
+        and \PT\ Symmetry is unbroken when $\abs{\gamma} < 1$. The eigenvalues and the normalized eigenvectors with respect to \PT\ inner product are
         \begin{equation*}
             \lambda_\pm = \pm \alpha E_0
             \mycomma
@@ -16,14 +21,14 @@
         \end{equation*}
         such that
         \begin{equation*}
-            \hH\ket{\phi_\pm} = \alpha \pm E_0 \ket{\phi_\pm}
+            \hH\ket{\phi_\pm} = \pm \alpha E_0 \ket{\phi_\pm}
             \qand
             \braket{\phi_\pm}{\phi_\pm}_{\PT} = \pm 1
             \myperiod
         \end{equation*}
-        We construct the \hC\ operator starting from \eqref{eq:C-position} which in this case becomes
+        We construct the \hC\ operator starting from \eqref{eq:C-position}, which in this case becomes
         \begin{equation}
-            \hC = \dyad{\phi_+}{\phi_+} + \dyad{\phi_-}{\phi_-} = \frac{1}{2\alpha}\pmqty{\dmat[2]{2i\gamma, -2i\gamma}} = \frac{1}{\alpha E_0}\hH
+            \hC = \dyad{\phi_+}{\phi_+} + \dyad{\phi_-}{\phi_-} = \frac{1}{\alpha}\pmqty{\dmat[1]{i\gamma, -i\gamma}} = \frac{\hH}{\alpha E_0}
             \mycomma
         \end{equation}
         reminding that $\bra{\phi_\pm}$ is the \PT-conjugate of $\ket{\phi_\pm}$. Properties \eqref{eq:C-H-commutator}, \eqref{eq:C-PT-commutator} and \eqref{eq:C-eigenvalues} are trivially verified.
@@ -79,7 +84,7 @@
             \hM = \frac{1}{\alpha}\pmqty{\admat[1]{i\gamma, -i\gamma}}
             \mycomma
         \end{equation*}
-        its eigenvalues and normalized eigenvectors are
+        its eigenvalues and normalized\footnote{Since we are just working with matrices in $\bbC^{2,2}$, normalization is achieved via the usual inner product and not the \PT\ one.} eigenvectors are
         \begin{equation*}
             \mu_{\pm} = \frac{1}{\alpha}\pqty{1 \mp \gamma}
             \mycomma
