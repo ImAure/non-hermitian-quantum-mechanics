@@ -1,9 +1,9 @@
-\chapter{\PT-Symmetric Hamiltonians}\label{ch:pt-symmetric-hamiltonians}
+\chapter{\PT-Symmetric Quantum Mechanics}\label{ch:pt-symmetric-hamiltonians}
     \section{\PT-Symmetric Hamiltonians}
-        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-Symmetric if $\comm*{\hPT}{\hA} = 0$, which, in the case of the Hamiltonian \hH\ reads
+        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-Symmetric if $\comm*{\hPT}{\hA} = \hzero$, which, in the case of the Hamiltonian \hH\ reads
         \begin{equation}
             \label{eq:PT-H-commutator}
-            \comm*{\hPT}{\hH} = 0
+            \comm*{\hPT}{\hH} = \hzero
             \myperiod
         \end{equation}
         The requirement of \PT-Symmetry is weaker than the requirement of Hermiticity as, from \PT-Symmetry alone, we can say little on the properties of the Hamiltonian's spectrum. As we found in \Sref{s:pt-symmetry}, the eigenvalues of a \PT-Symmetric Hamiltonian are real only if \PT\ Symmetry is unbroken, meaning that the associated eigenstates are also simultaneous eigenstates for \hPT, which is not granted by \eqref{eq:PT-H-commutator} alone since \hPT\ is an antilinear operator.
@@ -154,11 +154,11 @@
         To improve the definition of the inner product, we need to find a new linear operator \hC, which commutes with \hH\ and \hPT, but not necessarily with \hP\ and \hT\ alone, in symbols
         \begin{align}
             \label{eq:C-H-commutator}
-            \comm*{\hC}{\hH} &= 0
+            \comm*{\hC}{\hH} &= \hzero
             \mycomma
             \\
             \label{eq:C-PT-commutator}
-            \comm*{\hC}{\hPT} &= 0
+            \comm*{\hC}{\hPT} &= \hzero
             \myperiod
         \end{align}
         If we manage to prove that such an operator exists, we are in fact showing that when a physical system is \hPT-Symmetric its Hamiltonian has an extra degree of symmetry under transformations induced by \hC. This operator is also the missing piece in the introduction of a well-defined inner product for the Hilbert space, which we will denote by $\braket{\cdot}{\cdot}_{\CPT}$.
@@ -218,9 +218,9 @@
         \subsection{Algebraic construction of the \texorpdfstring{\hC}{C} operator}
             The definition \eqref{eq:C-position} we used for \hC\ allowed us to prove its existence and its properties. However the explicit calculation of the operator requires the evaluation of the sum of an infinite series which can be an arduous task, if not impossible. We may attempt another approach \cite{bender2024} by constructing \hC\ algebraically, using the properties of \hC\ as algebraic equations that it needs to satisfy, namely
             \begin{align*}
-                \comm*{\hC}{\hH} &= 0 
+                \comm*{\hC}{\hH} &= \hzero 
                 \mycomma \\
-                \comm*{\hC}{\hPT} &= 0 
+                \comm*{\hC}{\hPT} &= \hzero 
                 \mycomma \\
                 \hC^2 &= \hidM
                 \myperiod
@@ -256,7 +256,7 @@
             At last, from the requirement that \hC\ commute with \hH---which means \hC\ must be time independent---we get the last condition
             \begin{equation}
                 \label{eq:Q-last-condition}
-                \myexp{Q\pqty{\hvr,\hvp}} \comm{\hP}{\hH} + \comm{\myexp{Q\pqty{\hvr,\hvp}}}{\hH} \hP = 0
+                \myexp{Q\pqty{\hvr,\hvp}} \comm{\hP}{\hH} + \comm{\myexp{Q\pqty{\hvr,\hvp}}}{\hH} \hP = \hzero
                 \mycomma
             \end{equation}
             which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve it exactly. The problem may however be approached by using perturbative methods \cite{bender2024}.
@@ -333,7 +333,7 @@
         \subsection{Time evolution}
             The only topic that is left to cover is the unitarity of time evolution, which is essential in the definition of a physical theory of Quantum Mechanics, as it is the very condition that ensures the conservation of probability. We need to show that the norm of a state does not change through time and this is easily proved by considering that under unbroken \PT-Symmetry
             \begin{equation}
-                \comm*{\hCPT}{\hH} = 0
+                \comm*{\hCPT}{\hH} = \hzero
                 \myperiod
             \end{equation}
             If we define the time evolution $\hU\pqty{t}$ as we did in \eqref{eq:time-evolution},

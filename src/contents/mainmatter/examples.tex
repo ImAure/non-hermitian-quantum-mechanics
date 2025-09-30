@@ -132,5 +132,50 @@
         \end{equation*}
         which is indeed Hermitian.
         
-        
         \section{Deformation of the Harmonic Oscillator}
+            The study of the one dimensional Quantum Harmonic Oscillator is one of the most notorious problems of Quantum Mechanics. Its Hermitian Hamiltonian is given by
+            \begin{equation}
+                \hH = \frac{\hp^2}{2m} + \frac{m\omega^2}{2}\hx^2\mycomma
+            \end{equation}
+            where $m$ is the mass of the particle and $\omega$ the proper frequency of the system. We are interested in deformating the Hamiltonian by introducing a complex factor in such a way that breaks the hermiticity of the operator but still preserves its \PT-Symmetry. In order to do that, let's first operate the following substitutions to work in simpler dimensionless quantities:
+            \begin{equation}
+                \hH' = \frac{\hH}{\hbar\omega}
+                \mycomma\qquad
+                \hx' = \sqrt{\frac{m\omega}{2\hbar}}\hx
+                \mycomma\qquad
+                \hp' = \frac{\hp}{\sqrt{2 \hbar m \omega}}
+                \mycomma
+            \end{equation}
+            in these variables the Hamiltonian becomes
+            \begin{equation*}
+                \hH' = \hp'^2 + \hx'^2
+                \myperiod
+            \end{equation*}
+            Since we will be sticking to this notation from now onwards, we may as well drop the apices, therefore writing
+            \begin{equation}
+                \label{eq:H-oscillator}
+                \hH = \hp^2 + \hx^2
+                \myperiod
+            \end{equation}
+            The deformation we are going to look into is
+            \begin{equation}
+                \hH = \hp^2 + \hx^2\pqty{i\hx}^\varepsilon
+                \mycomma\qquad
+                \varepsilon \in \bbR
+                \myperiod
+            \end{equation}
+            We can clearly see that for $\varepsilon = 0$ we find the Hamiltonian \eqref{eq:H-oscillator}. When $\varepsilon \neq 0$ the Hamiltonian is not Hermitian anymore, but it is \PT-Symmetric. Via the application of powerful methods of complex analysis, it was possible to prove that for $\varepsilon \geq 0$ the energy spectrum is real, discrete and bounded below, signifying that all of the Hamiltonian eigenstates are also simultanous \hPT\ eigenstates and \PT\ Symmetry is unbroken. The eigenvalues and eigenstates cannot be caluclated analytically for most values of $\varepsilon$, but perturbative and numerical methods, like the WKB approximation \cite{Bender2007}, may be employed to evaluate them with arbitrary precision.
+
+            An remarkable case is obtained when $\varepsilon = 2$, which yields the Hamiltonian
+            \begin{equation}
+                \hH = \hp^2 - \hx^4
+                \myperiod
+            \end{equation}
+            This Hamiltonian is particularly interesting because it represents a particle in an unbounded potential well, which would imply a continuous spectrum and unbound states in the Hermitian case. It was however proven by Bender and Boettcher \cite{Bender1998} that the spectrum is real and discrete, with eigenvalues that match those of the conventional quartic anharmonic oscillator with Hamiltonian
+            \begin{equation}
+                \hH = \hp^2 + \hx^4
+                \myperiod
+            \end{equation}
+            While this result may seem counterintuitive at first, it can be understood by looking at the extension of the potential $V\pqty{\hx} = -\hx^4$ into the complex plane. In particular, it was shown\footnote{A detailed discussion of this topic is beyond the scope of this thesis, but the interested reader may refer to \cite{Bender1998,bender2024} for a more in-depth explanation. The key idea is that in the particular case $\varepsilon = 2$, a particle in the upside-down quartic potential will escape to infinity in a \emph{finite} time when constrained to the real axis, but if we allow $\hx$ to be complex we find that the particle may be confined in a complex \emph{Stokes wedge} where the potential acts like a confining barrier and bound states may exist.} that the particle appears to be confined in a \emph{Stokes wedge} in the complex plane where the potential acts like a confining barrier. The analytical proof of the reality and discreteness of the spectrum implies that the particle is indeed in a bound state and further calculations shows that the particle's wavefunction is actually localized at the origin.
+
+            If we now move our attention to the case $-1 < \varepsilon < 0$, we find that the spectrum contains only a finite number of real eigenvalues and the rest of the spectrum is made up of infinite complex conjugate pairs. This is a consequence of the spontaneous breaking of \PT\ Symmetry, which occurs when some of the eigenstates of the Hamiltonian are no longer eigenstates of \hPT. The number of real eigenvalues decreases as $\varepsilon$ approaches $-1$ from above, and at $\varepsilon = -1$ the spectrum becomes null. This particular value of $\varepsilon$ is called an \emph{exceptional point} and it represents a non-analytic point in the spectrum where all eigenvalues simultaneously diverge to infinity. The case $\varepsilon < -1$ is not physically interesting since the spectrum is empty.

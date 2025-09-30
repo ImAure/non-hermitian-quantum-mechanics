@@ -1,5 +1,35 @@
 \chapter{Notation}
+\subsubsection{Physical and mathematical constants}
+    \begin{enumerate}
+        \item[$i$:] Imaginary unit, $i^2 = -1$
+        \item[$e$:] Euler's number, $e\simeq\num{2.718}$
+        \item[$\hbar$:] Reduced Planck constant, $h/2\pi \simeq \SI{1.055e-34}{\joule\second}$ 
+        \item[$c$:] Speed of light in vacuum, $c\simeq\SI{2.998e+8}{\meter\per\second}$ 
+    \end{enumerate}
+\subsubsection{Mathematical functions and conventions}
+Quantum mechanical operators distinguish themselves from their classical counterparts by wearing a hat: $A \to \hA$.
 \begin{enumerate}
-    \item[$i$] Imaginary unit, $i^2 = -1$
-    \item[$\ket{\psi}$] Element of the Hilbert space   
+    \item[$\tensor{x}{_\mu}\tensor{x}{^\mu}$:] Einstein's summation convention, $\tensor{x}{_\mu}\tensor{x}{^\mu} = \sum\nolimits_\mu \tensor{x}{_\mu}\tensor{x}{^\mu}$. The signature used for Minkowski's spacetime is $\pqty{+,-, -, -}$
+    \item[$\vb{0}$:] Null vector
+    \item[$\idM,\hidM$:] Identity transformation
+    \item[$\hzero$:] Null operator 
+    \item[$\mcP,\hP$:] Parity Inversion transformation   
+    \item[$\mcT,\hT$:] Time Revesal transformation
+    \item[$\delta\pqty{x}$:] Dirac's delta distribution, $\int{f\pqty{x}\delta\pqty{x-x_0}\dd{x}} = f\pqty{x_0}$
+    \item[$\laplacian$:] Laplacian operator, $\laplacian = \pdv[2]{x} + \pdv[2]{y} + \pdv[2]{z}$ 
+    \item[$z^*$:] Complex conjugate of $z$
+    \item[$\hA^\intercal$:] Matrix transposition
+    \item[$\hA^\dag$:] Hermitian conjugate of \hA
+    \item[$\hA^\ddag$:] \CPT\ conjugate of \hA, $\hA^\ddag = \CPTtransform{\hA}$
+    \item[$\acomm*{A}{B}$:] Poisson bracket, $\pdv{A}{x}\pdv{B}{p} - \pdv{B}{x}\pdv{A}{p}$
+    \item[$\comm*{\hA}{\hB}$:] Commutator, $\hA\hB - \hB\hA$  
+    \item[$\togglehat{\sigma}_j$:] Pauli matrices for $j=x,y,z$,
+        \begin{equation*}
+            \togglehat{\sigma}_x = \pmqty{\admat{1,1}}
+            \mycomma \quad
+            \togglehat{\sigma}_y = \pmqty{\admat{-i,i}}
+            \mycomma \quad
+            \togglehat{\sigma}_z = \pmqty{\dmat{1,-1}}
+        \end{equation*} 
 \end{enumerate}
+Dirac's braket notation is extensively used throughout this work. The standard inner product is always denoted by $\bra{\cdot}\ket{\cdot}$; \PT\ and \CPT\ variations of the inner product are denoted by $\braket{\cdot}{\cdot}_{\PT}$ and $\braket{\cdot}{\cdot}_{\CPT}$; the same convention applies to the norm $\norm{\cdot}$ with $\norm{\cdot}_{\PT}$ and $\norm{\cdot}_{\CPT}$. $\bra{\psi}$ denotes the Hermitian conjugate of $\ket{\psi}$; when explicitly stated it may denote the \PT\ or \CPT\ conjugate.
