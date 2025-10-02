@@ -1,7 +1,7 @@
 \chapter{Examples and Applications}\label{ch:examples}
-    Now that we covered the key aspects and foundations of a \PT\ Symmetric quantum mechanical theory, let's look at some exaples of application to better understand how the tools we introduced operate in practical scenarios.
+    Now that we covered the key aspects and foundations of a \PT\ Symmetric quantum mechanical theory, let's look at some examples of application to better understand how the tools we introduced operate in practical scenarios.
     
-    In this chapter we will explore further the $2\times2$ matrix Hamiltonian presented in \Sref{s:problem} and look at a more concrete system obtained from the deformation of the Hamiltonian of the Quantum Harmonic Oscillator.
+    In this chapter we will explore further the $2\times2$ matrix Hamiltonian presented in \Sref{s:problem} and look at a more concrete system obtained from a non-Hermitian deformation of the Hamiltonian of the Quantum Harmonic Oscillator.
     \section{A finite dimensional Hamiltonian}
         Let's briefely review the $2\times2$ Hamiltonian we looked at in the previous chapter, delving into the details of the construction of \hC. The \PT-symmetric Hamiltonian is
         \begin{equation}
@@ -31,16 +31,21 @@
         \end{equation*}
         We construct the \hC\ operator starting from \eqref{eq:C-position}, which in this case becomes
         \begin{equation}
-            \hC = \dyad{\phi_+}{\phi_+} + \dyad{\phi_-}{\phi_-}
+            \hC = \dyad{\phi_+}{\phi_{+}}_{\PT} + \dyad{\phi_-}{\phi_-}_{\PT}
             = \frac{1}{\alpha} \!\pmqty{\dmat[1]{i\gamma, -i\gamma}}
             = \frac{\hH}{\alpha E_0}
             \mycomma
         \end{equation}
-        reminding that $\bra{\phi_\pm}$ is the \PT-conjugate of $\ket{\phi_\pm}$. Properties \eqref{eq:C-H-commutator}, \eqref{eq:C-PT-commutator} and \eqref{eq:C-eigenvalues} are trivially verified.
+        where the \PT\ outer product $\dyad{\cdot}{\cdot}_{\PT}$ is again evaluated in terms of the standard outer product as 
+        \begin{equation*}
+            \dyad{\psi}{\psi}_{\PT} = \dyad{\psi}{\psi_{\PT}}
+            \myperiod
+        \end{equation*}
+        Properties \eqref{eq:C-H-commutator}, \eqref{eq:C-PT-commutator} and \eqref{eq:C-eigenvalues} are trivially verified.
 
         Let's now determine the \CPT\ inner product, which is given by \eqref{eq:CPT-inner-product} by making use of \eqref{eq:CPT-conjugation}. The \CPT\ conjugate of $\ket{\phi_\pm}$ is
         \begin{align*}
-            \bra{\phi_\pm}
+            \bra*{\phi^\myconj_\pm}
             &= \bqty{\ket{\phi_\pm}}^\myconj \\
             &= \bqty*{\hCPT\!\ket{\phi_\pm}}^\intercal \\
             &= \frac{1}{\alpha E_0}\bqty*{\hH\hPT\!\ket{\phi_\pm}}^\intercal \\
@@ -50,7 +55,7 @@
         \end{align*}
         As expected, we have
         \begin{equation}
-            \braket{\phi_\pm}{\phi_\pm}_{\CPT} =  \pm\frac{1}{2\alpha}\pmqty{\pm\alpha + i\gamma & 1} \! \pmqty{1 \\ \pm\alpha - i \gamma} = 1
+            \braket{\phi_\pm}{\phi_\pm}_{\CPT} =  \pm\frac{1}{2\alpha}\!\pmqty{\pm\alpha + i\gamma & 1} \! \pmqty{1 \\ \pm\alpha - i \gamma} = 1
             \mycomma
         \end{equation}
         and
@@ -84,14 +89,14 @@
             \hS = \frac{1}{\sqrt{\hM}}
             \myperiod
         \end{equation}
-        \hM\ is easy to calculate from the definition of \hC\ and \hP; after we calculate \hM\ we may diagonalize it, evaluate function \eqref{eq:S-M-function} and then do the inverse transformation to find the correct expression for \hS. The operator \hM\ takes the matrix form
+        \hM\ is easy to calculate from the definition of \hC\ and \hP; after we calculate \hM\ we may diagonalize it, evaluate function \eqref{eq:S-M-function} and then apply the inverse transformation to find the correct expression for \hS. The operator \hM\ takes the matrix form
         \begin{equation*}
             \hM = \frac{1}{\alpha}\!\pmqty{\admat[1]{i\gamma, -i\gamma}}
             \mycomma
         \end{equation*}
         its eigenvalues and normalized\footnote{Since we are just working with matrices in $\bbC^{2,2}$, normalization is achieved via the usual inner product and not the \PT\ one.} eigenvectors are
         \begin{equation*}
-            \mu_{\pm} = \frac{1}{\alpha}\!\pqty{1 \mp \gamma}
+            \mu_{\pm} = \frac{1}{\alpha}\pqty{1 \mp \gamma}
             \mycomma
             \qquad
             \ket{\mu_\pm} = \frac{1}{\sqrt{2}}\!\pmqty{1 \\ \pm i}
@@ -104,7 +109,7 @@
         \end{equation*}
         we can find the diagonal expression of \hM\ via the similarity transformation
         \begin{equation}
-            \hM_d = \hU \hM \hU^\dag
+            \hM_d = \hU \!\hM \hU^\dag
             \mycomma
         \end{equation}
         which equals
@@ -117,19 +122,19 @@
             \hS_d = \pmqty{\dmat{1/\sqrt{\mu_{+}}, 1/\sqrt{\mu_{-}}}}
             \mycomma
         \end{equation*}
-        and then do the inverse transformation $\hS = \hU^\dag \hS_d \hU$ to get
+        and then apply the inverse transformation $\hS = \hU^\dag \hS_d \hU$ to get
         \begin{align*}
             \hS 
             &= \frac{1}{2}\pmqty{1 & 1 \\ i & -i} \!\pmqty{\dmat[0]{1/\sqrt{\mu_{+}}, 1/\sqrt{\mu_{-}}}} \!\pmqty{1 & -i \\ 1 & i} \\
             &= \frac{1}{2\sqrt{\mu_{+}\mu_{-}}} \!\pmqty{\admat[\sqrt{\mu_{+}} + \sqrt{\mu_{-}}]{i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}} , -i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}}}}
             \myperiod
         \end{align*}
-        Via an analogous process we find the inverse
+        Via an analogous process we find the inverse of \hS,
         \begin{align*}
             \hS^{-1} = \frac{1}{2} \!\pmqty{\admat[\sqrt{\mu_{+}} + \sqrt{\mu_{-}}]{-i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}} , i\pqty{\sqrt{\mu_{+}} - \sqrt{\mu_{-}}}}}
             \myperiod
         \end{align*}
-        Now we can evaluate the transformation \eqref{eq:F-Q-similarity} and after some careful matrix multiplication we find 
+        We can now evaluate the transformation \eqref{eq:F-Q-similarity}; after some careful matrix multiplication we find 
         \begin{equation*}
             \hF = \hS \hH \hS^{-1}
             = \alpha E_0 \!\pmqty{\admat{1,1}}
@@ -143,7 +148,7 @@
             \begin{equation}
                 \hH = \frac{\hp^2}{2m} + \frac{m\omega^2}{2}\hx^2\mycomma
             \end{equation}
-            where $m$ is the mass of the particle and $\omega$ the proper frequency of the system. We are interested in deformating the Hamiltonian by introducing a complex factor in such a way that breaks the hermiticity of the operator but still preserves its \PT-Symmetry. In order to do that, let's first operate the following substitutions to work in simpler dimensionless quantities:
+            where $m$ is the mass of the particle and $\omega$ the proper frequency of the system. We are interested in deformating the Hamiltonian by introducing a complex factor in such a way that breaks the Hermiticity of the operator but still preserves its \PT-symmetry. In order to do that, let's first operate the following substitutions to work in simpler dimensionless quantities:
             \begin{equation}
                 \hH' = \frac{\hH}{\hbar\omega}
                 \mycomma\qquad
@@ -170,18 +175,18 @@
                 \varepsilon \in \bbR
                 \myperiod
             \end{equation}
-            We can clearly see that for $\varepsilon = 0$ we find the Hamiltonian \eqref{eq:H-oscillator}. When $\varepsilon \neq 0$ the Hamiltonian is not Hermitian anymore, but it is \PT-Symmetric. Via the application of powerful methods of complex analysis, it was possible to prove that for $\varepsilon \geq 0$ the energy spectrum is real, discrete and bounded below, signifying that all of the Hamiltonian eigenstates are also simultanous \hPT\ eigenstates and \PT\ Symmetry is unbroken. The eigenvalues and eigenstates cannot be caluclated analytically for most values of $\varepsilon$, but perturbative and numerical methods, like the WKB approximation \cite{Bender2007}, may be employed to evaluate them with arbitrary precision.
+            We can clearly see that for $\varepsilon = 0$ we find the Hermitian Hamiltonian \eqref{eq:H-oscillator}. When $\varepsilon \neq 0$ the Hamiltonian is not Hermitian anymore, but it is \PT-symmetric. Via the application of powerful methods of complex analysis \cite{bender2024,Bender1998}, it was possible to prove that for $\varepsilon \geq 0$ the energy spectrum is real, discrete and bounded below, signifying that all of the Hamiltonian eigenstates are also simultanous \hPT\ eigenstates and \PT\ Symmetry is unbroken. The eigenvalues and eigenstates cannot be caluclated analytically for most values of $\varepsilon$, but perturbative and numerical methods, like the WKB approximation \cite{Bender2007}, may be employed to evaluate them with arbitrary precision.
 
             An remarkable case is obtained when $\varepsilon = 2$, which yields the Hamiltonian
             \begin{equation}
                 \hH = \hp^2 - \hx^4
                 \myperiod
             \end{equation}
-            This Hamiltonian is particularly interesting because it represents a particle in an unbounded potential well, which would imply a continuous spectrum and unbound states in the Hermitian case. It was however proven by Bender and Boettcher \cite{Bender1998} that the spectrum is real and discrete, with eigenvalues that match those of the conventional quartic anharmonic oscillator with Hamiltonian
+            This Hamiltonian is particularly interesting because it represents a particle in an potential well unbounded below, which would imply a continuous spectrum and unbound states in the Hermitian case. It was however proven by Bender and Boettcher \cite{Bender1998} that the spectrum is real and discrete, with eigenvalues that match those of the conventional quartic anharmonic oscillator with Hamiltonian
             \begin{equation}
                 \hH = \hp^2 + \hx^4
                 \myperiod
             \end{equation}
-            While this result may seem counterintuitive at first, it can be understood by looking at the extension of the potential $V\pqty{\hx} = -\hx^4$ into the complex plane. In particular, it was shown\footnote{A detailed discussion of this topic is beyond the scope of this thesis, but the interested reader may refer to \cite{Bender1998,bender2024} for a more in-depth explanation. The key idea is that in the particular case $\varepsilon = 2$, a particle in the upside-down quartic potential will escape to infinity in a \emph{finite} time when constrained to the real axis, but if we allow $\hx$ to be complex we find that the particle may be confined in a complex \emph{Stokes wedge} where the potential acts like a confining barrier and bound states may exist.} that the particle appears to be confined in a \emph{Stokes wedge} in the complex plane where the potential acts like a confining barrier. The analytical proof of the reality and discreteness of the spectrum implies that the particle is indeed in a bound state and further calculations shows that the particle's wavefunction is actually localized at the origin.
+            While this result may seem counterintuitive at first, it can be understood by looking at the extension of the potential $V\pqty{\hx} = -\hx^4$ into the complex plane. In particular, it was shown\footnote{A detailed discussion of this topic is beyond the scope of this thesis, but the interested reader may refer to \cite{Bender1998,bender2024} for a more in-depth explanation. The key idea is that in the particular case when $\varepsilon = 2$, a particle in the upside-down quartic potential will escape to infinity in a \emph{finite} time when constrained to the real axis, but if we allow $\hx$ to be complex we find that the particle may be confined in a complex \emph{Stokes wedge} where the potential acts like a confining barrier and bound states may exist.} that the particle appears to be confined in a \emph{Stokes wedge} in the complex plane\footnote{For more details, see \Sref{a:stokes}.} where the potential acts like a confining barrier. The analytical proof of the reality and discreteness of the spectrum implies that the particle is indeed in a bound state and further calculations shows that the particle's wavefunction is actually localized at the origin.
 
             If we now move our attention to the case $-1 < \varepsilon < 0$, we find that the spectrum contains only a finite number of real eigenvalues and the rest of the spectrum is made up of infinite complex conjugate pairs. This is a consequence of the spontaneous breaking of \PT\ Symmetry, which occurs when some of the eigenstates of the Hamiltonian are no longer eigenstates of \hPT. The number of real eigenvalues decreases as $\varepsilon$ approaches $-1$ from above, and at $\varepsilon = -1$ the spectrum becomes null. This particular value of $\varepsilon$ is called an \emph{exceptional point} and it represents a non-analytic point in the spectrum where all eigenvalues simultaneously diverge to infinity. The case $\varepsilon < -1$ is not physically interesting since the spectrum is empty.

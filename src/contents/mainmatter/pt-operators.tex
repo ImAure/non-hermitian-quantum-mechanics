@@ -64,16 +64,16 @@
         Since the inversion of parity and the reversal of time are independent actions, the assumption\footnote{The convention $\comm*{\hA}{\togglehat{B}} = \hA\togglehat{B} - \togglehat{B}\hA$ is implied.}
         \begin{equation}
             \label{eq:PT-commutator}
-            \comm*{\hP}{\hT}\! = \hzero 
+            \comm*{\hP}{\hT} = \hzero 
         \end{equation}
         is legit.
 
-        Having defined the operators, let's now go over the property of linearity. Since we are trying to introduce a concept of symmetry, we expect that the laws of Physics should be unchanged under their action down to the fundamental level. Hence, the canonical commutation relation $\comm*{\hx}{\hp} = i \hbar$ should hold even after transforming the operators through the action of \hP\ or \hT. By using the earlier definitions, it is easy to show that this is indeed true if some assumptions on \hT\ are made:
+        Having defined the operators, let's now go over the property of linearity. Since we are trying to introduce some kind of symmetry, we ask that the laws of Physics be unchanged under these symmetry transformations, down to the fundamental level. Hence, the canonical commutation relation $\comm*{\hx}{\hp} = i \hbar$ should hold even after transforming the operators through \hP\ and \hT. By using the earlier definitions, it is easy to show that this is indeed true if some assumptions on the operators are made; for \hP\ we have
         \begin{align*}
             i \hbar 
             = \comm*{\hx}{\hp}\! 
             = \comm*{-\hx}{-\hp} \!
-            = \comm*{\hP \hx \hP^{-1}}{\hP \hp \hP^{-1}}\! 
+            = \bigl[\hP \hx \hP^{-1},\hP \hp \hP^{-1}\bigr] 
             = \hP \comm*{\hx}{\hp}\! \hP^{-1} 
             = \hP i \hbar \hP^{-1} 
         \end{align*}
@@ -83,11 +83,11 @@
             \hP i \hP^{-1} = i
             \myperiod
         \end{equation}
-        On a similar fashion
+        On a similar fashion, for \hT we get
         \begin{align*}
             i \hbar
             = \comm*{\hx}{\hp}\! 
-            = \comm*{\hT \hx \hT^{-1}}{-\hT \hp \hT^{-1}}\! 
+            = \bigl[\hT \hx \hT^{-1},-\hT \hp \hT^{-1}\bigr] 
             = \hT \comm*{\hx}{-\hp}\! \hT^{-1}
             = \hT \pqty{-i \hbar} \hT^{-1}
             \mycomma
@@ -113,24 +113,29 @@
             \mycomma
         \end{alignat}
         where $z^*$ is the hermitian conjugate %\footnote{Being a number, the hermitian conjugate $z^\dag$ and the complex conjugate $z^*$ are in fact the same thing. The $\dag$ notation is used because \hP\ and \hT\ are defined by their action on operators: $\hT z \hT^{-1}$ actually means $\hT \pqty{z\togglehat{\idM}} \hT^{-1} = z^*\togglehat{\idM} = \pqty*{z \togglehat{\idM}}^\dag$.}
-        of $z$. In this context, \hT\ is said to be \emph{antilinear}.
+        of $z$. In this context, \hT\ is said to be \emph{antilinear}, which means that when we apply \hT\ to a linear combination of states with complex coefficients we can distribute the sum and bring the coefficients to the left of the operator by directly applying \eqref{eq:T-antilinear}. In symbols
+        \begin{equation*}
+            \hT\pqty{c_1\!\ket{\psi} + c_2\!\ket{\phi}}
+            = c_1^* \hT\!\ket{\psi} + c_2^* \hT\!\ket{\phi}
+            \myperiod
+        \end{equation*}
 
         \subsection{Eigenvalues of \hP, Hermiticity, unitarity}
-            We can also prove that \hP\ is both Hermitian and unitary. Starting from $\hvr\!\ket{\vb{r}} = \vb{r}\!\ket{\vb{r}}$ and by looking at \eqref{eq:lorentz-P}, it is easy to convince ourselves that applying the Parity Inversion operator on $\ket{\vb{r}}$ will yield $\ket{-\vb{r}}$. Through \eqref{eq:integral-identity} we have
+            We can show that \hP\ is both Hermitian and unitary. Starting from $\hvr\!\ket{\vb{r}} = \vb{r}\!\ket{\vb{r}}$ and by looking at \eqref{eq:lorentz-P}, it is easy to convince ourselves that applying the Parity Inversion operator on $\ket{\vb{r}}$ will yield $\ket{-\vb{r}}$.\footnote{This can be achieved by multiplying \eqref{eq:r-eigenvalues} on the left by \hP\ and introducing the identity $\hidM = \hP^{-1}\hP$, getting $\hP\hvr\hP^{-1}\hP\!\ket{\vb{r}} = \hP\vb{r}\!\ket{\vb{r}}$. It easily follows that $\hP\!\ket{\vb{r}}$ is an eigenstate of \hvr\ with eigenvalue $-\vb{r}$.} Through \eqref{eq:integral-identity} we have
             \begin{equation*}
                 \mel{\phi}{\hP}{\psi}
                 = \int\nolimits_{\bbR^3}\bra{\phi}\!\hP\!\ket{\vb{r}}\!\!\bra{\vb{r}}\ket{\psi}\dd[3]{\vb{r}}
                 = \int\nolimits_{\bbR^3}\phi^*\pqty{-\vb{r}}\psi\pqty{\vb{r}}\dd[3]{\vb{r}}
                 \myperiod
             \end{equation*}
-            Since we are integrating over all of $\bbR^3$ we are allowed to rename the variable of integration from $x$ to $-x$, and by considering the hermitian conjugate of $\hP\!\ket{\vb{r}} = \ket{-\vb{r}}$, $\bra{\vb{r}}\!\hP^\dag = \bra{-\vb{r}}$, we get
+            Since we are integrating over all of $\bbR^3$ we are allowed to rename the variable of integration from $x$ to $-x$, and by considering the Hermitian conjugate of the identity $\hP\!\ket{\vb{r}} = \ket{-\vb{r}}$, which is $\bra{\vb{r}}\!\hP^\dag = \bra{-\vb{r}}$, we get
             \begin{equation*}
                 \int\nolimits_{\bbR^3}\phi^*\pqty{\vb{r}}\psi\pqty{-\vb{r}}\dd[3]{\vb{r}}
                 = \int\nolimits_{\bbR^3}\bra{\phi}\ket{\vb{r}}\!\!\bra{\vb{r}}\!\hP^\dag\!\ket{\psi}\dd[3]{\vb{r}}
                 = \mel{\phi}{\hP^\dag}{\psi}
                 \mycomma
             \end{equation*}
-            from which we see that $\hP^\dag = \hP$. From the fact that $\hP\hP\!\ket{\vb{r}} = \ket{\vb{r}}$ we also have $\hP^2 = \hidM$, implying unitarity. To sum up,
+            from which we see that $\hP^\dag = \hP$. From the fact that $\hP^2\!\ket{\vb{r}} = \ket{\vb{r}}$ we also get $\hP^2 = \hidM$, implying unitarity. To sum up,
             \begin{equation}
                 \label{eq:P-properties}
                 \hP
@@ -150,7 +155,9 @@
             \end{equation}
         
         \subsection{Eigenvalues of \hT, antiunitarity}
-            Going back to \hT, having already shown that it is antilinear, we are not really allowed to talk about Hermiticity nor unitarity. We can however show that \hT\ preserves the modulus of scalar products and, consequently, the norm, which is an essential property to require in order to preserve probability. By the definition of \hT\ we have $\mel{\vb{r}}{\hT}{\psi} = \psi^*\pqty{\vb{r}}$. If we evaluate the inner product between two transformed states $\hT\!\ket{\phi}$ and $\hT\!\ket{\psi}$, we find
+            Going back to \hT, having already shown that it is antilinear, we are not really allowed to talk about Hermiticity nor unitarity. We can however show that \hT\ preserves the modulus of scalar products and, consequently, the norm. This is remarkable, since the probability of finding the state $\ket{\psi}$ in $\ket{\phi}$ is $\abs{\braket{\phi}{\psi}}^2$, and this quantity only depends on the modulus of the \emph{probability amplitude} $\braket{\phi}{\psi}$.
+            
+            Because of \hT's antilinearity we have $\mel{\vb{r}}{\hT}{\psi} = \psi^*\pqty{\vb{r}}$. If we evaluate the inner product between two transformed states $\hT\!\ket{\phi}$ and $\hT\!\ket{\psi}$, we find
             \begin{equation*}
                 \bra{\phi}\!\hT^\dag\hT\!\ket{\psi}
                 = \int\nolimits_{\bbR^3} \phi\pqty{\vb{r}}\psi^*\pqty{\vb{r}}\dd[3]{\vb{r}}
@@ -158,9 +165,10 @@
                 = \bra{\phi}\ket{\psi}^*
                 \mycomma
             \end{equation*}
-            which means that the inner product between the original states, $\braket{\phi}{\psi}$ and the inner product between the transformed states $\bra{\phi}\!\hT^\dag\hT\!\ket{\psi}$ must have the same modulus. An operator that conserves the modulus of the inner product, but not the inner product itself, is said to be \emph{antiunitary}. Antiunitarity for \hT\ is often required in its very definition, however, we proved this property by making sure that the canonical commutation relations are conserved under \mcT\ transformations.
+            which means that the original probability amplitude $\braket{\phi}{\psi}$ and the transformed one $\bra{\phi}\!\hT^\dag\hT\!\ket{\psi}$ share the same modulus. An operator that conserves the modulus of the inner product but turns the inner product itself via complex conjugation is said to be \emph{antiunitary}. We proved the antiunitarity of \hT\ by requiring that the canonical commutation relations be conserved under 
+            \hT\ transformations, however the two properties are equivalent: one can define \hT\ as antiunitary and show that the canonical commutation relations are in fact conserved.
             
-            We would like to understand how the eigenvalue problems translates to antiunitary operators. An antiunitary operator can be expressed \cite{Sakurai2020-pu} as the product of an unitary linear part $\hU$ and antilinear part $\hK$ which solely deals with the complex conjugation, hence
+            Let's now figure out how the eigenvalue problem translates to antiunitary operators. An antiunitary operator can be expressed \cite{Sakurai2020-pu} as the product of an unitary linear part $\hU$ and antilinear part $\hK$ which solely deals with the complex conjugation, hence
             \begin{equation}
                 \label{eq:antiunitary-operator}
                 \hT = \hU\!\hK
@@ -189,28 +197,28 @@
                 = \myexp{-i \togglehat{\sigma}_y \pi}
                 \mycomma
             \end{equation*}
-            showing that the double application of \hT\ corresponds to a rotation of an angle $\pi$ about the $y$ axis, hence the eigenstates of \hSz, which we shall call $\ket{\pm s}$ will be flipped:
+            showing that the double application of \hT\ corresponds to a rotation of an angle $\pi$ about the $y$ axis. As a consequence the eigenstates of \hSz, which we shall call $\ket{\pm s}$, will be flipped by $\hT^2$:
             \begin{equation*}
                 \hT^2 \!\ket{\pm s} = \mp\! \ket{\pm s}
-                \quad\implies\quad
+                \quad\iff\quad
                 \hT^2 = -\togglehat{\idM}
                 \myperiod
             \end{equation*}
-            A similar argument is valid for any half-integer value of $s$. In the situation where spin is an integer number $\pqty{s = 0,1,\ldots}$, the double application of \hK\ will yield the exponential of an integer multiple of $2\pi$. Under these circumstances we would have
+            A similar argument is valid for any half-integer value of $s$. In the situation where spin is an integer number $\pqty{s = 0,1,\ldots}$, the double application of \hK\ will yield the exponential of an integer multiple of $2\pi$. Under these circumstances we have
             \begin{equation*}
                 \hT^2\! \ket{\pm} = \pm\!\ket{\pm}
-                \quad\implies\quad
+                \quad\iff\quad
                 \hT^2 = +\togglehat{\idM}
                 \myperiod
             \end{equation*}
 
-            The eigenvalue problem only admits solutions in the case of integer spin or, more generally, in all cases where $\hT^2 = +\togglehat{\idM}$. Let's start with the eigenvalue problem for \hT
+            The eigenvalue problem only admits solutions in the case of integer spin or, more generally, in all cases where $\hT^2 = +\togglehat{\idM}$. It can be proved by considering the eigenvalue problem for \hT
             \begin{equation}
                 \label{eq:eigenvalue-problem-T}
                 \hT\! \ket{\psi} = \lambda\! \ket{\psi}
                 \myperiod
             \end{equation}
-            Since \hT\ is antiunitary, the modulus of $\lambda$ must be unity as
+            Since \hT\ is antiunitary, the modulus of $\lambda$ must be unity, as
             \begin{equation*}
                 \bra{\psi}\!\hT^\dag \hT \!\ket{\psi}
                 = \bra{\psi} \!\lambda^* \lambda\!\ket{\psi}
@@ -228,7 +236,7 @@
                 = \abs{\lambda}^2\! \ket{\psi}
                 \mycomma
             \end{equation*}
-            where it is evident that solutions may only exists when $\hT^2 = +\togglehat{\idM}$. In the opposite case the equation would reduce to $\abs{\lambda}^2 = -1$ which is absurd. This result will be important later, as we discuss the existence of eigenstates for the \hPT\ operator. For the sake of simplicity, we are only going to consider spinless systems, so that $\hT^2 = \togglehat{\idM}$ holds.
+            where it is evident that solutions may only exist when $\hT^2 = +\togglehat{\idM}$. In the opposite case the equation would reduce to $\abs{\lambda}^2 = -1$ which is absurd. This result will be important later, as we discuss the existence of eigenstates for the \hPT\ operator. For the sake of simplicity, we are only going to consider spinless systems, so that $\hT^2 = \togglehat{\idM}$ holds.
 
     \section{\PT\ Symmetry}\label{s:pt-symmetry}
         It is now time to introduce the composite operator \hPT, the concept of \PT\ transformations and \PT\ Symmetry, which will be of major interest throughout the rest of this thesis.
@@ -236,16 +244,16 @@
         The \hPT\ operator is defined as the composition of Parity Inversion and Time Reversal. Since by definition \eqref{eq:PT-commutator} \hP\ and \hT\ commute, \hPT\ and $\hT\hP$ are the same. We can easily determine the way \hPT\ transforms \hx\ and \hp\ by relying on \eqref{eq:quantum-P} and \eqref{eq:quantum-T}:
         \begin{align}
             \label{eq:quantum-PT-x}
-            \PTtransform{\hx}
+            \hPT\hx\bqty*{\hPT}\!^{-1}
             &= -\hx
             \mycomma
             \\
             \label{eq:quantum-PT-p}
-            \PTtransform{\hp}
+            \hPT\hp\bqty*{\hPT}\!^{-1}
             &= \hp
             \myperiod
         \end{align}
-        Following from the fact that $\hP^2 = \hT^2 = \togglehat{\idM}$, we also get that $\hPT^2 = \togglehat{\idM}$. However, \hPT\ is antilinear just like \hT\ and therefore cannot be neither Hermitian nor unitary; it is however antiunitary.
+        \hPT\ is antilinear just like \hT\ and therefore cannot be Hermitian nor unitary; it is however antiunitary and its properties can be derived from the ones of \hP\ and \hT. In particular, from the known fact that $\hP^2 = \hidM$ and the assumption $\hT^2 = \hidM$, we also get that $\bqty*{\hPT}^2 = \hidM$. 
 
         We can extend the definition of \PT\ tranformation to any operator \hA\ that can be expressed as a function of \hx\ and \hp, namely
         \begin{equation}
@@ -253,7 +261,7 @@
             \hA' = \PTtransform{\hA}
             \myperiod
         \end{equation}
-        We say that an operator \hA\ is \emph{\PT-symmetric} if $\PTtransform{\hA} = \hA$. The condition of \PT-Symmetry can be expressed in a cleaner way via a little manipulation:
+        We say that an operator \hA\ is \emph{\PT-symmetric} if $\PTtransform{\hA} = \hA$. The condition of \PT-symmetry can be expressed in a cleaner way via a little manipulation:
         \begin{equation*}
             \PTtransform{\hA} = \hA
             \quad\iff\quad
@@ -262,28 +270,28 @@
             \hPT\!\hA - \hA\hPT = \hzero
             \mycomma
         \end{equation*}
-        which means that in order for \hA\ to be \PT-Symmetric we need
+        which means that condition of \PT-symmetry for \hA\ is equivalent to
         \begin{equation}
             \label{eq:pt-symmetric-operator}
             \comm*{\hPT}{\hA}\! = \hzero
         \end{equation}
-        The most trivial example of a \PT-symmetric operator is the momentum operator \hp, right from the definition \eqref{eq:quantum-PT-p}; since $\comm*{\hPT}{\hp} = \hzero$, any regular function of \hp\ is \PT-Symmetric. The position operator is not \PT-symmetric itself but $\hx^2$ is:
+        The most trivial example of a \PT-symmetric operator is the momentum operator \hp, right from the definition \eqref{eq:quantum-PT-p}. Since $\comm*{\hPT}{\hp}\! = \hzero$, any regular function of \hp\ is \PT-symmetric. The position operator \hx\ is not \PT-symmetric itself but its power $\hx^2$ is:
         \begin{align*}
-            \comm*{\hPT}{x^2}\!
-            &= \hx \comm*{\hPT}{\hx}\! + \comm*{\hPT}{\hx}\! \hx \\
+            \bigl[\hPT,\hx^2\bigr]
+            &= \hx \bigl[\hPT,\hx\bigr] + \bigl[\hPT,\hx\bigr] \hx \\
             &= -2\hx^2\hPT + 2\hx^2\hPT \\
             &= \hzero 
             \mycomma
         \end{align*}
         using the fact that $\hPT \hx = -\hx \hPT$ and $\comm*{\hPT}{\hx}\! = -2\hx\hPT$.
 
-        Let's now tackle the topic of eigenvalues. Since \hPT\ is antiunitary, the existence of its eigenvalues is non-trivial as thoroughfully discussed at \Sref{s:def-of-P-and-T} while talking about \hT. Let's consider the eigenvalue problem
+        Since \hPT\ is antiunitary, the existence of its eigenvalues is non-trivial as thoroughfully discussed at \Sref{s:def-of-P-and-T} while talking about \hT. Let's consider the eigenvalue problem
         \begin{equation}
             \label{eq:eigenvalue-problem-PT}
             \hPT\! \ket{\psi} = \lambda\! \ket{\psi}
             \mycomma
         \end{equation}
-        by relying of the assumption that $\hT^2 = \togglehat{\idM}$ and the known fact that $\hP^2 = \togglehat{\idM}$, we see that $\bqty*{\hPT}^2 = \togglehat{\idM}$ too. Therefore the eigenvalue problem \eqref{eq:eigenvalue-problem-PT} actually admits solutions with unimodular eigenvalues. Without loss of generality we are allowed to choose $\lambda = 1$, since any physical state $\ket{\psi}$ is defined up to a pure constant phase \cite{Bender2005}. This can be shown by operating the substitution $\ket{\psi} \rightarrow e^{i\theta / 2}\!\ket{\psi}$, where $e^{i\theta} = \lambda$; the eigenvalue problem \eqref{eq:eigenvalue-problem-PT} then becomes
+        by relying of the assumption that $\hT^2 = \hidM$ and the known fact that $\hP^2 = \hidM$, we see that $\bqty*{\hPT}\!^2 = \togglehat{\idM}$ too. Therefore the eigenvalue problem \eqref{eq:eigenvalue-problem-PT} actually admits solutions with unimodular eigenvalues. Without loss of generality we are allowed to choose $\lambda = 1$, since any physical state $\ket{\psi}$ is defined up to a pure constant phase \cite{Bender2005}. This can be shown by operating the substitution $\ket{\psi} \rightarrow e^{i\theta / 2}\!\ket{\psi}$, where $e^{i\theta} = \lambda$; the eigenvalue problem \eqref{eq:eigenvalue-problem-PT} then becomes
         \begin{equation*}
             \hPT e^{i\frac{\theta}{2}}\! \ket{\psi}
             = e^{-i\frac{\theta}{2}} \hPT\! \ket{\psi}
@@ -293,21 +301,21 @@
         \end{equation*}
         showing that $e^{i\theta / 2}\! \ket{\psi}$ indeed is an eigenstate for \hPT\ with eigenvalue $1$.
 
-        We are now ready to introduce the concept of \PT\ Symmetry. Let's consider a linear operator \hA\ such that $\comm*{\hPT}{\hA}\! = \hzero$, meaning that the operator itself is \PT-Symmetric. It may be tempting to assume that, since \hA\ and \hPT\ commute, a set of simultaneous eigenstates for both operators exists. However this is only true for \emph{linear} operators with a null commutator, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaneous eigenstates exists. It can be shown that, when such a set can be found, the eigenvalues of \hA\ are real \cite{bender2024}. We start from the eigenvalue problem for \hA,
+        We are now ready to introduce the concept of \PT\ Symmetry. Let's consider a linear operator \hA\ such that $\comm*{\hPT}{\hA}\! = \hzero$. It may be tempting to assume that, since \hA\ and \hPT\ commute, a set of simultaneous eigenstates for both operators exists. However this is only true for \emph{linear} operators with a null commutator, whereas \hPT\ is \emph{antilinear}. For this reason the previous statement is false \cite{bender2024} and we will have to check by hand, case by case, whether a set of simultaneous eigenstates exists. We will now show that when such a set can be found the eigenvalues of \hA\ are real \cite{bender2024}. We start from the eigenvalue problem for \hA,
         \begin{equation}
             \label{eq:eigenvalue-problem-A}
             \hA\! \ket{\psi} = \lambda\! \ket{\psi}
             \mycomma
         \end{equation}
-        by assuming that $\ket{\psi}$ is an eigenstate with eigenvalue $1$ for \hPT\ as well. If we multiply equation \eqref{eq:eigenvalue-problem-A} on the left by \hPT, we obtain
+        and by assuming that $\ket{\psi}$ is an eigenstate with eigenvalue $1$ for \hPT\ as well. If we multiply equation \eqref{eq:eigenvalue-problem-A} on the left by \hPT, we obtain
         \begin{equation*}
             \hPT\! \hA\! \ket{\psi} = \hPT \lambda\! \ket{\psi}
             \quad\iff\quad
             \hA \hPT\! \ket{\psi} = \lambda^* \hPT\! \ket{\psi}
             \quad\iff\quad
-            \hA \ket{\psi}\! = \lambda^*\! \ket{\psi}
+            \hA\! \ket{\psi} = \lambda^*\! \ket{\psi}
             \myperiod
         \end{equation*}
-        By looking at \eqref{eq:eigenvalue-problem-A} we deduce that $\lambda^* = \lambda \in \bbR$.
+        By comparing this result with \eqref{eq:eigenvalue-problem-A} we deduce that $\lambda^* = \lambda \in \bbR$.
 
-        When the \PT-symmetric operator in question is the Hamiltonian \hH\ and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT\ Symmetric} and that \emph{\PT\ Symmetry is unbroken}. This is an interesting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.
+        When the \PT-symmetric operator in question is the Hamiltonian \hH\ and a set of simultaneous eigenstates for \hH\ and \hPT\ exists, we say that the physical system described by the Hamiltonian \hH\ is \emph{\PT\ Symmetric} and that \emph{\PT\ Symmetry is unbroken}. Please note that the \PT-symmetry of the Hamiltonian is not enough by itself to guarantee that \PT\ Symmetry be unbroken: \PT\ Symmetry of the system and \PT-symmetry of the Hamiltonian are not equivalent. This is an interesting property since it allows us to extend the theory of Quantum Mechanics to a more general set of Hamiltonians that need not be Hermitian anymore, since when \PT\ Symmetry is not broken the energy measurements will be real numbers. This generalization does however come at a cost, which we shall discuss in the following chapter.

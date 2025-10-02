@@ -1,12 +1,12 @@
 \chapter{\PT\ Symmetric Quantum Mechanics}\label{ch:pt-symmetric-hamiltonians}
     \section{\PT-symmetric Hamiltonians}
-        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-Symmetric if $\comm*{\hPT}{\hA}\! = \hzero$, which, in the case of the Hamiltonian \hH\ reads
+        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-symmetric if $\comm*{\hPT}{\hA}\! = \hzero$, which, in the case of the Hamiltonian \hH\ reads
         \begin{equation}
             \label{eq:PT-H-commutator}
             \comm*{\hPT}{\hH}\! = \hzero
             \myperiod
         \end{equation}
-        The requirement of \PT-symmetry is weaker than the requirement of Hermiticity as, from \PT-symmetry alone, we can say little on the properties of the Hamiltonian's spectrum. As we found in \Sref{s:pt-symmetry}, the eigenvalues of a \PT-symmetric Hamiltonian are real only if \PT\ Symmetry is unbroken, meaning that the associated eigenstates are also simultaneous eigenstates for \hPT, which is not granted by \eqref{eq:PT-H-commutator} alone since \hPT\ is an antilinear operator.
+        The requirement of \PT-symmetry is weaker than the requirement of Hermiticity as from \PT-symmetry alone we can say little on the properties of the Hamiltonian's spectrum. As we found in \Sref{s:pt-symmetry}, the eigenvalues of a \PT-symmetric Hamiltonian are real only if \PT\ Symmetry is unbroken, meaning that the associated eigenstates are also simultaneous eigenstates for \hPT, which is not granted by \eqref{eq:PT-H-commutator} alone since \hPT\ is an antilinear operator.
 
         Usually, when working with real open quantum mechanical systems that are coupled to the environment, the effective Hamiltonian is rarely Hermitian \cite{bender2024}. This is due to the fact that physical systems experience either loss to or gain from the environment---if not both at the same time. \PT-symmetric  Hamiltonians manage to describe some systems that are coupled to the environment in such a way that gain and loss balance each other.
 
@@ -18,12 +18,10 @@
         \end{equation}
         This means that, while \PT-symmetric Hamiltonians can have real eigenvalues, they cannot generally be used to build a physical theory of Quantum Mechanics unless we modify some of its foundations.
 
-        We will see that the non-breaking of \PT\ Symmetry is necessary in order to find ourselves a complete set of eigenstates of a quantum mechanical system but it does not suffice in the construction of a quantum mechanical theory. In Hermitian Quantum Mechanics, the Hilbert space is defined independently of the Hamiltonian of the specific physical system we are considering \cite{bender2024}. On the other hand, when dealing with \PT-symmetric Hamiltonians we need to define the \hP\ and \hT\ operators case by case, in a way that suits the physical system we are working on. This means that the structure of the Hilbert space must adapt, as we will need to define a tailored inner product that satisfies the essential properties that make a quantum mechanical theory a \emph{physical} quantum mechanical theory. In analogy with Hermitian Quantum Mechanics, we need to be able to find a complete set of eigenstates of the Hamiltonian with real energy eigenvalues, we expect independent eigenstates to be orthogonal and symmetry transformations to be unitary in the sense that they preserve probability with respect to the inner product associated to \hPT.
-        
-        To achieve all of this, we will see that the construction of an appropriate inner product, which depends case by case on \hP\ and \hT, is in order. For this purpose we will need to introduce a third operator, noted as \hC\ in analogy with Charge Conjugation, that helps in making the new \CPT\ inner product consistent with a physical theory of Quantum Mechanics.
+        We will see that the non-breaking of \PT\ Symmetry is necessary in order to find ourselves a complete set of eigenstates of a quantum mechanical system but it does not suffice in the construction of a quantum mechanical theory. In Hermitian Quantum Mechanics, the Hilbert space is defined independently of the Hamiltonian of the specific physical system we are considering \cite{bender2024}; on the other hand, when dealing with \PT-symmetric Hamiltonians we need to define the \hP\ and \hT\ operators case by case, in a way that suits the physical system we are working on. Moreover, in analogy with Hermitian Quantum Mechanics, we need to be able to find a complete set of eigenstates of the Hamiltonian with real energy eigenvalues, we expect independent eigenstates to be orthogonal and symmetry transformations to be unitary in the sense that they preserve probability with respect to the inner product associated to \hPT. These are in fact the essential properties that make a quantum mechanical theory a \emph{physical} quantum mechanical theory. To achieve all of this, we will see that the construction of a tailored inner product is in order. This inner product depends on \hP\ and \hT, meaning that the structure of Hilbert spaces associated to different physical systems may be generally different. To define this new inner product we will need to introduce a third operator, noted as \hC\ in analogy with Charge Conjugation, that helps in making this new \CPT\ inner product consistent with the requirements of a physical theory of Quantum Mechanics.
 
     \section{The problem of completeness, unitarity and orthogonality}\label{s:problem}
-        When working with \PT-Symmetric Hamiltonians, three problems arise:
+        When working with \PT-symmetric Hamiltonians, three problems arise:
         \begin{enumerate}[label = \mybullet]
             \item When \PT\ Symmetry is broken, it is not always possible to find a complete set of eigenstates of the Hamiltonian for the Hilbert space.
             \item When \PT\ Symmetry is broken, the energy spectrum becomes complex and the time evolution operator, which is built on the Hamiltonian as 
@@ -35,13 +33,15 @@
             will not preserve probability due to the introduction of exponentials of real numbers as coefficients.
             \item Even when \PT\ Symmetry is unbroken and a complete set for the Hilbert space can be found, the set is not guaranteed to be orthogonal.
         \end{enumerate}
-        To demonstrate what was just stated, let's look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's, by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
+        To demonstrate what we just claimed, let's look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
         \begin{equation}
             \label{eq:ex:reduced-2x2-hamiltonian}
             \hH = E_0\! \pmqty{\dmat[1]{i\gamma, -i\gamma}}
+            \mycomma\qquad
+            \gamma,E_0\in\bbR
             \mycomma
         \end{equation}
-        with $\gamma,E_0\in\bbR$ and the following definitions for \hP\ and \hT :
+        with the following definitions for \hP\ and \hT :
         \begin{equation}
             \label{eq:ex:reduced-2x2-P-T}
             \hP = \hat{\sigma}_x = \pmqty{\admat{1,1}}
@@ -49,44 +49,13 @@
             \hT = \hK
             \mycomma
         \end{equation}
-        where \hK\ is complex conjugation. It is straightforward to see that $\hH^\dag \neq \hH$ and $\comm*{\hPT}{\hH}\! = \hzero$ for any value of $\gamma$ by using properties \eqref{eq:PT-commutator} and \eqref{eq:P-properties} and then evaluating $\hP\pqty*{\hK\!\hH\!\hK^{-1}}\hP = \hP\hH^*\hP$.
-        
-        The eigenvalues of \hH, obtained by solving $\det\pqty*{\hH - \lambda\hidM} = 0$, are
+        where \hK\ is complex conjugation. It is straightforward to see that $\hH^\dag \neq \hH$ and $\comm*{\hPT}{\hH}\! = \hzero$ for any value of $\gamma$ by using properties \eqref{eq:PT-commutator} and \eqref{eq:P-properties} and then evaluating $\hP\hK\!\hH\!\hK^{-1}\hP = \hP\hH^*\hP$. The eigenvalues of \hH, obtained by solving $\det\!\pqty*{\hH - \lambda\hidM} = 0$, are
         \begin{equation*}
             \lambda_\pm = \pm E_0 \sqrt{1-\gamma^2}
         \end{equation*}
-        which are real when $\abs{\gamma} < 1$, zero when $\abs{\gamma} = 1$ and complex when $\abs{\gamma} > 1$.
+        which are real and distinct when $\abs{\gamma} < 1$, null and degenerate when $\abs{\gamma} = 1$ and complex conjugate pairs when $\abs{\gamma} > 1$.
         
-        Let's look at $\gamma = 1$ first. In this case, the Hamiltonian is still \PT-symmetric and the eigenvalues are real and degenerate, however it is not possible to find two linearly independent eigenvectors for \hH. The only independent eigenvector is
-        \begin{equation*}
-            \ket{\phi_0} = \frac{1}{\sqrt{2}}\! \pmqty{1 \\ -i}
-            \mycomma
-        \end{equation*}
-        which does not make for a complete set for $\bbC^2$.
-
-        Let's now look at how breaking the \PT\ Symmetry causes the loss of unitarity by looking at the case where $\gamma > 1$. We can express the eigenvalues as the purely imaginary conjugate pair
-        \begin{equation*}
-            \lambda_\pm = \pm i E_0 \sqrt{\gamma^2 - 1}
-        \end{equation*}
-        with eigenvectors
-        \begin{equation*}
-            \ket{\phi_\pm} = \pmqty{E_0 \\ \lambda_\pm - i E_0 \gamma }
-            \mycomma
-        \end{equation*}
-        which are not simultaneous eigenvectors for \hPT, since
-        \begin{equation*}
-            \hPT\!\ket{\phi_\pm} = \pqty{\lambda_\mp + i E_0 \gamma}\!\ket{\phi_\mp}
-            \myperiod
-        \end{equation*}
-        We should note that the application of \hPT\ to either of the eigenvectors gives us a vector proportional to the other eigenvector. The time evolution operator is the function \eqref{eq:time-evolution} of \hH\ which, when applied to the eigenstates of \hH, will yield the same function of the corresponding eigenvalues:
-        \begin{equation*}
-            \hU\pqty{t}\!\ket{\phi_\pm}
-            = \myexp{-i\frac{\hH}{\hbar}t}\!\ket{\phi_\pm}
-            = \myexp{\mp\frac{E_0\sqrt{\gamma^2-1}}{\hbar}t}\!\ket{\phi_\pm}
-        \end{equation*}
-        where the exponential actually diverges for $\ket{\phi_+}$ and goes to zero for $\ket{\phi_-}$ when $t\to +\infty$. While we get two independent eigenvectors of \hH, forming a complete set for $\bbC^2$, the time evolution operator that we built from the Hamiltonian does not preserve the norm and is not a unitary transformation.
-
-        We can end this section by noting that when $\abs{\gamma} < 1$ and \PT\ Symmetry is unbroken, the two eigenvectors we can find are not orthogonal according to the standard inner product. By letting $\alpha = \sqrt{1 - \gamma^2}$ we have 
+        Let's start by considering the case $\abs{\gamma} < 1$, where \PT\ Symmetry is unbroken. The two eigenvectors we can find are not orthogonal according to the standard inner product. By letting $\alpha = \sqrt{1 - \gamma^2}$ we have 
         \begin{equation*}
             \ket{\phi_\pm}
             = \pmqty{E_0 \\ \lambda_\pm - i E_0 \gamma}
@@ -103,6 +72,37 @@
         \end{equation}
         which is only zero when $\gamma = 0$, which in turn makes the Hamiltonian Hermitian.
 
+        Let's now look at $\abs{\gamma} = 1$. In this case the Hamiltonian is still \PT-symmetric and the eigenvalues are real and degenerate, however it is not possible to find two linearly independent eigenvectors for \hH. The only independent eigenvector is
+        \begin{equation*}
+            \ket{\phi_0} = \frac{1}{\sqrt{2}}\! \pmqty{1 \\ -i}
+            \mycomma
+        \end{equation*}
+        which does not span $\bbC^2$ but still is an eigenvector for \hPT\ since the spectrum is real. $\abs{\gamma} = 1$ is called an \emph{exceptional point} as it lies on the boundary between the two regions of unbroken and broken \PT\ Symmetry.
+
+        Let's finally look at how the breaking \PT\ Symmetry causes the loss of unitarity by looking at the case where $\gamma > 1$. We can express the eigenvalues as the purely imaginary conjugate pair
+        \begin{equation*}
+            \lambda_\pm = \pm i E_0 \sqrt{\gamma^2 - 1}
+        \end{equation*}
+        with eigenvectors
+        \begin{equation*}
+            \ket{\phi_\pm} = \pmqty{E_0 \\ \lambda_\pm - i E_0 \gamma }
+            \mycomma
+        \end{equation*}
+        which are not simultaneous eigenvectors for \hPT, since
+        \begin{equation*}
+            \hPT\!\ket{\phi_\pm} = \pqty{\lambda_\mp + i E_0 \gamma}\!\ket{\phi_\mp}
+            \myperiod
+        \end{equation*}
+        We should note that the application of \hPT\ to either of the eigenvectors gives us a multiple of the opposite eigenvector. The time evolution operator is the function \eqref{eq:time-evolution} of \hH\ and it will yield the same function of the eigenvalues when applied to the corresponding eigenstates of \hH :
+        \begin{equation*}
+            \hU\pqty{t}\!\ket{\phi_\pm}
+            = \myexp{-i\frac{\hH}{\hbar}t}\!\ket{\phi_\pm}
+            = \myexp{\mp\frac{E_0\sqrt{\gamma^2-1}}{\hbar}t}\!\ket{\phi_\pm}
+        \end{equation*}
+        where the exponential actually diverges for $\ket{\phi_+}$ and goes to zero for $\ket{\phi_-}$ when $t\to +\infty$. While we get two independent eigenvectors of \hH, forming a complete set for $\bbC^2$, the time evolution operator that we built from the Hamiltonian does not preserve the norm and is not a unitary transformation.
+
+        
+
     \section{Orthogonality under the \texorpdfstring{\PT}{PT} inner product}\label{s:orthogonality}
         When we deal with the properties of Hermitian operators, we take advantage of the strong connection between the definition of Hermiticity itself and the inner product of the Hilbert space on which the operator is defined. If we look at the definition \eqref{eq:hermiticity-inner-product} it is clear that the special properties of the Hermitian operator \hA\ are closely related to the definition of the inner product itself.
         
@@ -110,25 +110,29 @@
             As we saw in \Sref{s:hermitian-operators}, due to the Spectral Theorem we can find an orthonormal complete set of eigenvectors of \hA\ for the Hilbert space.\footnote{See property \ref{p:orthogonality} for the infinite-dimensional case.} Naturally, the eigenvectors are \emph{orthonormal with respect to the inner product that defines Hermiticity, \eqref{eq:hermiticity-inner-product}}. Just for clarity, let's write it down as
             \begin{equation*}
                 \begin{cases}
-                    \bra{\phi} \! \hA \! \ket{\psi} = \bra{\phi} \! \hA^\dag \! \ket{\psi}
+                    \hA^\dag = \hA
                     \mycomma \\
-                    \braket{\omega_i}{\omega_j} = \tensor{\delta}{_i_j}
+                    \braket{\phi_i}{\phi_j} = \tensor{\delta}{_i_j}
                     \mycomma
                 \end{cases}
             \end{equation*}
-            where $\ket{\omega_i}$ is the eigenvector associated to the $i$-th eigenvalue of \hA. This means that to some sort of symmetry of the operator, in this case $\hA = \hA^\dag$, corresponds the eigenvectors' orthonormality.
+            where $\ket{\phi_i}$ is the eigenvector associated to the $i$-th eigenvalue of \hA. This means that to some sort of symmetry of the operator, in this case $\hA = \hA^\dag$, corresponds the eigenvectors' orthonormality.
 
-            Now, the condition of \PT-Symmetry \eqref{eq:pt-symmetric-operator} for an operator is somewhat formally similar to Hermiticity: the operator transformed via \hPT---rather than via Hermitian conjugation---is equal to itself. We may write
+            Now, the condition \eqref{eq:pt-symmetric-operator} means that a \PT-symmetric operator, when transformed via a \PT\ transformation remains unchanged. We may denote the transformed operator as $\hA^{\PT}$ so that
             \begin{equation*}
-                \hA^{\PT} = \hA
+                \hA^{\PT} \equiv \PTtransform{\hA} = \hA
                 \mycomma
             \end{equation*}
-            where
+            and ask ourselves whether we can find a newly defined inner product $\braket{\cdot}{\cdot}_{\PT}$ such that
             \begin{equation*}
-                \hA^{\PT} \equiv \PTtransform{\hA}
-                \mycomma
+                \begin{cases}
+                    \hA^{\PT} = \hA
+                    \mycomma \\
+                    \braket{\phi_i}{\phi_j}_{\PT} = \tensor{\delta}{_i_j}
+                    \mycomma
+                \end{cases}
             \end{equation*}
-            and ask ourselves whether we can find a newly defined inner product $\braket{\cdot}{\cdot}_{\PT}$ such that $\braket{\omega_i}{\omega_j}_{\PT}= \tensor{\delta}{_i_j}$, where $\ket{\omega_i}$ is, in this case, the simultaneous eigenvector of \hA\ and \hPT\ associated to the $i$-th eigenvalue of \hA. Through this new inner product we expect that equation \eqref{eq:ex:non-orthogonality} becomes $\braket{\phi_-}{\phi_+}_{\PT} = 0$ since $\ket{\phi_\pm}$ are eigenvectors associated with distinct eigenvalues. Moreover, we would like to find an expression of the time evolution operator that is \emph{unitary with respect to the new inner product}.
+            where $\ket{\phi_i}$ is, in this case, the simultaneous eigenvector of \hA\ and \hPT\ associated to the $i$-th eigenvalue of \hA. Through this new inner product we expect that equation \eqref{eq:ex:non-orthogonality} becomes $\braket{\phi_-}{\phi_+}_{\PT} = 0$ since $\ket{\phi_\pm}$ are eigenvectors associated with distinct eigenvalues. Moreover, we would like to find an expression of the time evolution operator that is \emph{unitary with respect to the new inner product}.
 
             We start by conjecturing \cite{bender2024} a \PT\ inner product that acts on the space of the wavefunctions in a shape similar to \eqref{eq:integral-inner-product}, by replacing Hermitian conjugation\footnote{In equation \eqref{eq:integral-inner-product} we actually used complex conjugation which is equivalent to Hermitian conjugation when $g\pqty{\vb{r}}$ is a number. In the case that $g\pqty{\vb{r}}$ is a matrix-like object, like a spinor, the complex conjugate $g^*\pqty{\vb{r}}$ is to be replaced by Hermitian conjugate $g^\dag\pqty{\vb{r}}$.} with a \PT\ conjugation
             \begin{equation}
@@ -136,21 +140,36 @@
                 \braket{\phi}{\psi}_{\PT} = \int\nolimits_{\Omega} \phi^{\PT}\pqty{\vb{r}} \psi\pqty{\vb{r}} \dd[3]{\vb{r}}
                 \mycomma
             \end{equation}
-            where $\Omega\subseteq\bbR^3$ is a region of space where \PT\ Symmetry is unbroken, and the action of the \PT\ conjugation on $\phi$ is given by
+            where $\Omega\subseteq\bbR^3$ is a region of space where \PT\ Symmetry is unbroken,\footnote{For a more detailed explanation see \Sref{a:stokes}.} and the action of the \PT\ conjugation on $\phi$ is given by
             \begin{equation*}
                 \phi^{\PT}\pqty{\vb{r}} \equiv \phi^*\pqty{-\vb{r}}
                 \mycomma
             \end{equation*}
-            which is consistent with $\hP \phi\pqty{\vb{r}} \hP^{-1} = \phi\pqty{{-\vb{r}}}$ and $\hT \phi\pqty{\vb{r}} \hT^{-1} = \phi^*\pqty{{\vb{r}}}$. This definition of the inner product is enough to restore orthogonality and we can verify this claim by evaluating the inner product \eqref{eq:ex:non-orthogonality} of the previous example. We first transform $\ket{\phi_-}$ via $\hPT = \hat{\sigma}_x \hK$, obtaining
+            which is consistent with $\hP \phi\pqty{\vb{r}} \hP^{-1} = \phi\pqty{{-\vb{r}}}$ and $\hT \phi\pqty{\vb{r}} \hT^{-1} = \phi^*\pqty{{\vb{r}}}$. This definition of the inner product is enough to restore orthogonality and we can verify this claim by evaluating the inner product \eqref{eq:ex:non-orthogonality} of the previous example with the new definition. We define the \PT\ conjugate of a vector $\ket{\psi}$ as
+            \begin{equation}
+                \bra{\psi_{\PT}}
+                \equiv \bqty{\ket{\psi}}^{\PT}
+                \equiv \bqty*{\hP\hT\!\ket{\psi}}^\intercal
+                \mycomma
+            \end{equation}
+            so that the \PT\ inner product can be evaluated in terms of the standard inner product as 
+            \begin{equation}
+                \label{eq:pt-conjugation}
+                \braket{\phi}{\psi}_{\PT} = \braket{\phi_{\PT}}{\psi}
+                \myperiod
+            \end{equation}
+            We can now apply this definition and transform $\ket{\phi_-}$ via $\hPT = \hat{\sigma}_x \hK$, obtaining
             \begin{equation*}
                 \bqty{\ket{\phi_-}}^{\PT}
-                = E_0\! \pmqty{\admat[0]{1,1}}\! \hK\! \pmqty{1 \\ -\alpha - i \gamma } = E_0\! \pmqty{i \gamma - \alpha \\ 1}
+                = \bqty{E_0\! \pmqty{\admat[0]{1,1}}\! \hK\! \pmqty{1 \\ -\alpha - i \gamma }}^\intercal
+                = E_0\! \pmqty{i \gamma - \alpha & 1}
+                \myperiod
             \end{equation*}
-            and then we multiply the transpose of this vector by $\ket{\phi_+}$, which yields
+            Then we multiply this vector by $\ket{\phi_+}$, which yields
             \begin{equation*}
                 \braket{\phi_-}{\phi_+}_{\PT} = E_0^2 \!\pmqty{i\gamma - \alpha & 1} \!\pmqty{1\\ \alpha - i \gamma} = 0
             \end{equation*}
-            as expected. However, if we evaluate the norm of $\ket{\phi_\pm}$ we find
+            as expected. However, if we evaluate the norm of $\ket{\phi_\pm}$ given by the new \PT\ inner product we find
             \begin{equation*}
                 \norm{\ket{\phi_\pm}}^2_{\PT} = \braket{\phi_\pm}{\phi_\pm}_{\PT} = \pm 2 E_0^2 \sqrt{1 - \gamma^2}
                 \myperiod
@@ -168,10 +187,10 @@
             \comm*{\hC}{\hPT}\! &= \hzero
             \myperiod
         \end{align}
-        If we manage to prove that such an operator exists, we are in fact showing that when a physical system is \hPT\ Symmetric its Hamiltonian has an extra degree of symmetry under transformations induced by \hC. This operator is also the missing piece in the introduction of a well-defined inner product for the Hilbert space, which we will denote by $\braket{\cdot}{\cdot}_{\CPT}$.
+        If we manage to prove that such an operator exists, we are in fact showing that when a physical system is \PT\ Symmetric its Hamiltonian has an extra degree of symmetry under transformations induced by \hC. This operator is also the missing piece in the introduction of a well-defined inner product for the Hilbert space, which we will denote by $\braket{\cdot}{\cdot}_{\CPT}$.
 
         \subsection{Integral construction of the \texorpdfstring{\hC}{C} operator}
-            To construct the \hC\ operator we need to define its action on a complete set of physical states and then verify whether properties \eqref{eq:C-H-commutator} and \eqref{eq:C-PT-commutator} are satisfied. We may choose to use the set of the simultaneous eigenstates $\ket{\phi_n}$ of \hH\ and \hPT. It is possible to show that the sign of the \PT\ norm of an eigenstate of \hH\ and \hPT\ is $\pqty{-1}^n$ \cite{bender2024}. If we consider normalized eigenstates---and recall that we can multiply each state by a pure complex phase so that $\hPT\!\ket{\phi_n} = \ket{\phi_n}$, as we showed in \Sref{s:pt-symmetry}---this condition reads \cite{Bender2002,bender2024}
+            To construct the \hC\ operator we need to define its action on a complete set of physical states and then verify whether properties \eqref{eq:C-H-commutator} and \eqref{eq:C-PT-commutator} are satisfied. We may choose to use the set of the simultaneous eigenstates $\ket{\phi_n}$ of \hH\ and \hPT. It is possible to show that the sign of the \PT\ norm of an eigenstate of \hH\ and \hPT\ is $\pqty{-1}^n$ \cite{bender2024}. If we assume that the eigenstates are normalized---and recall that we can multiply each state by a pure complex phase so that $\hPT\!\ket{\phi_n} = \ket{\phi_n}$ as shown in \Sref{s:pt-symmetry}---this condition reads \cite{Bender2002,bender2024}
             \begin{equation*}
                 \braket{\phi_n}{\phi_n}_{\PT} 
                 = \int\nolimits_\Omega \phi_n^*\pqty{-\vb{r}} \phi_n\pqty{\vb{r}} \dd[3]{\vb{r}}
@@ -223,7 +242,7 @@
             We have therefore shown that the operator we were looking for does in fact exist and satisfies the properties we expected. Since \eqref{eq:C-position} and \eqref{eq:C-eigenvalues} are equivalent, we may now use the latter as the definition for \hC.
 
         \subsection{Algebraic construction of the \texorpdfstring{\hC}{C} operator}
-            The definition \eqref{eq:C-position} we used for \hC\ allowed us to prove its existence and its properties. However the explicit calculation of the operator requires the evaluation of the sum of an infinite series which can be an arduous task, if not impossible. We may attempt another approach \cite{bender2024} by constructing \hC\ algebraically, using the properties of \hC\ as algebraic equations that it needs to satisfy, namely
+            The definition \eqref{eq:C-position} we used for \hC\ allowed us to prove its existence and its properties. However the explicit calculation of the operator requires the evaluation of the sum of an infinite series which can be an arduous task, if not impossible. We may attempt another approach \cite{bender2024} by constructing \hC\ algebraically, turning the properties of \hC\ into algebraic equations that it needs to satisfy, namely
             \begin{align*}
                 \comm*{\hC}{\hH}\! &= \hzero 
                 \mycomma \\
@@ -233,13 +252,13 @@
                 \myperiod
             \end{align*}
             
-            Bender found that \hC\ may be expressed as the product of the exponential of an operator $\hQ = Q\pqty{\hvr,\hvp}$ and the Parity operator \hP,
+            By looking into perturbative, \PT-symmetric, non-Hermitian expansions of the Harmonic Oscillator's Hamiltonian \cite{bender2024}, Bender found that \hC\ may be expressed as the product of the exponential of an operator $\hQ = Q\pqty{\hvr,\hvp}$ and the Parity operator \hP,
             \begin{equation}
                 \label{eq:C-exponential}
                 \hC = \myexp{Q\pqty{\hvr,\hvp}}\hP
-                \mycomma
+                \myperiod
             \end{equation}
-            by looking into perturbative, \PT-symmetric, non-Hermitian expansions of the Harmonic Oscillator's Hamiltonian \cite{bender2024}. If we substitute this form for \hC\ in the three equations above we can find some properties of $Q\pqty{\hvr,\hvp}$. From \PT-Symmetry we get
+            If we substitute this form for \hC\ in the three equations above we can find some properties of $Q\pqty{\hvr,\hvp}$. From \PT-symmetry of \hC\ we get
             \begin{equation*}
                 \myexp{Q\pqty{\hvr,\hvp}}\hP
                 = \PTtransform{\myexp{Q\pqty{\hvr,\hvp}}\hP}
@@ -266,14 +285,14 @@
                 \myexp{Q\pqty{\hvr,\hvp}} \comm{\hP}{\hH} + \comm{\myexp{Q\pqty{\hvr,\hvp}}}{\hH} \hP = \hzero
                 \mycomma
             \end{equation}
-            which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve it exactly. The problem may however be approached by using perturbative methods \cite{bender2024}.
+            which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve analitically; the problem may however be approached by using perturbative methods \cite{bender2024}.
 
             While this approach does not seem to lead anywhere, let's consider the quantity
             \begin{equation}
                 \label{eq:F-Q-similarity}
                 \hF = \myexp{-\frac{\hQ}{2}}\!\hH\myexp{\frac{\hQ}{2}}
             \end{equation}
-            and let's evaluate its Hermitian conjugate by recalling $\myexp{Q} = \hC\hP$ from \eqref{eq:C-exponential}
+            and let's evaluate its Hermitian conjugate by recalling $\myexp{Q} = \hC\hP$ from \eqref{eq:C-exponential}:
             \begin{align*}
                 \hF^\dag
                 &= \myexp{\frac{\hQ}{2}} \hH^\dag \myexp{-\frac{\hQ}{2}} \\
@@ -290,7 +309,7 @@
                 &= \hF
                 \myperiod
             \end{align*}
-            We found that that the non-Hermitian Hamiltonian of a \PT-symmetric physical system can be transformed into an Hermitian operator via the similarity transformation \eqref{eq:F-Q-similarity}, corresponding to a change of basis which depends on the explicit form of $Q\pqty{\hvr,\hvp}$. Unfortunately again, this similarity transformation is hopelessly hard to find in its explicit form \cite{bender2024}---exception made for some rare cases---just as it is hard to find the function $Q$ that satisfies the algebraic conditions for the definition of \hC. In spite of this, the fact that we could find a correspondence between \PT-symmetric Hamiltonians and Hermitian operators is nonetheless remarkable.
+            We found that that, under unbroken \PT\ Symmetry, the non-Hermitian \PT-symmetric Hamiltonian of a physical system can be transformed into an Hermitian operator via the similarity transformation \eqref{eq:F-Q-similarity}, corresponding to a change of basis which depends on the explicit form of $Q\pqty{\hvr,\hvp}$. Unfortunately again, this similarity transformation is hopelessly hard to find in its explicit form---exception made for some rare cases---just as it is hard to find the function $Q$ that satisfies the algebraic conditions for the definition of \hC \cite{bender2024}. In spite of this, the fact that we could find a correspondence between \PT-symmetric Hamiltonians and Hermitian operators is nonetheless remarkable.
             
             Since eigenvalues are not dependent on the basis, \hH\ and \hF\ are \emph{isospectral}\footnote{Isospectrality means that the two operators share the same spectrum.} and their spectrum is real, consistently with the Spectral Theorem. We hence see that there is an underlying equivalence among the following:
             \begin{enumerate}[label = \mybullet]
@@ -307,7 +326,7 @@
             \braket{\phi}{\psi}_{\CPT} = \int\nolimits_\Omega \phi^{\myconj}\pqty{\vb{r}} \psi\pqty{\vb{r}} \dd[3]{\vb{r}}
             \mycomma
         \end{equation}
-        where we replaced the \CPT\ conjugation symbol with the much more compact $^\myconj$, in analogy with Hermitian conjugation denoted by $^\dag$. The \CPT\ transformation acts on the wavefunction of an eigenstate as
+        where we replaced the \CPT\ conjugation symbol with the much more compact $^\myconj$, in analogy with Hermitian conjugation denoted by $^\dag$. The \CPT\ transformation acts on the wavefunction of an eigenstate as 
         \begin{equation}
             \label{eq:CPT-conjugation}
             \phi_n^\myconj\pqty{\vb{r}}
@@ -371,27 +390,24 @@
                 \ket{\psi\pqty{t}} = \hU\pqty{t}\!\ket{\psi\pqty{0}}
                 \mycomma
             \end{equation*}
-            and denote $\bqty*{\hU\pqty{t}\!\ket{\psi\pqty{0}}}^\myconj = \bra{\psi\pqty{0}}\!\hU^\myconj\pqty{t}$, we can easily evaluate the norm
+            and denote $\bqty*{\hU\pqty{t}\!\ket{\psi\pqty{0}}}\!^\myconj \equiv \bra*{\psi^\myconj\pqty{0}}\!\hU^\myconj\pqty{t}$, we can easily evaluate the norm in terms of the standard inner product as we did with the \PT\ inner product in \eqref{eq:pt-conjugation}:
             \begin{align*}
                 \norm{\ket{\psi\pqty{t}}}^2_{\CPT}
                 &= \braket{\psi{\pqty{t}}}{\psi\pqty{t}}_{\CPT} \\
-                &= \bra{\psi\pqty{0}}\! \hU^\myconj\pqty{t} \hU\pqty{t} \!\ket{\psi\pqty{0}}_{\CPT} \\
-                &= \bra{\psi\pqty{0}}\ket{\psi\pqty{0}}_{\CPT} \\
-                &= \norm{\ket{\psi\pqty{t}}}^2_{\CPT}
+                &= \bra*{\psi^\myconj\pqty{0}}\! \hU^\myconj\pqty{t} \hU\pqty{t} \!\ket{\psi\pqty{0}} \\
+                &= \bra*{\psi\pqty{0}}\ket{\psi\pqty{0}}_{\CPT} \\
+                &= \norm{\ket{\psi\pqty{0}}}^2_{\CPT}
                 \mycomma
             \end{align*}
             which proves unitarity and the conservation of probability.
 
-            Now that we have a well-defined, positive \CPT\ inner product for the Hilbert space and having proved that the time evolution in this space is unitary, we can see that the construction of a \PT\ Symmetric quantum mechanical theory is possible. The only issue which comes with this achievement is that the calculation of the Hilbert space depends on the Hamiltonian, in an opposite fashion to Hermitian Quantum Mechanics where the Hilbert space exists \emph{a priori} and the theory holds for any Hermitian Hamiltonian defined on it.
+            Now that we have a well-defined, positive \CPT\ inner product for the Hilbert space and having proven that the time evolution in this space is unitary, we can see that the construction of a \PT\ Symmetric quantum mechanical theory is possible. The only open broblem that comes with this achievement is that the calculation of the Hilbert space depends on the Hamiltonian, in an opposite fashion to Hermitian Quantum Mechanics where the Hilbert space exists \emph{a priori} and the theory holds for any Hermitian Hamiltonian defined on it.
 
         \subsection{Symmetries and analogies with Hermitian Quantum Mechanics}
-            At the beginning of \Sref{s:orthogonality}, an attempt at finding an analogy with Hermitian systems was made. Let's group what we found in table \ref{tab:lunica}.
-            \begin{table}[h]
-                \centering
-                \label{tab:lunica}
-                \input{src/assets/tables/PT-vs-Hermitian.tex}
-                \caption{Formal analogies between Hermitian and \PT\ Symmetric Quantum Mechanics.}
-            \end{table}
-            
-            This result is particularly interesting because it shows that, by simply changing some notation and definitions, we can establish a direct analogy between Hermitian Quantum Mechanics and \PT\ Symmetric Quantum Mechanics. The essential structure and properties of the theory remain similar, highlighting a deep connection between the two frameworks, however acknowledging that \PT\ Symmetry is not always satisfied and this same mathematical framework needs to adapt to each system by an appropriate definition of \hC, \hP\ and \hT.
-           
+        At the beginning of \Sref{s:orthogonality}, an attempt at finding an analogy with Hermitian systems was made. After the unsuccessful attempt via the \PT\ inner product, we found a resolution by defining a \CPT\ inner product which granted the desired properties to the theory. This result, presented in Table \ref{tab:lunica}, is particularly interesting because it shows that by simply changing some notation and definitions we can establish a direct analogy between Hermitian Quantum Mechanics and \PT\ Symmetric Quantum Mechanics. The essential structure and properties of the theory remain similar, highlighting a deep connection between the two frameworks, however acknowledging that \PT\ Symmetry is not always satisfied and this same mathematical framework needs to adapt to each system by an appropriate definition of \hC, \hP\ and \hT.
+        \begin{table}
+            \centering
+            \label{tab:lunica}
+            \input{src/assets/tables/PT-vs-Hermitian.tex}
+            \caption{Formal analogies between Hermitian and \PT\ Symmetric Quantum Mechanics.}
+        \end{table}

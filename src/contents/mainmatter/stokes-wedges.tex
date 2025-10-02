@@ -1,0 +1,10 @@
+\chapter{Boundary Conditions and Stokes Wedges}\label{a:stokes}
+    In the body of this thesis we briefely mentioned the topic of boundary conditions when we stated that the wavefuction must always be square Lebesgue-integrable in order to belong in the Hilbert space $L^2$. This condition must be taken into account when solving the Schr\"odinger equation, as the equation itself only describes the wavefunction locally as a function or $\pqty{\vb{r},t}$. The integrability of the wavefunction constitutes a stronger \emph{global} condition when compared to Hermiticity, \PT-symmetry and other \emph{local} conditions, which may or may not hold depending on $\pqty{\vb{r},t}$.
+
+    To face the problem of boundary conditions we often make asymptotic approximations in order to study the property of the wavefunction as $\abs{x}\to+\infty$. However, while this is a simple task in \bbR, it becomes non trivial when dealing with complex variables. Sometimes when dealing with \PT\ Symmetry we find eigenfunctions that do not vanish fast enough when restricted to the real line. However, if we let the variable become complex, we may find regions in the complex plane where the function vanishes quickly and thus we can actually make use of asymptotic approximations.
+
+    The regions in which the approximations are valid depend on the function in consideration. The function
+    \begin{align*}
+        \sinh\!\pqty{z} = \frac{e^z - e^{-z}}{2}
+    \end{align*}
+    behaves very differently when $\Re z > 0$ and $\Re z < 0$, as it diverges exponentially to $+\infty$ and $-\infty$ respectively. The regions of the complex plane in which the asymptotic approximations are coherent with the behavior of the function are usually defined by the angular interval in which $\arg z$ may vary.
