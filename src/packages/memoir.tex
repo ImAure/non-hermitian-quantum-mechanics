@@ -31,14 +31,30 @@
     \createplainmark{index}{both}{\indexname}
     \createplainmark{glossary}{both}{\glossaryname}    
 }
+\makepagestyle{append}                                                  % definisce il nome dello stile.
+\makerunningwidth{append}{\headwidth}                                   % definisce la lunghezza dell'header.
+\makeheadrule{append}{\headwidth}{\normalrulethickness}                 % mette la riga nell'header.
+\makeheadposition{append}{flushright}{flushleft}{flushright}{flushleft} % definisce la posizione dell'header.
+\makepsmarks{append}{%                                                  % da qui in poi non lo so
+    \nouppercaseheads
+    \createmark{chapter}{both}{shownumber}{\appendixname\ }{.\ } 
+    \createmark{section}{right}{shownumber}{}{.\ }              
+    \createplainmark{toc}{both}{\contentsname}                  
+    \createplainmark{lof}{both}{\listfigurename}                
+    \createplainmark{lot}{both}{\listtablename}
+    \createplainmark{bib}{both}{\bibname}
+    \createplainmark{index}{both}{\indexname}
+    \createplainmark{glossary}{both}{\glossaryname}    
+}
 
 %% se oneside:
     \makeoddhead{thesis}{\bfseries\leftmark}{}{\bfseries\thepage}
+    \makeoddhead{append}{\bfseries\leftmark}{}{\bfseries\thepage}
 %% se twoside:
     % \makeevenhead{thesis}{\bfseries\thepage}{}{\bfseries\leftmark}
     % \makeoddhead{thesis}{\bfseries\rightmark}{}{\bfseries}
 
-\chapterstyle{hangnum}
+%\chapterstyle{hangnum}
 \aliaspagestyle{chapter}{empty} % toglie il numero di pagina nelle pagine con il nome del capitolo.
 \aliaspagestyle{part}{empty}
 

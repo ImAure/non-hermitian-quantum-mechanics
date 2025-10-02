@@ -1,6 +1,6 @@
 \chapter{\PT\ Symmetric Quantum Mechanics}\label{ch:pt-symmetric-hamiltonians}
     \section{\PT-symmetric Hamiltonians}
-        Moving forward from what we said in \Sref{ch:pt-operators}, an operator \hA\ is said to be \PT-symmetric if $\comm*{\hPT}{\hA}\! = \hzero$, which, in the case of the Hamiltonian \hH\ reads
+        Moving forward from what we said in \chref{ch:pt-operators}, an operator \hA\ is said to be \PT-symmetric if $\comm*{\hPT}{\hA}\! = \hzero$, which, in the case of the Hamiltonian \hH\ reads
         \begin{equation}
             \label{eq:PT-H-commutator}
             \comm*{\hPT}{\hH}\! = \hzero
@@ -33,7 +33,7 @@
             will not preserve probability due to the introduction of exponentials of real numbers as coefficients.
             \item Even when \PT\ Symmetry is unbroken and a complete set for the Hilbert space can be found, the set is not guaranteed to be orthogonal.
         \end{enumerate}
-        To demonstrate what we just claimed, let's look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
+        To demonstrate what we just claimed, let us look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
         \begin{equation}
             \label{eq:ex:reduced-2x2-hamiltonian}
             \hH = E_0\! \pmqty{\dmat[1]{i\gamma, -i\gamma}}
@@ -107,7 +107,7 @@
         When we deal with the properties of Hermitian operators, we take advantage of the strong connection between the definition of Hermiticity itself and the inner product of the Hilbert space on which the operator is defined. If we look at the definition \eqref{eq:hermiticity-inner-product} it is clear that the special properties of the Hermitian operator \hA\ are closely related to the definition of the inner product itself.
         
         \subsection{An attempt at the \PT\ inner product}
-            As we saw in \Sref{s:hermitian-operators}, due to the Spectral Theorem we can find an orthonormal complete set of eigenvectors of \hA\ for the Hilbert space.\footnote{See property \ref{p:orthogonality} for the infinite-dimensional case.} Naturally, the eigenvectors are \emph{orthonormal with respect to the inner product that defines Hermiticity, \eqref{eq:hermiticity-inner-product}}. Just for clarity, let's write it down as
+            As we saw in \Sref{s:hermitian-operators}, due to the Spectral Theorem we can find an orthonormal complete set of eigenvectors of \hA\ for the Hilbert space.\footnote{See property \ref{p:orthogonality} for the infinite-dimensional case.} Naturally, the eigenvectors are \emph{orthonormal with respect to the inner product that defines Hermiticity, \eqref{eq:hermiticity-inner-product}}. Just for clarity, let us write it down as
             \begin{equation*}
                 \begin{cases}
                     \hA^\dag = \hA
@@ -140,7 +140,7 @@
                 \braket{\phi}{\psi}_{\PT} = \int\nolimits_{\Omega} \phi^{\PT}\pqty{\vb{r}} \psi\pqty{\vb{r}} \dd[3]{\vb{r}}
                 \mycomma
             \end{equation}
-            where $\Omega\subseteq\bbR^3$ is a region of space where \PT\ Symmetry is unbroken,\footnote{For a more detailed explanation see \Sref{a:stokes}.} and the action of the \PT\ conjugation on $\phi$ is given by
+            where $\Omega\subseteq\bbR^3$ is a region of space where \PT\ Symmetry is unbroken,\footnote{For a more detailed explanation see \apref{a:stokes}.} and the action of the \PT\ conjugation on $\phi$ is given by
             \begin{equation*}
                 \phi^{\PT}\pqty{\vb{r}} \equiv \phi^*\pqty{-\vb{r}}
                 \mycomma
@@ -287,12 +287,12 @@
             \end{equation}
             which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve analitically; the problem may however be approached by using perturbative methods \cite{bender2024}.
 
-            While this approach does not seem to lead anywhere, let's consider the quantity
+            While this approach does not seem to lead anywhere, let us consider the quantity
             \begin{equation}
                 \label{eq:F-Q-similarity}
                 \hF = \myexp{-\frac{\hQ}{2}}\!\hH\myexp{\frac{\hQ}{2}}
             \end{equation}
-            and let's evaluate its Hermitian conjugate by recalling $\myexp{Q} = \hC\hP$ from \eqref{eq:C-exponential}:
+            and let us evaluate its Hermitian conjugate by recalling $\myexp{Q} = \hC\hP$ from \eqref{eq:C-exponential}:
             \begin{align*}
                 \hF^\dag
                 &= \myexp{\frac{\hQ}{2}} \hH^\dag \myexp{-\frac{\hQ}{2}} \\

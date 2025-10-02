@@ -1,5 +1,5 @@
 \chapter{Examples and Applications}\label{ch:examples}
-    Now that we covered the key aspects and foundations of a \PT\ Symmetric quantum mechanical theory, let's look at some examples of application to better understand how the tools we introduced operate in practical scenarios.
+    Now that we covered the key aspects and foundations of a \PT\ Symmetric quantum mechanical theory, let us look at some examples of application to better understand how the tools we introduced operate in practical scenarios.
     
     In this chapter we will explore further the $2\times2$ matrix Hamiltonian presented in \Sref{s:problem} and look at a more concrete system obtained from a non-Hermitian deformation of the Hamiltonian of the Quantum Harmonic Oscillator.
     \section{A finite dimensional Hamiltonian}
@@ -78,7 +78,7 @@
         \end{align*}
         with $\omega = E_0 \alpha / \hbar$. It is possible to verify that this state is indeed a solution of the time dependent Schr\"odinger's equation \eqref{eq:schrodinger}.
 
-        Finally, let's evaluate the similarity transformation that yields the Hermitian isospectral Hamiltonian \hF. We recall from \eqref{eq:C-exponential} that
+        Finally, we evaluate the similarity transformation that yields the Hermitian isospectral Hamiltonian \hF. We recall from \eqref{eq:C-exponential} that
         \begin{equation*}
             \myexp{\hQ} = \hC\hP
             \myperiod
@@ -148,7 +148,7 @@
             \begin{equation}
                 \hH = \frac{\hp^2}{2m} + \frac{m\omega^2}{2}\hx^2\mycomma
             \end{equation}
-            where $m$ is the mass of the particle and $\omega$ the proper frequency of the system. We are interested in deformating the Hamiltonian by introducing a complex factor in such a way that breaks the Hermiticity of the operator but still preserves its \PT-symmetry. In order to do that, let's first operate the following substitutions to work in simpler dimensionless quantities:
+            where $m$ is the mass of the particle and $\omega$ the proper frequency of the system. We are interested in deformating the Hamiltonian by introducing a complex factor in such a way that breaks the Hermiticity of the operator but still preserves its \PT-symmetry. In order to do that, we will first operate the following substitutions to work in simpler dimensionless quantities:
             \begin{equation}
                 \hH' = \frac{\hH}{\hbar\omega}
                 \mycomma\qquad
@@ -187,6 +187,6 @@
                 \hH = \hp^2 + \hx^4
                 \myperiod
             \end{equation}
-            While this result may seem counterintuitive at first, it can be understood by looking at the extension of the potential $V\pqty{\hx} = -\hx^4$ into the complex plane. In particular, it was shown\footnote{A detailed discussion of this topic is beyond the scope of this thesis, but the interested reader may refer to \cite{Bender1998,bender2024} for a more in-depth explanation. The key idea is that in the particular case when $\varepsilon = 2$, a particle in the upside-down quartic potential will escape to infinity in a \emph{finite} time when constrained to the real axis, but if we allow $\hx$ to be complex we find that the particle may be confined in a complex \emph{Stokes wedge} where the potential acts like a confining barrier and bound states may exist.} that the particle appears to be confined in a \emph{Stokes wedge} in the complex plane\footnote{For more details, see \Sref{a:stokes}.} where the potential acts like a confining barrier. The analytical proof of the reality and discreteness of the spectrum implies that the particle is indeed in a bound state and further calculations shows that the particle's wavefunction is actually localized at the origin.
+            While this result may seem counterintuitive at first, it can be understood by looking at the extension of the potential $V\pqty{\hx} = -\hx^4$ into the complex plane. In particular, it was shown\footnote{A detailed discussion of this topic is beyond the scope of this thesis, but the interested reader may refer to \cite{Bender1998,bender2024} for a more in-depth explanation. The key idea is that in the particular case when $\varepsilon = 2$, a particle in the upside-down quartic potential will escape to infinity in a \emph{finite} time when constrained to the real axis, but if we allow $\hx$ to be complex we find that the particle may be confined in a complex \emph{Stokes wedge} where the potential acts like a confining barrier and bound states may exist.} that the particle appears to be confined in a \emph{Stokes wedge} in the complex plane\footnote{For more details, see \apref{a:stokes}.} where the potential acts like a confining barrier. The analytical proof of the reality and discreteness of the spectrum implies that the particle is indeed in a bound state and further calculations shows that the particle's wavefunction is actually localized at the origin.
 
             If we now move our attention to the case $-1 < \varepsilon < 0$, we find that the spectrum contains only a finite number of real eigenvalues and the rest of the spectrum is made up of infinite complex conjugate pairs. This is a consequence of the spontaneous breaking of \PT\ Symmetry, which occurs when some of the eigenstates of the Hamiltonian are no longer eigenstates of \hPT. The number of real eigenvalues decreases as $\varepsilon$ approaches $-1$ from above, and at $\varepsilon = -1$ the spectrum becomes null. This particular value of $\varepsilon$ is called an \emph{exceptional point} and it represents a non-analytic point in the spectrum where all eigenvalues simultaneously diverge to infinity. The case $\varepsilon < -1$ is not physically interesting since the spectrum is empty.
