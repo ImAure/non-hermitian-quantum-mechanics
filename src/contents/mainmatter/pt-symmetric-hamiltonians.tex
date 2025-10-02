@@ -18,7 +18,7 @@
         \end{equation}
         This means that, while \PT-symmetric Hamiltonians can have real eigenvalues, they cannot generally be used to build a physical theory of Quantum Mechanics unless we modify some of its foundations.
 
-        We will see that the non-breaking of \PT\ Symmetry is necessary in order to find ourselves a complete set of eigenstates of a quantum mechanical system but it does not suffice in the construction of a quantum mechanical theory. In Hermitian Quantum Mechanics, the Hilbert space is defined independently of the Hamiltonian of the specific physical system we are considering \cite{bender2024}; on the other hand, when dealing with \PT-symmetric Hamiltonians we need to define the \hP\ and \hT\ operators case by case, in a way that suits the physical system we are working on. Moreover, in analogy with Hermitian Quantum Mechanics, we need to be able to find a complete set of eigenstates of the Hamiltonian with real energy eigenvalues, we expect independent eigenstates to be orthogonal and symmetry transformations to be unitary in the sense that they preserve probability with respect to the inner product associated to \hPT. These are in fact the essential properties that make a quantum mechanical theory a \emph{physical} quantum mechanical theory. To achieve all of this, we will see that the construction of a tailored inner product is in order. This inner product depends on \hP\ and \hT, meaning that the structure of Hilbert spaces associated to different physical systems may be generally different. To define this new inner product we will need to introduce a third operator, noted as \hC\ in analogy with Charge Conjugation, that helps in making this new \CPT\ inner product consistent with the requirements of a physical theory of Quantum Mechanics.
+        We will see that the non-breaking of \PT\ Symmetry is necessary in order to find a complete set of eigenstates of a quantum mechanical system but it does not suffice in the construction of a quantum mechanical theory. In Hermitian Quantum Mechanics, the Hilbert space is defined independently of the Hamiltonian of the specific physical system we are considering \cite{bender2024}; on the other hand, when dealing with \PT-symmetric Hamiltonians we need to define the \hP\ and \hT\ operators case by case, in a way that suits the physical system we are working on. Moreover, in analogy with Hermitian Quantum Mechanics, we need to be able to find a complete set of eigenstates of the Hamiltonian with real energy eigenvalues, we expect independent eigenstates to be orthogonal and symmetry transformations to be unitary in the sense that they preserve probability with respect to the inner product associated to \hPT. These are in fact the essential properties that make a quantum mechanical theory a \emph{physical} quantum mechanical theory. To achieve all of this, we will see that the construction of a tailored inner product is in order. This inner product depends on \hP\ and \hT, meaning that the structure of Hilbert spaces associated to different physical systems may be generally different. To define this new inner product we will need to introduce a third operator, noted as \hC\ in analogy with Charge Conjugation, that helps in making this new \CPT\ inner product consistent with the requirements of a physical theory of Quantum Mechanics.
 
     \section{The problem of completeness, unitarity and orthogonality}\label{s:problem}
         When working with \PT-symmetric Hamiltonians, three problems arise:
@@ -33,7 +33,7 @@
             will not preserve probability due to the introduction of exponentials of real numbers as coefficients.
             \item Even when \PT\ Symmetry is unbroken and a complete set for the Hilbert space can be found, the set is not guaranteed to be orthogonal.
         \end{enumerate}
-        To demonstrate what we just claimed, let us look at a simple example built on a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
+        To demonstrate what we just claimed, let us look at a simple example built from a $2\times2$ matrix Hamiltonian \cite{Bender2005,Bender2007}\footnote{The presented Hamiltonian is derived from Bender's by letting $s = 1$, $r = \gamma$ and $\theta = \pi/2$. $E_0$ has the dimensions of energy.}
         \begin{equation}
             \label{eq:ex:reduced-2x2-hamiltonian}
             \hH = E_0\! \pmqty{\dmat[1]{i\gamma, -i\gamma}}
@@ -285,7 +285,7 @@
                 \myexp{Q\pqty{\hvr,\hvp}} \comm{\hP}{\hH} + \comm{\myexp{Q\pqty{\hvr,\hvp}}}{\hH} \hP = \hzero
                 \mycomma
             \end{equation}
-            which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve analitically; the problem may however be approached by using perturbative methods \cite{bender2024}.
+            which must be solved case by case, depending on the Hamiltonian. Unfortunately, there is no general solution to \eqref{eq:Q-last-condition} as it depends on the shape of the Hamiltonian and it is often difficult to solve analytically; the problem may however be approached by using perturbative methods \cite{bender2024}.
 
             While this approach does not seem to lead anywhere, let us consider the quantity
             \begin{equation}
@@ -309,14 +309,14 @@
                 &= \hF
                 \myperiod
             \end{align*}
-            We found that that, under unbroken \PT\ Symmetry, the non-Hermitian \PT-symmetric Hamiltonian of a physical system can be transformed into an Hermitian operator via the similarity transformation \eqref{eq:F-Q-similarity}, corresponding to a change of basis which depends on the explicit form of $Q\pqty{\hvr,\hvp}$. Unfortunately again, this similarity transformation is hopelessly hard to find in its explicit form---exception made for some rare cases---just as it is hard to find the function $Q$ that satisfies the algebraic conditions for the definition of \hC \cite{bender2024}. In spite of this, the fact that we could find a correspondence between \PT-symmetric Hamiltonians and Hermitian operators is nonetheless remarkable.
+            We found that that, under unbroken \PT\ Symmetry, the non-Hermitian \PT-symmetric Hamiltonian of a physical system can be transformed into a Hermitian operator via the similarity transformation \eqref{eq:F-Q-similarity}, corresponding to a change of basis which depends on the explicit form of $Q\pqty{\hvr,\hvp}$. Unfortunately again, this similarity transformation is hopelessly hard to find in its explicit form---exception made for some rare cases---just as it is hard to find the function $Q$ that satisfies the algebraic conditions for the definition of \hC \cite{bender2024}. In spite of this, the fact that we could find a correspondence between \PT-symmetric Hamiltonians and Hermitian operators is nonetheless remarkable.
             
             Since eigenvalues are not dependent on the basis, \hH\ and \hF\ are \emph{isospectral}\footnote{Isospectrality means that the two operators share the same spectrum.} and their spectrum is real, consistently with the Spectral Theorem. We hence see that there is an underlying equivalence among the following:
             \begin{enumerate}[label = \mybullet]
                 \item Unbroken \PT\ Symmetry;
                 \item Reality of the eigenvalues of \hH;
                 \item Existence of an hidden \CPT\ Symmetry;
-                \item The similarity of \hH\ to an Hermitian operator \hF.
+                \item The similarity of \hH\ to a Hermitian operator \hF.
             \end{enumerate}
 
     \section{The \CPT\ inner product and unitarity}
@@ -401,7 +401,7 @@
             \end{align*}
             which proves unitarity and the conservation of probability.
 
-            Now that we have a well-defined, positive \CPT\ inner product for the Hilbert space and having proven that the time evolution in this space is unitary, we can see that the construction of a \PT\ Symmetric quantum mechanical theory is possible. The only open broblem that comes with this achievement is that the calculation of the Hilbert space depends on the Hamiltonian, in an opposite fashion to Hermitian Quantum Mechanics where the Hilbert space exists \emph{a priori} and the theory holds for any Hermitian Hamiltonian defined on it.
+            Now that we have a well-defined, positive \CPT\ inner product for the Hilbert space and having proven that the time evolution in this space is unitary, we can see that the construction of a \PT\ Symmetric quantum mechanical theory is possible. The only open problem that comes with this achievement is that the calculation of the Hilbert space depends on the Hamiltonian, in an opposite fashion to Hermitian Quantum Mechanics where the Hilbert space exists \emph{a priori} and the theory holds for any Hermitian Hamiltonian defined on it.
 
         \subsection{Symmetries and analogies with Hermitian Quantum Mechanics}
         At the beginning of \Sref{s:orthogonality}, an attempt at finding an analogy with Hermitian systems was made. After the unsuccessful attempt via the \PT\ inner product, we found a resolution by defining a \CPT\ inner product which granted the desired properties to the theory. This result, presented in Table \ref{tab:lunica}, is particularly interesting because it shows that by simply changing some notation and definitions we can establish a direct analogy between Hermitian Quantum Mechanics and \PT\ Symmetric Quantum Mechanics. The essential structure and properties of the theory remain similar, highlighting a deep connection between the two frameworks, however acknowledging that \PT\ Symmetry is not always satisfied and this same mathematical framework needs to adapt to each system by an appropriate definition of \hC, \hP\ and \hT.
