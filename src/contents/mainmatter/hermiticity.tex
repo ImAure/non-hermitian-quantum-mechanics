@@ -45,7 +45,7 @@
                 \int\nolimits_{\bbR^3}\abs{\psi\pqty{\vb{r}}}^2 \dd[3]{\vb{r}} = 1
                 \mycomma
             \end{equation}
-            and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. % By the properties of 
+            and, for this reason, we choose $\ket{\psi}$ and $\ket{\vb{r}}$ to be of unitary norm. This is allowed because, while $\ket{\psi}$ and $\lambda\!\ket{\psi}$ for any $\lambda\in\bbC$ are not generally the same vector in the Hilbert space, they are actually equivalent in representing a physical state, since, when substituted in Schr\"odinger's equation \eqref{eq:schrodinger}, the constant $\lambda$ cancels out. % By the properties of 
             Having defined the wavefunction, it is easy to see that for any eigenstate $\ket{\vb{r}_0}$ of \hvr\ the associated wavefunction would be $\psi\pqty{\vb{r}} = \braket{\vb{r}}{\vb{r}_0} = \delta^3\pqty{\vb{r} - \vb{r}_0}$.
 
             The wavefunction formalism is not strictly necessary, since a quantum mechanical theory could be entirely developed by the usage of operatorial formalism in the Heisenberg picture. It is however quite useful since it allows us to translate the problems from the abstract Hilbert space to the more concrete $L^2$ space of modulus squared Lebesgue-integrable functions. In this space, the scalar product between physical states can be expressed in terms of the integral
@@ -72,14 +72,14 @@
                 \int\nolimits_{\bbR^3} \dyad{\vb{r}}{\vb{r}} \dd[3]{\vb{r}} = \hidM
                 \myperiod
             \end{equation}
-            This expression is called \emph{resolution of the Identity} and it corresponds to the spectral representation of the Identity operator. The resolution of the Identity is essential in the context of completeness: if a set of states can be used to express the Identity operator, either in a continuous way\footnote{Formally speaking, the set $\qty{\ket{\vb{r}}}$ is not a subset of the Hilbert space as its vectors have infinite norm and their wavefunctions are not square-integrable. If we however interpret their wavefunction as a distribution, they can be treated as Dirac's deltas, recovering the possibility of using them to represent physical states.} like \eqref{eq:integral-identity} or in a discrete way like
+            This expression is called \emph{resolution of the Identity} and it corresponds to the spectral representation of the Identity operator. The resolution of the Identity is essential in the context of completeness: if a set of states can be used to express the Identity operator, either in a continuous way\footnote{Formally speaking, the set $\qty{\ket{\vb{r}}}$ is not a subset of the Hilbert space as its vectors have infinite norm and their wavefunctions are not modulus squared Lebesgue-integrable. If we however interpret their wavefunction as a distribution, they can be treated as Dirac's deltas, recovering the possibility of using them to represent physical states.} like \eqref{eq:integral-identity} or in a discrete way like
             \begin{equation*}
                 \sum\nolimits_n \dyad{\phi_n}{\phi_n} = \hidM
                 \mycomma
             \end{equation*}
             then the set is complete and any physical state can be expressed as a linear combination of the states in the set.
         
-        \subsection{The time independent Schr\"odinger Equation}
+        \subsection{The time independent Schr\"odinger equation}
             One of the problems of main interest in Quantum Mechanics is the one of finding the eigenvalues of the Hamiltonian operator \hH\ by solving 
             \begin{equation}
                 \label{eq:schrodinger-time-independent}
@@ -129,7 +129,7 @@
                 \label{eq:hermiticity-inner-product}
                 \mel{\phi}{\hA}{\psi}
                 = \mel{\phi}{\hA^\dag}{\psi}
-                = \mel{\psi}{\hA}{\psi}^*
+                = \mel{\psi}{\hA}{\phi}^*
                 \mycomma
             \end{equation}
             where $\bra{\phi}\!\hA^\dag = \bqty*{\hA\!\ket{\phi}}\!^\dag$, which must hold for any pair of states $\ket{\phi}$ and $\ket{\psi}$ in the Hilbert space. We can derive some important properties of Hermitian operators, which are all grouped under the name of the \emph{Spectral Theorem for Hermitian Operators} \cite{Bernardini1993-iy}:
