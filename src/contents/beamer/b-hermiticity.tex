@@ -1,0 +1,51 @@
+\section{Operatori Hermitiani}
+\begin{frame}{Osservabili fisiche}
+    Nella Meccanica Quantistica standard, gli stato fisico $\ket{\psi}$ è un vettore in uno spazio di Hilbert \mcH. Le quantità osservabili sono associate ad operatori Hermitiani su \mcH.
+
+    \pause
+    Il processo di misura di un'osservabile \hA :
+    \begin{enumerate}[label=\mybullet]
+        \pause
+        \item Distrugge lo stato fisico $\ket{\psi}$;
+        \pause
+        \item Fa collassare il sistema nell'autostato $\ket{\phi_n}$ di \hA\ associato all'autovalore $\lambda_n$.
+        \pause
+        \item Restituisce come misura l'autovalore $\lambda_n$ di \hA;
+    \end{enumerate}
+    \pause
+    La misura è un fenomeno aleatorio, la probabilità di osservare l'autovalore $\lambda_n$ è
+    \begin{equation*}
+        P\pqty{\lambda_n} = \abs{\braket{\phi_n}{\psi}}^2
+    \end{equation*}
+    \refer{A.N. \etal, PRB (2019)}
+\end{frame}
+
+\begin{frame}
+    Come mai è importante che gli operatori siano Hermitiani?
+    \begin{enumerate}[label=\mybullet]
+        \pause
+        \item Spettro reale:
+            \begin{equation*}
+                \hA\!\ket{\phi_n} = \lambda_n\!\ket{\phi_n}
+                \quad\implies\quad
+                \lambda_n \in \bbR
+                \mycomma
+            \end{equation*}
+            essenziale affinché le misure abbiano senso fisico;
+        \pause
+        \item Autospazi ortogonali:
+            \begin{equation*}
+                \braket{\phi_m}{\phi_n} = \tensor{\delta}{_m_n}\mycomma
+            \end{equation*}
+            le possibili misure sono mutualmente esclusive;
+        \pause
+        \item Generano trasformazioni di simmetria:
+            \begin{equation*}
+                \hU = \myexp{i\hA}
+                \quad\implies\quad
+                \hU~\text{unitario}
+                \myperiod
+            \end{equation*}
+    \end{enumerate}
+\end{frame}
+

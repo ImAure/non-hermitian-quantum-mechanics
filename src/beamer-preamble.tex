@@ -1,0 +1,75 @@
+\input{src/packages/fontenc}                % per il font
+\input{src/packages/inputenc}               % per l'input
+\input{src/packages/babel}                  % lingua principale inglese, secondaria italiano
+\usepackage{amsmath}
+\input{src/packages/amsfonts}               % cose utili per fare matematica e fisica
+\input{src/packages/amssymb}                % intlimits mette gli estremi di integrazione sopra e sotto il segno di integrale       
+\input{src/packages/amsthm}                 % cose utili per fare matematica e fisica
+\input{src/packages/bbm}                    % cose utili per fare matematica e fisica
+\input{src/packages/physics}                % cose utili per fare matematica e fisica
+\input{src/packages/tensor}                 % =======================================
+\input{src/packages/siunitx}
+\input{src/packages/graphicx}               % per le foto
+\input{src/packages/tikz}                   % per fare i disegnini belli
+\input{src/packages/pgf}
+\input{src/packages/pgfplots}
+\input{src/packages/enumitem}               % 
+\input{src/packages/lettrine}               % per le lettere belle a inizio capitolo
+% \input{src/packages/hyperref}        
+\input{src/packages/pifont}
+
+\input{src/packages/xurl}
+\input{src/packages/csquotes}
+\input{src/packages/biblatex}
+
+\usepackage{src/packages/my-science-utils}
+\usepackage{src/packages/my-thesis-utils}
+
+\usefonttheme{serif}
+
+\definecolor{CTgreen}{HTML}{28794e} % Catania green (primary)
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw} 
+  % \usetheme{Madrid}
+  % \usetheme{Montpellier}
+  % \usetheme{Marburg} 
+  \usecolortheme[named=CTgreen]{structure}
+  \setbeamercolor{alerted text}{fg=CTgreen}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{section in toc}[ball unnumbered]
+}
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\newcommand{\refer}[1]{%
+   \begin{flushright}
+      {\alert{\tiny #1}}
+   \end{flushright}}
+  
+\newcommand{\lrefer}[1]{%
+   \begin{flushleft}
+      {\alert{\tiny #1}}
+   \end{flushleft}}
+  
+\newcommand{\param}[1]{%
+   \begin{flushright}
+      {\small #1}
+   \end{flushright}
+   \vspace{-1.5\baselineskip}
+}
+
+\newcommand{\etal}{{\em et al.}}
