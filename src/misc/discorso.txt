@@ -1,0 +1,47 @@
+Sappiamo che nella meccanica quantistica standard, eseguire una misura corrisponde all'applicazione di un operatore Hermitiano sullo stato fisico che vive nello spazio di Hilbert.
+
+La misura causa il collasso dello stato fisico e restituisce un numero, pari a uno degli autovalori dell'operatore. 
+
+L'hermitianità di un operatore è condizione sufficiente affinché i suoi autovalori siano reali, inoltre gli operatori hermitiani generano trasformazioni unitarie che conservano la probabilità.
+
+Possiamo trovare una classe più ampia di operatori con autovalori reali? forse...
+
+Introduciamo gli operatori di inversione di parità P e di inversione temporale T. P cambia il segno sia alla posizione che all'impulso, il sistema è come visto allo specchio. T invece cambia solo il segno all'impulso, il sistema appare come se si muove a ritroso.
+
+Facciamo una carrellata di proprietà:
+P è lineare, hermitiano e unitario, è un operatore di riflessione e i suoi autovalori sono ±1.
+
+T invece è antilineare, perché se non lo fosse non si conserverebbero le parentesi di commutazione canoniche, e in particolare antiunitario. Questo vuol dire che conserva il prodotto scalare a meno di una coniugazione complessa: lascia invariato il suo modulo e quindi, anche se non conserva il prodotto scalare, conserva la probabilità.
+
+Introduciamo quindi l'operatore PT che è semplicemente la composizione di P e T ed è di conseguenza antiunitario, come T. Essendo antiunitario i suoi autovalori sono fattori di fase che possiamo assorbire nello stato fisico in modo che PT abbia autovalore 1.
+
+Diciamo infine che un operatore è PT-invariante se commuta con PT, ovvero se
+PT A PT = A 
+oppure
+[PT,A] = 0
+Purtroppo il fatto che un operatore commuti con PT non è sufficiente ad avere autostati simultanei perché PT non è lineare. Tuttavia se gli autostati simultanei esistono, si può dimostrare che gli autovalori di A sono reali.
+    **mostrare i passaggi**
+
+Fatta questa premessa, definiamo il concetto di simmetria PT: si dice che un sistema fisico non rompe la simmetria PT se:
+- H commuta con PT
+- esistono autostati simultanei di H e PT.
+In questo caso le possibili misure di energia sono reali per quello che abbiamo appena detto.
+
+Domanda:
+Una sistema la cui Hamiltoniana non rompe la simmetria PT può essere descritto dal formalismo della meccanica quantistica?
+
+Sorgono dei problemi: gli autostati non sono più ortogonali rispetto al prodotto scalare Hermitiano e l'evoluzione temporare generata da H potrebbe non essere più unitaria.
+
+Visto che l'hamiltoniana è PT simmetrica anziché Hermitiana, proviamo a sostituire il prodotto scalare hermitiano con un prodotto scalare PT che usi la coniugazione PT al posto della coniugazione complessa, che corrisponde a:
+    **formula**
+
+Rispetto a questo prodotto scalare salviamo l'ortogonalità degli autostati ma la norma non è definita di segno: la norma degli autostati ha segno alterno. Per migliorare questo risultato introduciamo un terzo operatore lineare C definito dalle proprietà:
+    **proprietà**
+
+Si dimostra che questo operatore esiste per costruzione e ha come effetto quello di inserire un (-1) davanti agli autostati con norma PT negativa.
+
+A questo punto possiamo definire il prodotto CPT che sostituisce la coniugazione CPT alla coniugazione PT recuperando la definitezza di segno della norma. È interessante notare che rispetto a questo prodotto interno l'evoluzione temporale è unitaria e quindi in condizioni di simmetria, che non è più solo PT ma anche CPT, non rotta abbiamo effettivamente in mano una teoria quantistica applicabile.
+
+È altrettanto interessante notare la corrispondenza 1:1 tra il formalismo Hermitiano e il formalismo CPT come vediamo in questa tabella. Ancora più interessante è il fatto che l'operatore C può essere usato per costruire una trasformazione di similarità che manda un'Hamiltoniana CPT simmetrica in una hamiltoniana hermitiana, sottolineando la profonda interconnessione tra le due teorie.
+
+Vediamo infine un'applicazione con l'oscillatore armonico...

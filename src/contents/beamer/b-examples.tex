@@ -1,4 +1,36 @@
 \section{Applicazioni}
-\begin{frame}
-    ed erano amici
+\begin{frame}{Deformazione dell'oscillatore armonico}
+    Consideriamo l'Hamiltoniana adimensionata
+    \begin{equation*}
+        \hH = \hp^2 + \hx^2\pause\pqty{i\hx}^\varepsilon
+        \mycomma
+    \end{equation*}
+    La deformazione non è Hermitiana ma è \PT-invariante per $\varepsilon > -1$.
+
+    \begin{enumerate}[label=\mybullet]
+        \pause
+        \item Per $\varepsilon \geq 0$: Simmetria non rotta, autovalori reali;
+        \pause
+        \item Per $-1 < \varepsilon < 0$: Simmetria rotta, un numero finito di autovalori sono reali, il resto sono complessi;
+        \pause
+        \item Per $\varepsilon \to -1$ lo spettro diverge. 
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Potenziale quartico capovolto}
+    Un caso interessante si ha per $\varepsilon = 2$:
+    \begin{equation*}
+        \hH = \hp^2 - \hx^4
+    \end{equation*}
+    \pause
+    Attraverso metodi di analisi complessa si trova che lo spettro coincide con quello di $\hH = \hp^2 + \hx^4$.
+    \begin{enumerate}[label=\mybullet]
+        \pause
+        \item  Le soluzioni sono stati legati;
+        \pause
+        \item La particella percorre orbite ellittiche nel piano complesso;
+        \pause
+        \item La posizione media è l'origine. 
+    \end{enumerate}
+    Ricorda il potenziale quartico di auto-interazione in teoria dei campi.
 \end{frame}

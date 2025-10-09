@@ -1,78 +1,9 @@
-\section{Operatori \hP, \hT\ e \hPT}
-\begin{frame}{Il gruppo di Lorentz}
-    Le trasformazioni di Lorentz sono quelle trasformazioni che lasciano invariato il 4-intervallo:
-    \begin{equation*}
-        \Delta s^2 = \tensor{x}{_\mu}\tensor{x}{^\mu} = c^2t^2 - x^2 - y^2 - z^2
-        \myperiod
-    \end{equation*}
-    \pause
-    I cambi di segno di una o più delle coordinate, come
-    \begin{enumerate}[label=\mybullet]
-        \item $ct \to -ct$
-        \item $x \to -x$
-        \item $\vb{r} \to -\vb{r}$, con $\vb{r} \equiv \pqty{x,y,z}$
-    \end{enumerate}
-    conservano il $4$-intervallo, quindi sono ancora trasformazioni di Lorentz.
-\end{frame}
-
-\begin{frame}{Trasformazioni \mcP\ e \mcT}
-    Introduciamo due trasformazioni:
+\section{L'operatore \hPT}
+\begin{frame}{Operatori \hP\ e \hT}
+    Introduciamo gli operatori quantistici \hP\ e \hT.
     \begin{enumerate}[label=\mybullet]
         \pause
-        \item Inversione di parità, che inverte le coordinate spaziali:
-            \begin{equation*}
-                \func{\mcP}{\pqty{ct,\vb{r}}}{\pqty{ct,-\vb{r}}}
-            \end{equation*}
-        \pause
-        \item Inversione temporale, che inverte il tempo
-            \begin{equation*}
-                \func{\mcT}{\pqty{ct,\vb{r}}}{\pqty{-ct,\vb{r}}}
-            \end{equation*}
-            \pause L'effetto dell'Inversione temporale in realtà è quello di invertire la direzione del moto.
-    \end{enumerate}
-\end{frame}
-
-\begin{frame}{Connessione del gruppo di Lorentz}
-    Le trasformazioni di Lorentz formano un gruppo e sono identificate dal parametro $\vb*{\beta} = \vb{v}/c$.
-
-    \pause
-    Il gruppo di Lorentz si divide in quattro componenti connesse:
-    \begin{enumerate}[label=\mybullet]
-        \pause
-        \item Il sottogruppo contentente l'identità;
-        \pause
-        \item Il sottogruppo dell'identità composto con \mcP;
-        \item Il sottogruppo dell'identità composto con \mcT;
-        \item Il sottogruppo dell'identità composto con \mcP\mcT;
-    \end{enumerate}
-    \pause
-    Queste quattro componenti sono sconnesse tra loro.
-    
-        
-\end{frame}
-
-\begin{frame}{Connessione del gruppo di Lorentz}
-    Le componenti possono essere ridotte a due passando ai numeri complessi.
-    \begin{figure}
-        \begin{tikzpicture}
-            \draw (1,1) -- (1,2);
-        \end{tikzpicture}
-        \qquad\pause
-        \begin{tikzpicture}
-            \draw (1,1) -- (2,1);
-        \end{tikzpicture}
-    \end{figure}
-    \pause
-    La componente dell'identità si connette alla componente \PT.
-    \pause
-    Le trasformazioni \PT\ potrebbero quindi avere un ruolo privilegiato.
-\end{frame}
-
-\begin{frame}{Passaggio agli operatori quantistici}
-    Introduciamo gli operatori quantistici \hP\ e \hT, analoghi dei classici \mcP\ e \mcT :
-    \begin{enumerate}[label=\mybullet]
-        \pause
-        \item L'inversione di parità inverte posizione e impulso, il sistema appare come allo specchio:
+        \item Inversione di parità \hP : inverte posizione e impulso e il sistema appare specchiato:
             \begin{equation*}
                 \hP\hvr\hP^{-1} = -\hvr
                 \mycomma
@@ -81,7 +12,7 @@
                 \mysemicolon
             \end{equation*}
         \pause
-        \item L'inversione temporale inverte l'impulso ma non la posizione, il sistema appare come se si evolvesse a ritroso:
+        \item Inversione temporale \hT : inverte l'impulso ma non la posizione, il sistema appare come se si evolvesse a ritroso:
             \begin{equation*}
                 \hT\hvr\hT^{-1} = \hvr
                 \mycomma
@@ -94,76 +25,224 @@
     Si pone inoltre $\comm*{\hP}{\hT}\! = 0$.
 \end{frame}
 
-\begin{frame}{Linearità e antilinearità}
-    Imponendo che le trasformazioni \hP\ e \hT\ lascino invariate le relazioni di commutazione canoniche
+\begin{frame}{Proprietà di \hP\ e \hT}
+    Applicando \hP\ e \hT\ parentesi di commutazione canoniche
     \begin{equation*}
-        \comm*{\tensor{\hx}{_j}}{\tensor{\hp}{_k}}\! = i\hbar\tensor{\delta}{_j_k}
-        \mycomma
+        \comm*{\hx_j}{\hp_k}\! = i\hbar\tensor{\delta}{_j_k}
     \end{equation*}
-    si trova che 
+    devono conservarsi. Da questo si trova che:
     \begin{enumerate}[label=\mybullet]
-        \item \hP\ deve essere lineare, ovvero $\forall\ket{\psi},\ket{\phi}\in\mcH$, $\forall\lambda,\mu\in\bbC$
-            $$
-                \hP\pqty{\lambda\!\ket{\psi} + \mu\!\ket{\phi}}
-                = \lambda\hP\!\ket{\psi} + \mu\hP\!\ket{\phi}
-            $$
-        \item \hT\ deve essere \emph{antilineare}, ovvero
-            $$
-                \hT\pqty{\lambda\!\ket{\psi} + \mu\!\ket{\phi}}
-                = \lambda^*\hT\!\ket{\psi} + \mu^*\hT\!\ket{\phi}
-            $$
+        \pause
+        \item \hP\ è lineare, Hermitiano, unitario e di riflesisone, ovvero
+            \begin{equation*}
+                \hP = \hP^\dag = \hP^{-1}
+                \mycomma\qquad
+                \hP^2 = \hidM
+                \myperiod
+            \end{equation*}
+        I suoi autovalori sono $\pm1$.
+        \pause
+        \item \hT\ è \emph{antilineare}, ovvero $\hT\lambda\!\ket{\psi} = \lambda^*\hT\!\ket{\psi}$, e \emph{anitunitario}. Posto $\ket*{\psi'} = \hT\!\ket{\psi}$ e $\ket*{\phi'} = \hT\!\ket{\phi}$ si ha 
+            \begin{equation*}
+                \braket*{\phi'}{\psi'} = \braket*{\phi}{\psi}^*
+                \quad\implies\quad 
+                \abs*{\!\braket*{\phi'}{\psi'}} = \abs*{\!\braket*{\phi}{\psi}}
+                \mycomma
+            \end{equation*}
+        quindi conserva la probabilità.
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Proprietà di \hP}
-    Si può inoltre dimostrare che \hP :
-    \begin{enumerate}[label=\mybullet]
-        \pause
-        \item È Hermitiano $$\hP = \hP^\dag\mysemicolon$$
-        \pause
-        \item È unitario $$\hP^{-1} = \hP^\dag\mysemicolon$$
-        \pause
-        \item Il suo quadrato è l'identità $$\hP^2 = \hidM\myperiod$$
-    \end{enumerate}
-    \pause
-    Di conseguenza, gli autovalori di \hP\ sono $\pm1$: $$\hP\!\ket{\pm} = \pm\!\ket{\pm}.$$
-\end{frame}
-
-\begin{frame}{Proprietà di \hT}
-    Per \hT\ il discorso è più delicato. È un operatore \emph{antiunitario}
-    Se trasformo due vettori
-    $$\ket*{\psi'} = \hT\!\ket{\psi}\quad\text{e}\quad\ket*{\phi'} = \hT\!\ket{\phi}\mycomma$$
-    \pause
-    e ne faccio il prodotto scalare, ottengo il complesso coniugato:
-    $$\braket*{\phi'}{\psi'} = \braket{\phi}{\psi}^*\myperiod$$
-    \pause
-    L'operatore \hT\ non conserva il prodotto scalare ma conserva il suo modulo
-    $\abs*{\!\braket*{\phi'}{\psi'}}\! = \abs{\braket{\phi}{\psi}}$,
-    essenziale per conservare la probabilità.
-
-    \pause 
-    Infine $\hT^2 = \hidM$ vale solo per i sistemi con spin intero.
-\end{frame}
-
-\begin{frame}{Operatore \hPT\ e sue proprietà}
+\begin{frame}{Operatore \hPT}
     L'operatore \hPT\ è la composizione di \hP\ e \hT. Di conseguenza è antiunitario e per sistemi senza spin è tale che $\bqty*{\hPT}\!^2 = \hidM$.
 
     \pause
     Possiamo imporre che abbia autovalori uguali a $1$:
-    $$
+    \begin{equation*}
         \hPT\!\ket{\psi} = \lambda\!\ket{\psi}
         \quad\implies\quad
         \lambda = e^{i\theta}
         \mysemicolon
-    $$
+    \end{equation*}
+    
     Ridefiniamo $\ket*{\psi'} = e^{i\theta/2}\!\ket{\psi}$ e otteniamo
-    $$
+    \begin{equation*}
         \hPT e^{i\theta/2}\!\ket{\psi}
         =\pause e^{-i\theta/2}\hPT\!\ket{\psi}
         =\pause e^{-i\theta/2}e^{i\theta}\!\ket{\psi}
         =\pause e^{i\theta/2}\!\ket{\psi}
         \myperiod
-    $$
+    \end{equation*}
     \pause
     da cui $$\hPT\!\ket*{\psi'} = \ket*{\psi'}$$
 \end{frame}
+
+% \begin{frame}{Il gruppo di Lorentz}
+%     Le trasformazioni di Lorentz sono quelle trasformazioni che lasciano invariato il 4-intervallo:
+%     \begin{equation*}
+%         \Delta s^2 = \tensor{x}{_\mu}\tensor{x}{^\mu} = c^2t^2 - x^2 - y^2 - z^2
+%         \myperiod
+%     \end{equation*}
+%     \pause
+%     I cambi di segno di una o più delle coordinate, come
+%     \begin{enumerate}[label=\mybullet]
+%         \item $ct \to -ct$
+%         \item $x \to -x$
+%         \item $\vb{r} \to -\vb{r}$, con $\vb{r} \equiv \pqty{x,y,z}$
+%     \end{enumerate}
+%     conservano il $4$-intervallo, quindi sono ancora trasformazioni di Lorentz.
+% \end{frame}
+% 
+% \begin{frame}{Trasformazioni \mcP\ e \mcT}
+%     Introduciamo due trasformazioni:
+%     \begin{enumerate}[label=\mybullet]
+%         \pause
+%         \item Inversione di parità, che inverte le coordinate spaziali:
+%             \begin{equation*}
+%                 \func{\mcP}{\pqty{ct,\vb{r}}}{\pqty{ct,-\vb{r}}}
+%             \end{equation*}
+%         \pause
+%         \item Inversione temporale, che inverte il tempo
+%             \begin{equation*}
+%                 \func{\mcT}{\pqty{ct,\vb{r}}}{\pqty{-ct,\vb{r}}}
+%             \end{equation*}
+%             \pause L'effetto dell'Inversione temporale in realtà è quello di invertire la direzione del moto.
+%     \end{enumerate}
+% \end{frame}
+% 
+% \begin{frame}{Connessione del gruppo di Lorentz}
+%     Le trasformazioni di Lorentz formano un gruppo e sono identificate dal parametro $\vb*{\beta} = \vb{v}/c$.
+% 
+%     \pause
+%     Il gruppo di Lorentz si divide in quattro componenti connesse:
+%     \begin{enumerate}[label=\mybullet]
+%         \pause
+%         \item Il sottogruppo contentente l'identità;
+%         \pause
+%         \item Il sottogruppo dell'identità composto con \mcP;
+%         \item Il sottogruppo dell'identità composto con \mcT;
+%         \item Il sottogruppo dell'identità composto con \mcP\mcT;
+%     \end{enumerate}
+%     \pause
+%     Queste quattro componenti sono sconnesse tra loro.
+%     
+%         
+% \end{frame}
+% 
+% \begin{frame}{Connessione del gruppo di Lorentz}
+%     Le componenti possono essere ridotte a due passando ai numeri complessi.
+%     \begin{figure}
+%         \begin{tikzpicture}
+%             \draw (1,1) -- (1,2);
+%         \end{tikzpicture}
+%         \qquad\pause
+%         \begin{tikzpicture}
+%             \draw (1,1) -- (2,1);
+%         \end{tikzpicture}
+%     \end{figure}
+%     \pause
+%     La componente dell'identità si connette alla componente \PT.
+%     \pause
+%     Le trasformazioni \PT\ potrebbero quindi avere un ruolo privilegiato.
+% \end{frame}
+
+% \begin{frame}{Passaggio agli operatori quantistici}
+%     Introduciamo gli operatori quantistici \hP\ e \hT, analoghi dei classici \mcP\ e \mcT :
+%     \begin{enumerate}[label=\mybullet]
+%         \pause
+%         \item L'inversione di parità inverte posizione e impulso, il sistema appare come allo specchio:
+%             \begin{equation*}
+%                 \hP\hvr\hP^{-1} = -\hvr
+%                 \mycomma
+%                 \qquad
+%                 \hP\hvp\hP^{-1} = -\hvp
+%                 \mysemicolon
+%             \end{equation*}
+%         \pause
+%         \item L'inversione temporale inverte l'impulso ma non la posizione, il sistema appare come se si evolvesse a ritroso:
+%             \begin{equation*}
+%                 \hT\hvr\hT^{-1} = \hvr
+%                 \mycomma
+%                 \qquad
+%                 \hT\hvp\hT^{-1} = -\hvp
+%                 \myperiod
+%             \end{equation*}
+%     \end{enumerate}
+%     \pause
+%     Si pone inoltre $\comm*{\hP}{\hT}\! = 0$.
+% \end{frame}
+
+% \begin{frame}{Linearità e antilinearità}
+%     Imponendo che le trasformazioni \hP\ e \hT\ lascino invariate le relazioni di commutazione canoniche
+%     \begin{equation*}
+%         \comm*{\tensor{\hx}{_j}}{\tensor{\hp}{_k}}\! = i\hbar\tensor{\delta}{_j_k}
+%         \mycomma
+%     \end{equation*}
+%     si trova che 
+%     \begin{enumerate}[label=\mybullet]
+%         \item \hP\ deve essere lineare, ovvero $\forall\ket{\psi},\ket{\phi}\in\mcH$, $\forall\lambda,\mu\in\bbC$
+%             $$
+%                 \hP\pqty{\lambda\!\ket{\psi} + \mu\!\ket{\phi}}
+%                 = \lambda\hP\!\ket{\psi} + \mu\hP\!\ket{\phi}
+%             $$
+%         \item \hT\ deve essere \emph{antilineare}, ovvero
+%             $$
+%                 \hT\pqty{\lambda\!\ket{\psi} + \mu\!\ket{\phi}}
+%                 = \lambda^*\hT\!\ket{\psi} + \mu^*\hT\!\ket{\phi}
+%             $$
+%     \end{enumerate}
+% \end{frame}
+% 
+% \begin{frame}{Proprietà di \hP}
+%     Si può inoltre dimostrare che \hP :
+%     \begin{enumerate}[label=\mybullet]
+%         \pause
+%         \item È Hermitiano $$\hP = \hP^\dag\mysemicolon$$
+%         \pause
+%         \item È unitario $$\hP^{-1} = \hP^\dag\mysemicolon$$
+%         \pause
+%         \item Il suo quadrato è l'identità $$\hP^2 = \hidM\myperiod$$
+%     \end{enumerate}
+%     \pause
+%     Di conseguenza, gli autovalori di \hP\ sono $\pm1$: $$\hP\!\ket{\pm} = \pm\!\ket{\pm}.$$
+% \end{frame}
+% 
+% \begin{frame}{Proprietà di \hT}
+%     Per \hT\ il discorso è più delicato. È un operatore \emph{antiunitario}
+%     Se trasformo due vettori
+%     $$\ket*{\psi'} = \hT\!\ket{\psi}\quad\text{e}\quad\ket*{\phi'} = \hT\!\ket{\phi}\mycomma$$
+%     \pause
+%     e ne faccio il prodotto scalare, ottengo il complesso coniugato:
+%     $$\braket*{\phi'}{\psi'} = \braket{\phi}{\psi}^*\myperiod$$
+%     \pause
+%     L'operatore \hT\ non conserva il prodotto scalare ma conserva il suo modulo
+%     $\abs*{\!\braket*{\phi'}{\psi'}}\! = \abs{\braket{\phi}{\psi}}$,
+%     essenziale per conservare la probabilità.
+% 
+%     \pause 
+%     Infine $\hT^2 = \hidM$ vale solo per i sistemi con spin intero.
+% \end{frame}
+
+% \begin{frame}{Operatore \hPT}
+%     L'operatore \hPT\ è la composizione di \hP\ e \hT. Di conseguenza è antiunitario e per sistemi senza spin è tale che $\bqty*{\hPT}\!^2 = \hidM$.
+% 
+%     \pause
+%     Possiamo imporre che abbia autovalori uguali a $1$:
+%     \begin{equation*}
+%         \hPT\!\ket{\psi} = \lambda\!\ket{\psi}
+%         \quad\implies\quad
+%         \lambda = e^{i\theta}
+%         \mysemicolon
+%     \end{equation*}
+%     
+%     Ridefiniamo $\ket*{\psi'} = e^{i\theta/2}\!\ket{\psi}$ e otteniamo
+%     \begin{equation*}
+%         \hPT e^{i\theta/2}\!\ket{\psi}
+%         =\pause e^{-i\theta/2}\hPT\!\ket{\psi}
+%         =\pause e^{-i\theta/2}e^{i\theta}\!\ket{\psi}
+%         =\pause e^{i\theta/2}\!\ket{\psi}
+%         \myperiod
+%     \end{equation*}
+%     \pause
+%     da cui $$\hPT\!\ket*{\psi'} = \ket*{\psi'}$$
+% \end{frame}
