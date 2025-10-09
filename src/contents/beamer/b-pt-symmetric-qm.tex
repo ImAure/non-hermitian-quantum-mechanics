@@ -75,15 +75,11 @@
 \end{frame}
 
 \begin{frame}{Ci siamo persi qualcosa...}
-    Nel tentativo di salvaguardare la realtà degli autovalori abbiamo perso qualcosa:
-    \begin{enumerate}
-        \pause
+    Nel tentativo di salvaguardare la realtà degli autovalori abbiamo perso qualcosa. \pause Finché  usiamo il prodotto scalare Hermitiano:
+    \begin{enumerate}  
         \item[\ding{55}] Gli autospazi non sono più ortogonali;
-        \pause
-        \item[\ding{55}] La probabilità non si conserva più;
+        \item[\ding{55}] La probabilità non è più conservata.
     \end{enumerate}
-    \pause
-    finché usiamo il prodotto scalare Hermitiano.
 \end{frame}
 
 \begin{frame}{Prodotto \PT}
@@ -92,7 +88,7 @@
     \pause
     Dal momento che lavoriamo con operatori \PT-invarianti, introduciamo un prodotto \PT :
     \begin{equation*}
-        \braket{\phi}{\psi}_{\PT} = \int\nolimits_{\bbR^3}\phi^{\PT}\pause\pqty{\vb{r}}\psi\pqty{\vb{r}} \dd[3]{\vb{r}}
+        \braket{\phi}{\psi}_{\PT} = \int\nolimits_{\bbR^3}\phi^{\PT}\pqty{\vb{r}}\pause\psi\pqty{\vb{r}} \dd[3]{\vb{r}}
     \end{equation*}
     dove $\phi^{\PT}\!\pqty{\vb{r}} = \phi^*\pqty{-\vb{r}}$, \pause coerente con:
     \begin{enumerate}[label=\mybullet]
@@ -115,26 +111,65 @@
         \pause
         \item $\comm*{\hC}{\hPT}\! = 0$;
         \pause
-        \item $\hC^2 = \hidM$;
+        \item $\hC^2 = \hidM$.
     \end{enumerate}
     \pause
     Si dimostra la sua esistenza per costruzione:
     \begin{equation*}
         \hC = \sum\nolimits_n\dyad{\phi_n}{\phi_n}_{\PT}
-        \quad\implies\quad\pause
-        \mel*{\vb{r}}{\hC}{\vb{r'}} = \sum\nolimits_n \phi_n\pqty{\vb{r}}\phi_n\pqty*{\vb{r}'}
-        \myperiod
+        \mycomma
     \end{equation*}
     \pause
-    Si può inoltre trovare una funzione $Q$ tale che
+    e agisce sugli autostati di \hH\ come
     \begin{equation*}
-        \hC = \myexp{Q\pqty{\hvr,\hvp}}\hP
+        \hC\!\ket{\phi_n} = \pqty{-1}^n\!\ket{\phi_n}
         \myperiod
     \end{equation*}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Prodotto \CPT}
+    Inseriamo nel prodotto \PT\ anche l'azione dell'operatore \hC :
+    \begin{equation*}
+        \braket{\phi}{\psi}_{\CPT} = \int\nolimits_{\bbR^3} \phi^{\CPT}\!\pqty{\vb{r}}\pause\psi\pqty{\vb{r}} \dd[3]{\vb{r}}
+        \mycomma
+    \end{equation*}
+    dove $\phi^{\CPT}_n\pqty{\vb{r}} = \pqty{-1}^n\phi^{\PT}\pqty{\vb{r}} = \pqty{-1}^n\phi^*_n\pqty{-\vb{r}}$.
+
+    \pause
+    Questo prodotto interno
+    \begin{enumerate}[label=\mybullet]
+        \pause
+        \item Recupera l'ortogonalità degli autostati;
+        \pause
+        \item È ben definito;
+        \pause
+        \item È conservato dall'evoluzione temporarle
+            \begin{equation*}
+                \hU\pqty{t} = \myexp{-i\frac{\hH}{\hbar}t}
+                \quad\iff\quad
+                \hU\pqty{t}\hU^{\CPT}\pqty{t} = \hidM 
+                \myperiod
+            \end{equation*}
+    \end{enumerate}
+\end{frame}
 
 
+\begin{frame}{Due teorie a confronto}
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c}
+            $\hH^\dag = \hH$ & $\hK^{\CPT} = \hK$ \pause\\\\
+            $\hH\!\ket{\phi_n} = \lambda_n\!\ket{\phi_n}$, & $\hK\!\ket{\phi_n} = \lambda_n\!\ket{\phi_n}$ \\
+            con $\lambda_n\in\bbR$ & con $\lambda_n\in\bbR$ \pause\\\\
+            $\braket{\phi_m}{\phi_n} = \tensor{\delta}{_m_n}$ & $\braket{\phi_m}{\phi_n}_{\CPT} = \tensor{\delta}{_m_n}$ \pause\\\\
+            $\displaystyle \ket{\psi{\pqty{t}}} = \hU\pqty{t} \!\ket{\psi\pqty{0}}$, & $\displaystyle \ket{\psi{\pqty{t}}} = \hU\pqty{t} \!\ket{\psi\pqty{0}}$, \\
+            con $\hU\pqty{t} \hU^\dag\pqty{t} = \hidM$ & con $\hU\pqty{t} \hU^{\CPT}\pqty{t} = \hidM$
+        \end{tabular}
+    \end{table}
+    \pause
+    Inoltre l'operatore \hC\ induce una trasformazione di similarità tra l'Hamiltoniana \PT-invariante e un'Hamiltoniana Hermitiana: i due formalismi sono interconnessi.
+\end{frame}
 
 % \begin{frame}{Operatori \PT-invarianti}
 %     Diciamo che un operatore è \hPT-invariante se
